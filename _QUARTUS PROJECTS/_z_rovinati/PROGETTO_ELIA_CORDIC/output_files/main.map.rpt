@@ -1,0 +1,963 @@
+Analysis & Synthesis report for main
+Sun Jan 26 17:01:15 2025
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |main|spi_FSM:spi0|state
+  9. State Machine - |main|spi_FSM:spi0|cordic_FSM:cordic|state
+ 10. State Machine - |main|spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: spi_FSM:spi0
+ 16. Parameter Settings for User Entity Instance: spi_FSM:spi0|cordic_FSM:cordic
+ 17. Parameter Settings for User Entity Instance: spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core
+ 18. Parameter Settings for User Entity Instance: spi_FSM:spi0|spi_core:spi
+ 19. Port Connectivity Checks: "spi_FSM:spi0|cordic_FSM:cordic"
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sun Jan 26 17:01:15 2025       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; main                                        ;
+; Top-level Entity Name           ; main                                        ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 121                                         ;
+; Total pins                      ; 29                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEBA6U23I7S      ;                    ;
+; Top-level entity name                                                           ; main               ; main               ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 32          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                             ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                      ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+; spi_FSM.vhd                      ; yes             ; User VHDL File  ; C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd         ;         ;
+; spi_core.vhd                     ; yes             ; User VHDL File  ; C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_core.vhd        ;         ;
+; main.vhd                         ; yes             ; User VHDL File  ; C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd            ;         ;
+; cordic_FSM.vhd                   ; yes             ; User VHDL File  ; C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd      ;         ;
+; cordic_core.vhd                  ; yes             ; User VHDL File  ; C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd     ;         ;
+; blink_heartbeat.vhd              ; yes             ; User VHDL File  ; C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/blink_heartbeat.vhd ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                      ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+; Estimate of Logic utilization (ALMs needed) ; 321                ;
+;                                             ;                    ;
+; Combinational ALUT usage for logic          ; 510                ;
+;     -- 7 input functions                    ; 0                  ;
+;     -- 6 input functions                    ; 125                ;
+;     -- 5 input functions                    ; 28                 ;
+;     -- 4 input functions                    ; 31                 ;
+;     -- <=3 input functions                  ; 326                ;
+;                                             ;                    ;
+; Dedicated logic registers                   ; 121                ;
+;                                             ;                    ;
+; I/O pins                                    ; 29                 ;
+;                                             ;                    ;
+; Total DSP Blocks                            ; 0                  ;
+;                                             ;                    ;
+; Maximum fan-out node                        ; FPGA_CLK1_50~input ;
+; Maximum fan-out                             ; 121                ;
+; Total fan-out                               ; 2444               ;
+; Average fan-out                             ; 3.47               ;
++---------------------------------------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node       ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Entity Name     ; Library Name ;
++----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+-----------------+--------------+
+; |main                            ; 510 (0)             ; 121 (0)                   ; 0                 ; 0          ; 29   ; 0            ; |main                                                 ; main            ; work         ;
+;    |spi_FSM:spi0|                ; 510 (105)           ; 121 (13)                  ; 0                 ; 0          ; 0    ; 0            ; |main|spi_FSM:spi0                                    ; spi_FSM         ; work         ;
+;       |blink_heartbeat:blink_hb| ; 25 (25)             ; 25 (25)                   ; 0                 ; 0          ; 0    ; 0            ; |main|spi_FSM:spi0|blink_heartbeat:blink_hb           ; blink_heartbeat ; work         ;
+;       |cordic_FSM:cordic|        ; 356 (175)           ; 13 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |main|spi_FSM:spi0|cordic_FSM:cordic                  ; cordic_FSM      ; work         ;
+;          |cordic_core:core|      ; 181 (181)           ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |main|spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core ; cordic_core     ; work         ;
+;       |spi_core:spi|             ; 24 (24)             ; 70 (70)                   ; 0                 ; 0          ; 0    ; 0            ; |main|spi_FSM:spi0|spi_core:spi                       ; spi_core        ; work         ;
++----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |main|spi_FSM:spi0|state                                                                                                                                                                                                                 ;
++-----------------------+--------------+---------------+---------------+---------------+------------------+-------------------+--------------------+----------------+----------------+--------------+--------------+-----------------------+---------------+
+; Name                  ; state.DONE_S ; state.WRITE_Z ; state.WRITE_Y ; state.WRITE_X ; state.WRITE_PATH ; state.CORDIC_DONE ; state.START_CORDIC ; state.READ_Z_H ; state.READ_Z_L ; state.READ_Y ; state.READ_X ; state.WAIT_PATH_START ; state.RESET_S ;
++-----------------------+--------------+---------------+---------------+---------------+------------------+-------------------+--------------------+----------------+----------------+--------------+--------------+-----------------------+---------------+
+; state.RESET_S         ; 0            ; 0             ; 0             ; 0             ; 0                ; 0                 ; 0                  ; 0              ; 0              ; 0            ; 0            ; 0                     ; 0             ;
+; state.WAIT_PATH_START ; 0            ; 0             ; 0             ; 0             ; 0                ; 0                 ; 0                  ; 0              ; 0              ; 0            ; 0            ; 1                     ; 1             ;
+; state.READ_X          ; 0            ; 0             ; 0             ; 0             ; 0                ; 0                 ; 0                  ; 0              ; 0              ; 0            ; 1            ; 0                     ; 1             ;
+; state.READ_Y          ; 0            ; 0             ; 0             ; 0             ; 0                ; 0                 ; 0                  ; 0              ; 0              ; 1            ; 0            ; 0                     ; 1             ;
+; state.READ_Z_L        ; 0            ; 0             ; 0             ; 0             ; 0                ; 0                 ; 0                  ; 0              ; 1              ; 0            ; 0            ; 0                     ; 1             ;
+; state.READ_Z_H        ; 0            ; 0             ; 0             ; 0             ; 0                ; 0                 ; 0                  ; 1              ; 0              ; 0            ; 0            ; 0                     ; 1             ;
+; state.START_CORDIC    ; 0            ; 0             ; 0             ; 0             ; 0                ; 0                 ; 1                  ; 0              ; 0              ; 0            ; 0            ; 0                     ; 1             ;
+; state.CORDIC_DONE     ; 0            ; 0             ; 0             ; 0             ; 0                ; 1                 ; 0                  ; 0              ; 0              ; 0            ; 0            ; 0                     ; 1             ;
+; state.WRITE_PATH      ; 0            ; 0             ; 0             ; 0             ; 1                ; 0                 ; 0                  ; 0              ; 0              ; 0            ; 0            ; 0                     ; 1             ;
+; state.WRITE_X         ; 0            ; 0             ; 0             ; 1             ; 0                ; 0                 ; 0                  ; 0              ; 0              ; 0            ; 0            ; 0                     ; 1             ;
+; state.WRITE_Y         ; 0            ; 0             ; 1             ; 0             ; 0                ; 0                 ; 0                  ; 0              ; 0              ; 0            ; 0            ; 0                     ; 1             ;
+; state.WRITE_Z         ; 0            ; 1             ; 0             ; 0             ; 0                ; 0                 ; 0                  ; 0              ; 0              ; 0            ; 0            ; 0                     ; 1             ;
+; state.DONE_S          ; 1            ; 0             ; 0             ; 0             ; 0                ; 0                 ; 0                  ; 0              ; 0              ; 0            ; 0            ; 0                     ; 1             ;
++-----------------------+--------------+---------------+---------------+---------------+------------------+-------------------+--------------------+----------------+----------------+--------------+--------------+-----------------------+---------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |main|spi_FSM:spi0|cordic_FSM:cordic|state                                                                                         ;
++----------------------+------------+---------------+----------------------+----------------------+-------------------+-----------------+------------+
+; Name                 ; state.DONE ; state.CHECK_R ; state.ADD_INDEX_LOOP ; state.WAIT_CORE_DONE ; state.START_STATE ; state.LOAD_DATA ; state.IDLE ;
++----------------------+------------+---------------+----------------------+----------------------+-------------------+-----------------+------------+
+; state.IDLE           ; 0          ; 0             ; 0                    ; 0                    ; 0                 ; 0               ; 0          ;
+; state.LOAD_DATA      ; 0          ; 0             ; 0                    ; 0                    ; 0                 ; 1               ; 1          ;
+; state.START_STATE    ; 0          ; 0             ; 0                    ; 0                    ; 1                 ; 0               ; 1          ;
+; state.WAIT_CORE_DONE ; 0          ; 0             ; 0                    ; 1                    ; 0                 ; 0               ; 1          ;
+; state.ADD_INDEX_LOOP ; 0          ; 0             ; 1                    ; 0                    ; 0                 ; 0               ; 1          ;
+; state.CHECK_R        ; 0          ; 1             ; 0                    ; 0                    ; 0                 ; 0               ; 1          ;
+; state.DONE           ; 1          ; 0             ; 0                    ; 0                    ; 0                 ; 0               ; 1          ;
++----------------------+------------+---------------+----------------------+----------------------+-------------------+-----------------+------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------+
+; State Machine - |main|spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state ;
++---------------+------------+---------------+--------------------------------+
+; Name          ; state.DONE ; state.EXECUTE ; state.IDLE                     ;
++---------------+------------+---------------+--------------------------------+
+; state.IDLE    ; 0          ; 0             ; 0                              ;
+; state.EXECUTE ; 0          ; 1             ; 1                              ;
+; state.DONE    ; 1          ; 0             ; 1                              ;
++---------------+------------+---------------+--------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                                     ;
++----------------------------------------------------------------+---------------------------------------------------------------+------------------------+
+; Latch Name                                                     ; Latch Enable Signal                                           ; Free of Timing Hazards ;
++----------------------------------------------------------------+---------------------------------------------------------------+------------------------+
+; spi_FSM:spi0|dataIn[15]                                        ; spi_FSM:spi0|WideOr1                                          ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|y_output[15]                    ; spi_FSM:spi0|cordic_FSM:cordic|state.DONE                     ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|x_output[15]                    ; spi_FSM:spi0|cordic_FSM:cordic|state.DONE                     ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|z_output[15]                    ; spi_FSM:spi0|cordic_FSM:cordic|state.DONE                     ; yes                    ;
+; spi_FSM:spi0|dataIn[14]                                        ; spi_FSM:spi0|WideOr1                                          ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|done_flag                       ; spi_FSM:spi0|cordic_FSM:cordic|WideOr1                        ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|y_out[15]      ; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state.EXECUTE ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|x_out[15]      ; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state.EXECUTE ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|z_out[15]      ; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state.EXECUTE ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|y_output[14]                    ; spi_FSM:spi0|cordic_FSM:cordic|state.DONE                     ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|x_output[14]                    ; spi_FSM:spi0|cordic_FSM:cordic|state.DONE                     ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|z_output[14]                    ; spi_FSM:spi0|cordic_FSM:cordic|state.DONE                     ; yes                    ;
+; spi_FSM:spi0|dataIn[13]                                        ; spi_FSM:spi0|WideOr1                                          ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|done_core_flag ; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state.EXECUTE ; yes                    ;
+; spi_FSM:spi0|start                                             ; spi_FSM:spi0|WideOr2                                          ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|y_out[14]      ; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state.EXECUTE ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|x_out[14]      ; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state.EXECUTE ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|z_out[14]      ; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state.EXECUTE ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|y_output[13]                    ; spi_FSM:spi0|cordic_FSM:cordic|state.DONE                     ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|x_output[13]                    ; spi_FSM:spi0|cordic_FSM:cordic|state.DONE                     ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|z_output[13]                    ; spi_FSM:spi0|cordic_FSM:cordic|state.DONE                     ; yes                    ;
+; spi_FSM:spi0|dataIn[12]                                        ; spi_FSM:spi0|WideOr1                                          ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|sgn                             ; spi_FSM:spi0|cordic_FSM:cordic|WideOr0                        ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|x_in_c[15]                      ; spi_FSM:spi0|cordic_FSM:cordic|state.LOAD_DATA                ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|y_in_c[15]                      ; spi_FSM:spi0|cordic_FSM:cordic|state.LOAD_DATA                ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|start_core                      ; spi_FSM:spi0|cordic_FSM:cordic|WideOr5                        ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|index[0]                        ; spi_FSM:spi0|cordic_FSM:cordic|state.LOAD_DATA                ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|index[1]                        ; spi_FSM:spi0|cordic_FSM:cordic|state.LOAD_DATA                ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|index[2]                        ; spi_FSM:spi0|cordic_FSM:cordic|state.LOAD_DATA                ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|index[3]                        ; spi_FSM:spi0|cordic_FSM:cordic|state.LOAD_DATA                ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|z_in_c[15]                      ; spi_FSM:spi0|cordic_FSM:cordic|state.LOAD_DATA                ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|y_out[13]      ; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state.EXECUTE ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|x_out[13]      ; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state.EXECUTE ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|z_out[13]      ; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state.EXECUTE ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|y_output[12]                    ; spi_FSM:spi0|cordic_FSM:cordic|state.DONE                     ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|x_output[12]                    ; spi_FSM:spi0|cordic_FSM:cordic|state.DONE                     ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|z_output[12]                    ; spi_FSM:spi0|cordic_FSM:cordic|state.DONE                     ; yes                    ;
+; spi_FSM:spi0|dataIn[11]                                        ; spi_FSM:spi0|WideOr1                                          ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|z_out[19]      ; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state.EXECUTE ; yes                    ;
+; spi_FSM:spi0|z_in[19]                                          ; spi_FSM:spi0|Selector6                                        ; yes                    ;
+; spi_FSM:spi0|x_in[15]                                          ; spi_FSM:spi0|x_in[0]                                          ; yes                    ;
+; spi_FSM:spi0|y_in[15]                                          ; spi_FSM:spi0|y_in[0]                                          ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|index[4]                        ; spi_FSM:spi0|cordic_FSM:cordic|state.LOAD_DATA                ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|x_in_c[14]                      ; spi_FSM:spi0|cordic_FSM:cordic|state.LOAD_DATA                ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|y_in_c[14]                      ; spi_FSM:spi0|cordic_FSM:cordic|state.LOAD_DATA                ; yes                    ;
+; spi_FSM:spi0|z_in[15]                                          ; spi_FSM:spi0|Selector5                                        ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|z_in_c[14]                      ; spi_FSM:spi0|cordic_FSM:cordic|state.LOAD_DATA                ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|y_out[12]      ; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state.EXECUTE ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|x_out[12]      ; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state.EXECUTE ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|z_out[12]      ; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state.EXECUTE ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|y_output[11]                    ; spi_FSM:spi0|cordic_FSM:cordic|state.DONE                     ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|x_output[11]                    ; spi_FSM:spi0|cordic_FSM:cordic|state.DONE                     ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|z_output[11]                    ; spi_FSM:spi0|cordic_FSM:cordic|state.DONE                     ; yes                    ;
+; spi_FSM:spi0|dataIn[10]                                        ; spi_FSM:spi0|WideOr1                                          ; yes                    ;
+; spi_FSM:spi0|x_in[14]                                          ; spi_FSM:spi0|x_in[0]                                          ; yes                    ;
+; spi_FSM:spi0|y_in[14]                                          ; spi_FSM:spi0|y_in[0]                                          ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|x_in_c[13]                      ; spi_FSM:spi0|cordic_FSM:cordic|state.LOAD_DATA                ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|y_in_c[13]                      ; spi_FSM:spi0|cordic_FSM:cordic|state.LOAD_DATA                ; yes                    ;
+; spi_FSM:spi0|z_in[14]                                          ; spi_FSM:spi0|Selector5                                        ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|z_in_c[13]                      ; spi_FSM:spi0|cordic_FSM:cordic|state.LOAD_DATA                ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|y_out[11]      ; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state.EXECUTE ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|x_out[11]      ; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state.EXECUTE ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|z_out[11]      ; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state.EXECUTE ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|y_output[10]                    ; spi_FSM:spi0|cordic_FSM:cordic|state.DONE                     ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|x_output[10]                    ; spi_FSM:spi0|cordic_FSM:cordic|state.DONE                     ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|z_output[10]                    ; spi_FSM:spi0|cordic_FSM:cordic|state.DONE                     ; yes                    ;
+; spi_FSM:spi0|dataIn[9]                                         ; spi_FSM:spi0|WideOr1                                          ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|z_in_c[19]                      ; spi_FSM:spi0|cordic_FSM:cordic|state.LOAD_DATA                ; yes                    ;
+; spi_FSM:spi0|x_in[13]                                          ; spi_FSM:spi0|x_in[0]                                          ; yes                    ;
+; spi_FSM:spi0|y_in[13]                                          ; spi_FSM:spi0|y_in[0]                                          ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|x_in_c[12]                      ; spi_FSM:spi0|cordic_FSM:cordic|state.LOAD_DATA                ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|y_in_c[12]                      ; spi_FSM:spi0|cordic_FSM:cordic|state.LOAD_DATA                ; yes                    ;
+; spi_FSM:spi0|z_in[13]                                          ; spi_FSM:spi0|Selector5                                        ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|z_in_c[12]                      ; spi_FSM:spi0|cordic_FSM:cordic|state.LOAD_DATA                ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|y_out[10]      ; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state.EXECUTE ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|x_out[10]      ; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state.EXECUTE ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|z_out[10]      ; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state.EXECUTE ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|y_output[9]                     ; spi_FSM:spi0|cordic_FSM:cordic|state.DONE                     ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|x_output[9]                     ; spi_FSM:spi0|cordic_FSM:cordic|state.DONE                     ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|z_output[9]                     ; spi_FSM:spi0|cordic_FSM:cordic|state.DONE                     ; yes                    ;
+; spi_FSM:spi0|dataIn[8]                                         ; spi_FSM:spi0|WideOr1                                          ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|z_in_c[18]                      ; spi_FSM:spi0|cordic_FSM:cordic|state.LOAD_DATA                ; yes                    ;
+; spi_FSM:spi0|x_in[12]                                          ; spi_FSM:spi0|x_in[0]                                          ; yes                    ;
+; spi_FSM:spi0|y_in[12]                                          ; spi_FSM:spi0|y_in[0]                                          ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|x_in_c[11]                      ; spi_FSM:spi0|cordic_FSM:cordic|state.LOAD_DATA                ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|y_in_c[11]                      ; spi_FSM:spi0|cordic_FSM:cordic|state.LOAD_DATA                ; yes                    ;
+; spi_FSM:spi0|z_in[12]                                          ; spi_FSM:spi0|Selector5                                        ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|z_in_c[11]                      ; spi_FSM:spi0|cordic_FSM:cordic|state.LOAD_DATA                ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|y_out[9]       ; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state.EXECUTE ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|x_out[9]       ; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state.EXECUTE ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|z_out[9]       ; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state.EXECUTE ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|y_output[8]                     ; spi_FSM:spi0|cordic_FSM:cordic|state.DONE                     ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|x_output[8]                     ; spi_FSM:spi0|cordic_FSM:cordic|state.DONE                     ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|z_output[8]                     ; spi_FSM:spi0|cordic_FSM:cordic|state.DONE                     ; yes                    ;
+; spi_FSM:spi0|dataIn[7]                                         ; spi_FSM:spi0|WideOr1                                          ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|z_out[18]      ; spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state.EXECUTE ; yes                    ;
+; spi_FSM:spi0|z_in[18]                                          ; spi_FSM:spi0|Selector6                                        ; yes                    ;
+; spi_FSM:spi0|cordic_FSM:cordic|z_in_c[17]                      ; spi_FSM:spi0|cordic_FSM:cordic|state.LOAD_DATA                ; yes                    ;
+; spi_FSM:spi0|x_in[11]                                          ; spi_FSM:spi0|x_in[0]                                          ; yes                    ;
+; spi_FSM:spi0|y_in[11]                                          ; spi_FSM:spi0|y_in[0]                                          ; yes                    ;
+; Number of user-specified and inferred latches = 230            ;                                                               ;                        ;
++----------------------------------------------------------------+---------------------------------------------------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++----------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                           ;
++-----------------------------------------------------+----------------------------------------+
+; Register name                                       ; Reason for Removal                     ;
++-----------------------------------------------------+----------------------------------------+
+; spi_FSM:spi0|cordic_FSM:cordic|state.ADD_INDEX_LOOP ; Lost fanout                            ;
+; spi_FSM:spi0|cordic_FSM:cordic|index_loop[4]        ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 2               ;                                        ;
++-----------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 121   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 15    ;
+; Number of registers using Asynchronous Clear ; 71    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 61    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |main|spi_FSM:spi0|cordic_FSM:cordic|index_loop[1]                ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |main|spi_FSM:spi0|spi_core:spi|MISO_counter[0]                   ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |main|spi_FSM:spi0|spi_core:spi|MOSI_counter[0]                   ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |main|spi_FSM:spi0|spi_core:spi|data_to_sent[1]                   ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main|spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|ShiftRight1 ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |main|spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|ShiftRight1 ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |main|spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|ShiftRight1 ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |main|spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|ShiftRight0 ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |main|spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|ShiftRight0 ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |main|spi_FSM:spi0|Selector29                                     ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; No         ; |main|spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|ShiftRight0 ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |main|spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|ShiftRight0 ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |main|spi_FSM:spi0|Selector24                                     ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |main|spi_FSM:spi0|cordic_FSM:cordic|Selector6                    ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; No         ; |main|spi_FSM:spi0|Selector0                                      ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |main|spi_FSM:spi0|Selector7                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: spi_FSM:spi0 ;
++----------------+------------------+-----------------------+
+; Parameter Name ; Value            ; Type                  ;
++----------------+------------------+-----------------------+
+; data_w         ; 16               ; Signed Integer        ;
+; margin         ; 4                ; Signed Integer        ;
+; start_path     ; 1010101010101010 ; Unsigned Binary       ;
++----------------+------------------+-----------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: spi_FSM:spi0|cordic_FSM:cordic ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; input_bit      ; 16    ; Signed Integer                                     ;
+; ext_precision  ; 4     ; Signed Integer                                     ;
+; index_bit      ; 5     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; data_w         ; 16    ; Signed Integer                                                      ;
+; ext_precision  ; 4     ; Signed Integer                                                      ;
+; index_w        ; 5     ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: spi_FSM:spi0|spi_core:spi ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; data_w         ; 16    ; Signed Integer                                ;
+; sync_bit       ; 8     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "spi_FSM:spi0|cordic_FSM:cordic"                                                                 ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port             ; Type   ; Severity ; Details                                                                             ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; z_output[19..16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 121                         ;
+;     CLR               ; 34                          ;
+;     ENA               ; 24                          ;
+;     ENA CLR           ; 22                          ;
+;     ENA CLR SLD       ; 15                          ;
+;     plain             ; 26                          ;
+; arriav_io_obuf        ; 16                          ;
+; arriav_lcell_comb     ; 511                         ;
+;     arith             ; 79                          ;
+;         1 data inputs ; 26                          ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 34                          ;
+;         5 data inputs ; 16                          ;
+;     normal            ; 432                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 16                          ;
+;         3 data inputs ; 246                         ;
+;         4 data inputs ; 31                          ;
+;         5 data inputs ; 12                          ;
+;         6 data inputs ; 125                         ;
+; boundary_port         ; 29                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.50                        ;
+; Average LUT depth     ; 2.36                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Sun Jan 26 17:01:10 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off main -c main
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 32 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file spi_loop_tb.vhd
+    Info (12022): Found design unit 1: spi_loop_tb-rtl File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_loop_tb.vhd Line: 19
+    Info (12023): Found entity 1: spi_loop_tb File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_loop_tb.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file spi_fsm.vhd
+    Info (12022): Found design unit 1: spi_FSM-rtl File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 35
+    Info (12023): Found entity 1: spi_FSM File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 16
+Info (12021): Found 2 design units, including 1 entities, in source file spi_core.vhd
+    Info (12022): Found design unit 1: spi_core-rtl File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_core.vhd Line: 36
+    Info (12023): Found entity 1: spi_core File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_core.vhd Line: 16
+Info (12021): Found 2 design units, including 1 entities, in source file main.vhd
+    Info (12022): Found design unit 1: main-arc File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 25
+    Info (12023): Found entity 1: main File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 15
+Info (12021): Found 2 design units, including 1 entities, in source file cordic_fsm.vhd
+    Info (12022): Found design unit 1: cordic_FSM-FSM File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 39
+    Info (12023): Found entity 1: cordic_FSM File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 16
+Info (12021): Found 2 design units, including 1 entities, in source file cordic_core.vhd
+    Info (12022): Found design unit 1: cordic_core-core File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 45
+    Info (12023): Found entity 1: cordic_core File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 16
+Info (12021): Found 2 design units, including 1 entities, in source file blink_heartbeat.vhd
+    Info (12022): Found design unit 1: blink_heartbeat-Behavioral File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/blink_heartbeat.vhd Line: 24
+    Info (12023): Found entity 1: blink_heartbeat File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/blink_heartbeat.vhd Line: 16
+Info (12127): Elaborating entity "main" for the top level hierarchy
+Info (12128): Elaborating entity "spi_FSM" for hierarchy "spi_FSM:spi0" File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 28
+Warning (10492): VHDL Process Statement warning at spi_FSM.vhd(122): signal "dataOut" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 122
+Warning (10492): VHDL Process Statement warning at spi_FSM.vhd(129): signal "dataOut" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 129
+Warning (10492): VHDL Process Statement warning at spi_FSM.vhd(135): signal "dataOut" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 135
+Warning (10492): VHDL Process Statement warning at spi_FSM.vhd(142): signal "dataOut" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 142
+Warning (10492): VHDL Process Statement warning at spi_FSM.vhd(149): signal "dataOut" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 149
+Warning (10492): VHDL Process Statement warning at spi_FSM.vhd(159): signal "done" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 159
+Warning (10492): VHDL Process Statement warning at spi_FSM.vhd(171): signal "x_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 171
+Warning (10492): VHDL Process Statement warning at spi_FSM.vhd(177): signal "y_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 177
+Warning (10492): VHDL Process Statement warning at spi_FSM.vhd(183): signal "z_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 183
+Warning (10631): VHDL Process Statement warning at spi_FSM.vhd(108): inferring latch(es) for signal or variable "dataIn", which holds its previous value in one or more paths through the process File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Warning (10631): VHDL Process Statement warning at spi_FSM.vhd(108): inferring latch(es) for signal or variable "start", which holds its previous value in one or more paths through the process File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Warning (10631): VHDL Process Statement warning at spi_FSM.vhd(108): inferring latch(es) for signal or variable "x_in", which holds its previous value in one or more paths through the process File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Warning (10631): VHDL Process Statement warning at spi_FSM.vhd(108): inferring latch(es) for signal or variable "y_in", which holds its previous value in one or more paths through the process File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Warning (10631): VHDL Process Statement warning at spi_FSM.vhd(108): inferring latch(es) for signal or variable "z_in", which holds its previous value in one or more paths through the process File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "z_in[0]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "z_in[1]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "z_in[2]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "z_in[3]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "z_in[4]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "z_in[5]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "z_in[6]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "z_in[7]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "z_in[8]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "z_in[9]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "z_in[10]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "z_in[11]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "z_in[12]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "z_in[13]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "z_in[14]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "z_in[15]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "z_in[16]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "z_in[17]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "z_in[18]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "z_in[19]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "y_in[0]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "y_in[1]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "y_in[2]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "y_in[3]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "y_in[4]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "y_in[5]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "y_in[6]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "y_in[7]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "y_in[8]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "y_in[9]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "y_in[10]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "y_in[11]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "y_in[12]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "y_in[13]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "y_in[14]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "y_in[15]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "x_in[0]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "x_in[1]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "x_in[2]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "x_in[3]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "x_in[4]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "x_in[5]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "x_in[6]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "x_in[7]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "x_in[8]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "x_in[9]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "x_in[10]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "x_in[11]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "x_in[12]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "x_in[13]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "x_in[14]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "x_in[15]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "start" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "dataIn[0]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "dataIn[1]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "dataIn[2]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "dataIn[3]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "dataIn[4]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "dataIn[5]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "dataIn[6]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "dataIn[7]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "dataIn[8]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "dataIn[9]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "dataIn[10]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "dataIn[11]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "dataIn[12]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "dataIn[13]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "dataIn[14]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (10041): Inferred latch for "dataIn[15]" at spi_FSM.vhd(108) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+Info (12128): Elaborating entity "blink_heartbeat" for hierarchy "spi_FSM:spi0|blink_heartbeat:blink_hb" File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 59
+Info (12128): Elaborating entity "cordic_FSM" for hierarchy "spi_FSM:spi0|cordic_FSM:cordic" File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at cordic_FSM.vhd(125): signal "index_loop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 125
+Warning (10492): VHDL Process Statement warning at cordic_FSM.vhd(126): signal "x_input" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 126
+Warning (10492): VHDL Process Statement warning at cordic_FSM.vhd(127): signal "y_input" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 127
+Warning (10492): VHDL Process Statement warning at cordic_FSM.vhd(128): signal "z_input" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 128
+Warning (10492): VHDL Process Statement warning at cordic_FSM.vhd(129): signal "z_input" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 129
+Warning (10492): VHDL Process Statement warning at cordic_FSM.vhd(131): signal "x_out_c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 131
+Warning (10492): VHDL Process Statement warning at cordic_FSM.vhd(132): signal "y_out_c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 132
+Warning (10492): VHDL Process Statement warning at cordic_FSM.vhd(133): signal "z_out_c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 133
+Warning (10492): VHDL Process Statement warning at cordic_FSM.vhd(134): signal "z_out_c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 134
+Warning (10492): VHDL Process Statement warning at cordic_FSM.vhd(136): signal "index_loop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 136
+Warning (10492): VHDL Process Statement warning at cordic_FSM.vhd(153): signal "index_loop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 153
+Warning (10492): VHDL Process Statement warning at cordic_FSM.vhd(161): signal "x_out_c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 161
+Warning (10492): VHDL Process Statement warning at cordic_FSM.vhd(162): signal "y_out_c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 162
+Warning (10492): VHDL Process Statement warning at cordic_FSM.vhd(163): signal "z_out_c" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 163
+Warning (10631): VHDL Process Statement warning at cordic_FSM.vhd(107): inferring latch(es) for signal or variable "sgn", which holds its previous value in one or more paths through the process File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Warning (10631): VHDL Process Statement warning at cordic_FSM.vhd(107): inferring latch(es) for signal or variable "start_core", which holds its previous value in one or more paths through the process File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Warning (10631): VHDL Process Statement warning at cordic_FSM.vhd(107): inferring latch(es) for signal or variable "done_flag", which holds its previous value in one or more paths through the process File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Warning (10631): VHDL Process Statement warning at cordic_FSM.vhd(107): inferring latch(es) for signal or variable "x_in_c", which holds its previous value in one or more paths through the process File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Warning (10631): VHDL Process Statement warning at cordic_FSM.vhd(107): inferring latch(es) for signal or variable "y_in_c", which holds its previous value in one or more paths through the process File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Warning (10631): VHDL Process Statement warning at cordic_FSM.vhd(107): inferring latch(es) for signal or variable "z_in_c", which holds its previous value in one or more paths through the process File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Warning (10631): VHDL Process Statement warning at cordic_FSM.vhd(107): inferring latch(es) for signal or variable "index", which holds its previous value in one or more paths through the process File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Warning (10631): VHDL Process Statement warning at cordic_FSM.vhd(107): inferring latch(es) for signal or variable "x_output", which holds its previous value in one or more paths through the process File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Warning (10631): VHDL Process Statement warning at cordic_FSM.vhd(107): inferring latch(es) for signal or variable "y_output", which holds its previous value in one or more paths through the process File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Warning (10631): VHDL Process Statement warning at cordic_FSM.vhd(107): inferring latch(es) for signal or variable "z_output", which holds its previous value in one or more paths through the process File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_output[0]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_output[1]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_output[2]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_output[3]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_output[4]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_output[5]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_output[6]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_output[7]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_output[8]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_output[9]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_output[10]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_output[11]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_output[12]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_output[13]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_output[14]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_output[15]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_output[16]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_output[17]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_output[18]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_output[19]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_output[0]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_output[1]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_output[2]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_output[3]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_output[4]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_output[5]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_output[6]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_output[7]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_output[8]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_output[9]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_output[10]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_output[11]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_output[12]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_output[13]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_output[14]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_output[15]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_output[0]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_output[1]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_output[2]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_output[3]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_output[4]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_output[5]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_output[6]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_output[7]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_output[8]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_output[9]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_output[10]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_output[11]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_output[12]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_output[13]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_output[14]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_output[15]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "index[0]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "index[1]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "index[2]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "index[3]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "index[4]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_in_c[0]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_in_c[1]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_in_c[2]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_in_c[3]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_in_c[4]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_in_c[5]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_in_c[6]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_in_c[7]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_in_c[8]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_in_c[9]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_in_c[10]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_in_c[11]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_in_c[12]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_in_c[13]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_in_c[14]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_in_c[15]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_in_c[16]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_in_c[17]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_in_c[18]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "z_in_c[19]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_in_c[0]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_in_c[1]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_in_c[2]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_in_c[3]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_in_c[4]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_in_c[5]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_in_c[6]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_in_c[7]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_in_c[8]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_in_c[9]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_in_c[10]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_in_c[11]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_in_c[12]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_in_c[13]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_in_c[14]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "y_in_c[15]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_in_c[0]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_in_c[1]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_in_c[2]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_in_c[3]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_in_c[4]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_in_c[5]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_in_c[6]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_in_c[7]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_in_c[8]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_in_c[9]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_in_c[10]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_in_c[11]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_in_c[12]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_in_c[13]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_in_c[14]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "x_in_c[15]" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "done_flag" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "start_core" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (10041): Inferred latch for "sgn" at cordic_FSM.vhd(107) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 107
+Info (12128): Elaborating entity "cordic_core" for hierarchy "spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core" File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 59
+Warning (10492): VHDL Process Statement warning at cordic_core.vhd(96): signal "sgn" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 96
+Warning (10492): VHDL Process Statement warning at cordic_core.vhd(97): signal "x_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 97
+Warning (10492): VHDL Process Statement warning at cordic_core.vhd(97): signal "y_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 97
+Warning (10492): VHDL Process Statement warning at cordic_core.vhd(97): signal "index_core" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 97
+Warning (10492): VHDL Process Statement warning at cordic_core.vhd(98): signal "y_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 98
+Warning (10492): VHDL Process Statement warning at cordic_core.vhd(98): signal "x_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 98
+Warning (10492): VHDL Process Statement warning at cordic_core.vhd(98): signal "index_core" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 98
+Warning (10492): VHDL Process Statement warning at cordic_core.vhd(99): signal "z_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 99
+Warning (10492): VHDL Process Statement warning at cordic_core.vhd(99): signal "index_core" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 99
+Warning (10492): VHDL Process Statement warning at cordic_core.vhd(101): signal "x_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 101
+Warning (10492): VHDL Process Statement warning at cordic_core.vhd(101): signal "y_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 101
+Warning (10492): VHDL Process Statement warning at cordic_core.vhd(101): signal "index_core" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 101
+Warning (10492): VHDL Process Statement warning at cordic_core.vhd(102): signal "y_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 102
+Warning (10492): VHDL Process Statement warning at cordic_core.vhd(102): signal "x_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 102
+Warning (10492): VHDL Process Statement warning at cordic_core.vhd(102): signal "index_core" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 102
+Warning (10492): VHDL Process Statement warning at cordic_core.vhd(103): signal "z_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at cordic_core.vhd(103): signal "index_core" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 103
+Warning (10631): VHDL Process Statement warning at cordic_core.vhd(84): inferring latch(es) for signal or variable "done_core_flag", which holds its previous value in one or more paths through the process File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Warning (10631): VHDL Process Statement warning at cordic_core.vhd(84): inferring latch(es) for signal or variable "x_out", which holds its previous value in one or more paths through the process File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Warning (10631): VHDL Process Statement warning at cordic_core.vhd(84): inferring latch(es) for signal or variable "y_out", which holds its previous value in one or more paths through the process File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Warning (10631): VHDL Process Statement warning at cordic_core.vhd(84): inferring latch(es) for signal or variable "z_out", which holds its previous value in one or more paths through the process File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "z_out[0]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "z_out[1]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "z_out[2]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "z_out[3]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "z_out[4]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "z_out[5]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "z_out[6]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "z_out[7]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "z_out[8]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "z_out[9]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "z_out[10]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "z_out[11]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "z_out[12]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "z_out[13]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "z_out[14]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "z_out[15]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "z_out[16]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "z_out[17]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "z_out[18]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "z_out[19]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "y_out[0]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "y_out[1]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "y_out[2]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "y_out[3]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "y_out[4]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "y_out[5]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "y_out[6]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "y_out[7]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "y_out[8]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "y_out[9]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "y_out[10]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "y_out[11]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "y_out[12]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "y_out[13]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "y_out[14]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "y_out[15]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "x_out[0]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "x_out[1]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "x_out[2]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "x_out[3]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "x_out[4]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "x_out[5]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "x_out[6]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "x_out[7]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "x_out[8]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "x_out[9]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "x_out[10]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "x_out[11]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "x_out[12]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "x_out[13]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "x_out[14]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "x_out[15]" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (10041): Inferred latch for "done_core_flag" at cordic_core.vhd(84) File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_core.vhd Line: 84
+Info (12128): Elaborating entity "spi_core" for hierarchy "spi_FSM:spi0|spi_core:spi" File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 79
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "ARDUINO_IO[12]" and its non-tri-state driver. File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 21
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "ARDUINO_IO[11]" has no driver File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 21
+    Warning (13040): bidirectional pin "ARDUINO_IO[13]" has no driver File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 21
+    Warning (13040): bidirectional pin "ARDUINO_IO[0]" has no driver File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 21
+    Warning (13040): bidirectional pin "ARDUINO_IO[1]" has no driver File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 21
+    Warning (13040): bidirectional pin "ARDUINO_IO[2]" has no driver File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 21
+    Warning (13040): bidirectional pin "ARDUINO_IO[3]" has no driver File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 21
+    Warning (13040): bidirectional pin "ARDUINO_IO[4]" has no driver File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 21
+    Warning (13040): bidirectional pin "ARDUINO_IO[5]" has no driver File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 21
+    Warning (13040): bidirectional pin "ARDUINO_IO[6]" has no driver File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 21
+    Warning (13040): bidirectional pin "ARDUINO_IO[7]" has no driver File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 21
+    Warning (13040): bidirectional pin "ARDUINO_IO[8]" has no driver File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 21
+    Warning (13040): bidirectional pin "ARDUINO_IO[9]" has no driver File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 21
+    Warning (13040): bidirectional pin "ARDUINO_IO[10]" has no driver File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 21
+    Warning (13040): bidirectional pin "ARDUINO_IO[14]" has no driver File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 21
+    Warning (13040): bidirectional pin "ARDUINO_IO[15]" has no driver File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 21
+Warning (13012): Latch spi_FSM:spi0|dataIn[15] has unsafe behavior File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal spi_FSM:spi0|state.WRITE_PATH File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 53
+Warning (13012): Latch spi_FSM:spi0|dataIn[14] has unsafe behavior File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal spi_FSM:spi0|state.WRITE_X File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 53
+Warning (13012): Latch spi_FSM:spi0|cordic_FSM:cordic|done_flag has unsafe behavior File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 35
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal spi_FSM:spi0|cordic_FSM:cordic|state.DONE File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 55
+Warning (13012): Latch spi_FSM:spi0|dataIn[13] has unsafe behavior File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal spi_FSM:spi0|state.WRITE_PATH File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 53
+Warning (13012): Latch spi_FSM:spi0|start has unsafe behavior File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 36
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal spi_FSM:spi0|state.START_CORDIC File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 53
+Warning (13012): Latch spi_FSM:spi0|dataIn[12] has unsafe behavior File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal spi_FSM:spi0|state.WRITE_X File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 53
+Warning (13012): Latch spi_FSM:spi0|cordic_FSM:cordic|sgn has unsafe behavior File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 48
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal spi_FSM:spi0|cordic_FSM:cordic|state.LOAD_DATA File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 55
+Warning (13012): Latch spi_FSM:spi0|cordic_FSM:cordic|start_core has unsafe behavior File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal spi_FSM:spi0|cordic_FSM:cordic|state.START_STATE File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/cordic_FSM.vhd Line: 55
+Warning (13012): Latch spi_FSM:spi0|dataIn[11] has unsafe behavior File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal spi_FSM:spi0|state.WRITE_PATH File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 53
+Warning (13012): Latch spi_FSM:spi0|dataIn[10] has unsafe behavior File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal spi_FSM:spi0|state.WRITE_X File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 53
+Warning (13012): Latch spi_FSM:spi0|dataIn[9] has unsafe behavior File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal spi_FSM:spi0|state.WRITE_PATH File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 53
+Warning (13012): Latch spi_FSM:spi0|dataIn[8] has unsafe behavior File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal spi_FSM:spi0|state.WRITE_X File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 53
+Warning (13012): Latch spi_FSM:spi0|dataIn[7] has unsafe behavior File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal spi_FSM:spi0|state.WRITE_PATH File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 53
+Warning (13012): Latch spi_FSM:spi0|dataIn[6] has unsafe behavior File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal spi_FSM:spi0|state.WRITE_X File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 53
+Warning (13012): Latch spi_FSM:spi0|dataIn[5] has unsafe behavior File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal spi_FSM:spi0|state.WRITE_PATH File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 53
+Warning (13012): Latch spi_FSM:spi0|dataIn[4] has unsafe behavior File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal spi_FSM:spi0|state.WRITE_X File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 53
+Warning (13012): Latch spi_FSM:spi0|dataIn[3] has unsafe behavior File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal spi_FSM:spi0|state.WRITE_PATH File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 53
+Warning (13012): Latch spi_FSM:spi0|dataIn[2] has unsafe behavior File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal spi_FSM:spi0|state.WRITE_X File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 53
+Warning (13012): Latch spi_FSM:spi0|dataIn[1] has unsafe behavior File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal spi_FSM:spi0|state.WRITE_PATH File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 53
+Warning (13012): Latch spi_FSM:spi0|dataIn[0] has unsafe behavior File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 108
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal spi_FSM:spi0|state.WRITE_X File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/spi_FSM.vhd Line: 53
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "ARDUINO_IO[12]~synth" File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 21
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LED[1]" is stuck at GND File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 20
+    Warning (13410): Pin "LED[2]" is stuck at GND File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 20
+    Warning (13410): Pin "LED[3]" is stuck at GND File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 20
+    Warning (13410): Pin "LED[4]" is stuck at GND File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 20
+    Warning (13410): Pin "LED[5]" is stuck at GND File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 20
+    Warning (13410): Pin "LED[6]" is stuck at GND File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 20
+    Warning (13410): Pin "LED[7]" is stuck at GND File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 20
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 19
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 19
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/PROGETTO_ELIA_CORDIC/main.vhd Line: 19
+Info (21057): Implemented 605 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 8 output pins
+    Info (21060): Implemented 16 bidirectional pins
+    Info (21061): Implemented 576 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 132 warnings
+    Info: Peak virtual memory: 4936 megabytes
+    Info: Processing ended: Sun Jan 26 17:01:15 2025
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:12
+
+

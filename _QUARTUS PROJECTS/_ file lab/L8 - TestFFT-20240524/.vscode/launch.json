@@ -1,0 +1,41 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+   "version": "0.2.0",
+   "configurations": [
+        {
+           "name": "Native debug",
+           "type": "gdb", //for "Native debug" extension
+            "request": "attach",
+             "gdbpath": "/usr/bin/gdb-multiarch",
+            "executable": "./FFT", //name and path of the binary file to be executed/debugged
+            "target": "192.168.137.252:4000", // IP address and port of the gdbserver
+            "remote": true,
+            "printCalls": true,
+            "cwd": "${workspaceRoot}",
+            "valuesFormatting": "parseText"
+        },
+        {
+			"name": "C/C++ extension", //for C/C++ extension
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/FFT", //name of the binary file to be executed/debugged
+			"miDebuggerServerAddress": "192.168.137.252:4000", // IP address and port of the gdbserver
+			"miDebuggerPath": "/usr/bin/gdb-multiarch",
+			"args": [],
+			"stopAtEntry": true,
+			"cwd": "${workspaceFolder}", //path to the binary file to be executed/debugged
+			"environment": [],
+			"externalConsole": true,
+			"MIMode": "gdb",
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				}
+			]
+		}
+    ]
+}

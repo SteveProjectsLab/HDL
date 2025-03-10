@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 100C Model Setup 'basic_iir:spi0|spi:spi|read_me'
+Slack : -4.312
+TNS   : -4.312
+
+Type  : Slow 1100mV 100C Model Setup 'FPGA_CLK1_50'
+Slack : -3.617
+TNS   : -124.687
+
+Type  : Slow 1100mV 100C Model Hold 'FPGA_CLK1_50'
+Slack : 0.289
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Hold 'basic_iir:spi0|spi:spi|read_me'
+Slack : 3.143
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -0.538
+TNS   : -62.153
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'basic_iir:spi0|spi:spi|read_me'
+Slack : 0.448
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Setup 'basic_iir:spi0|spi:spi|read_me'
+Slack : -4.623
+TNS   : -4.623
+
+Type  : Slow 1100mV -40C Model Setup 'FPGA_CLK1_50'
+Slack : -3.544
+TNS   : -112.471
+
+Type  : Slow 1100mV -40C Model Hold 'FPGA_CLK1_50'
+Slack : 0.044
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Hold 'basic_iir:spi0|spi:spi|read_me'
+Slack : 3.263
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -0.538
+TNS   : -57.290
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'basic_iir:spi0|spi:spi|read_me'
+Slack : 0.447
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Setup 'FPGA_CLK1_50'
+Slack : -2.758
+TNS   : -48.733
+
+Type  : Fast 1100mV 100C Model Setup 'basic_iir:spi0|spi:spi|read_me'
+Slack : -1.717
+TNS   : -1.717
+
+Type  : Fast 1100mV 100C Model Hold 'FPGA_CLK1_50'
+Slack : 0.156
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Hold 'basic_iir:spi0|spi:spi|read_me'
+Slack : 1.681
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -0.392
+TNS   : -31.144
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'basic_iir:spi0|spi:spi|read_me'
+Slack : 0.459
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Setup 'FPGA_CLK1_50'
+Slack : -1.864
+TNS   : -29.467
+
+Type  : Fast 1100mV -40C Model Setup 'basic_iir:spi0|spi:spi|read_me'
+Slack : -1.624
+TNS   : -1.624
+
+Type  : Fast 1100mV -40C Model Hold 'FPGA_CLK1_50'
+Slack : 0.135
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Hold 'basic_iir:spi0|spi:spi|read_me'
+Slack : 1.611
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -0.450
+TNS   : -41.022
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'basic_iir:spi0|spi:spi|read_me'
+Slack : 0.460
+TNS   : 0.000
+
+------------------------------------------------------------

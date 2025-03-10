@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 100C Model Setup 'FPGA_CLK1_50'
+Slack : -6.936
+TNS   : -480.310
+
+Type  : Slow 1100mV 100C Model Setup 'clock_generator:tim_100kHz|clock_signal'
+Slack : -4.031
+TNS   : -369.394
+
+Type  : Slow 1100mV 100C Model Hold 'clock_generator:tim_100kHz|clock_signal'
+Slack : 0.327
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Hold 'FPGA_CLK1_50'
+Slack : 0.448
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -0.756
+TNS   : -101.399
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'clock_generator:tim_100kHz|clock_signal'
+Slack : -0.538
+TNS   : -83.990
+
+Type  : Slow 1100mV -40C Model Setup 'FPGA_CLK1_50'
+Slack : -7.247
+TNS   : -486.591
+
+Type  : Slow 1100mV -40C Model Setup 'clock_generator:tim_100kHz|clock_signal'
+Slack : -3.944
+TNS   : -363.669
+
+Type  : Slow 1100mV -40C Model Hold 'FPGA_CLK1_50'
+Slack : 0.064
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Hold 'clock_generator:tim_100kHz|clock_signal'
+Slack : 0.352
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -0.763
+TNS   : -94.041
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'clock_generator:tim_100kHz|clock_signal'
+Slack : -0.538
+TNS   : -83.129
+
+Type  : Fast 1100mV 100C Model Setup 'FPGA_CLK1_50'
+Slack : -3.451
+TNS   : -186.342
+
+Type  : Fast 1100mV 100C Model Setup 'clock_generator:tim_100kHz|clock_signal'
+Slack : -1.749
+TNS   : -142.317
+
+Type  : Fast 1100mV 100C Model Hold 'clock_generator:tim_100kHz|clock_signal'
+Slack : 0.094
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Hold 'FPGA_CLK1_50'
+Slack : 0.183
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -0.784
+TNS   : -51.782
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'clock_generator:tim_100kHz|clock_signal'
+Slack : -0.032
+TNS   : -0.032
+
+Type  : Fast 1100mV -40C Model Setup 'FPGA_CLK1_50'
+Slack : -2.646
+TNS   : -154.106
+
+Type  : Fast 1100mV -40C Model Setup 'clock_generator:tim_100kHz|clock_signal'
+Slack : -1.374
+TNS   : -117.517
+
+Type  : Fast 1100mV -40C Model Hold 'FPGA_CLK1_50'
+Slack : -0.035
+TNS   : -0.057
+
+Type  : Fast 1100mV -40C Model Hold 'clock_generator:tim_100kHz|clock_signal'
+Slack : 0.077
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -0.811
+TNS   : -67.955
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'clock_generator:tim_100kHz|clock_signal'
+Slack : 0.020
+TNS   : 0.000
+
+------------------------------------------------------------

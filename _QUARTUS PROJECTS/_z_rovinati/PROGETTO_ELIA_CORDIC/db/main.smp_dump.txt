@@ -1,0 +1,32 @@
+
+State Machine - |main|spi_FSM:spi0|state
+Name state.DONE_S state.WRITE_Z state.WRITE_Y state.WRITE_X state.WRITE_PATH state.CORDIC_DONE state.START_CORDIC state.READ_Z_H state.READ_Z_L state.READ_Y state.READ_X state.WAIT_PATH_START state.RESET_S 
+state.RESET_S 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.WAIT_PATH_START 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.READ_X 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.READ_Y 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.READ_Z_L 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.READ_Z_H 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.START_CORDIC 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.CORDIC_DONE 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.WRITE_PATH 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.WRITE_X 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.WRITE_Y 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.WRITE_Z 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.DONE_S 1 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |main|spi_FSM:spi0|cordic_FSM:cordic|state
+Name state.DONE state.CHECK_R state.ADD_INDEX_LOOP state.WAIT_CORE_DONE state.START_STATE state.LOAD_DATA state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 
+state.LOAD_DATA 0 0 0 0 0 1 1 
+state.START_STATE 0 0 0 0 1 0 1 
+state.WAIT_CORE_DONE 0 0 0 1 0 0 1 
+state.ADD_INDEX_LOOP 0 0 1 0 0 0 1 
+state.CHECK_R 0 1 0 0 0 0 1 
+state.DONE 1 0 0 0 0 0 1 
+
+State Machine - |main|spi_FSM:spi0|cordic_FSM:cordic|cordic_core:core|state
+Name state.DONE state.EXECUTE state.IDLE 
+state.IDLE 0 0 0 
+state.EXECUTE 0 1 1 
+state.DONE 1 0 1 

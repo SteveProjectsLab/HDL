@@ -1,0 +1,92 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2020  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and any partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details, at
+# https://fpgasoftware.intel.com/eula.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+# Date created = 17:05:58  January 13, 2025
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		top_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone V"
+set_global_assignment -name DEVICE AUTO
+set_global_assignment -name TOP_LEVEL_ENTITY top
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:05:58  JANUARY 13, 2025"
+set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
+set_location_assignment PIN_V11 -to FPGA_CLK1_50
+set_location_assignment PIN_Y13 -to FPGA_CLK2_50
+set_location_assignment PIN_E11 -to FPGA_CLK3_50
+set_location_assignment PIN_Y24 -to SW[0]
+set_location_assignment PIN_W24 -to SW[1]
+set_location_assignment PIN_W21 -to SW[2]
+set_location_assignment PIN_W20 -to SW[3]
+set_location_assignment PIN_AA13 -to PCB_RS
+set_location_assignment PIN_Y11 -to PCB_RW
+set_location_assignment PIN_AB25 -to PCB_E
+set_location_assignment PIN_Y18 -to DB[0]
+set_location_assignment PIN_AA18 -to DB[1]
+set_location_assignment PIN_AG25 -to DB[2]
+set_location_assignment PIN_AG26 -to DB[3]
+set_location_assignment PIN_AE25 -to DB[4]
+set_location_assignment PIN_AG28 -to DB[5]
+set_location_assignment PIN_AA15 -to DB[6]
+set_location_assignment PIN_Y15 -to DB[7]
+set_location_assignment PIN_AD5 -to PCB_BT0
+set_location_assignment PIN_AH23 -to PCB_BT1
+set_location_assignment PIN_AF22 -to PCB_BT2
+set_location_assignment PIN_AF4 -to PCB_BT3
+set_location_assignment PIN_AG20 -to PCB_BT4
+set_location_assignment PIN_AG19 -to PCB_BT5
+set_location_assignment PIN_AF7 -to PCB_BT6
+set_location_assignment PIN_AG18 -to PCB_BT7
+set_location_assignment PIN_AF18 -to PCB_BT8
+set_location_assignment PIN_D8 -to PCB_BT9
+set_location_assignment PIN_W12 -to PCB_BT_UP
+set_location_assignment PIN_AE19 -to PCB_BT_DOWN
+set_location_assignment PIN_V12 -to PCB_BT_RIGHT
+set_location_assignment PIN_AG15 -to PCB_BT_LEFT
+set_global_assignment -name VHDL_FILE counter_mod.vhd
+set_global_assignment -name VHDL_FILE clock_generator.vhd
+set_global_assignment -name VHDL_FILE lcd_example.vhd
+set_global_assignment -name VHDL_FILE lcd_controller.vhd
+set_global_assignment -name VHDL_FILE top.vhd
+set_location_assignment PIN_W15 -to LED[0]
+set_location_assignment PIN_AA24 -to LED[1]
+set_location_assignment PIN_V16 -to LED[2]
+set_location_assignment PIN_V15 -to LED[3]
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

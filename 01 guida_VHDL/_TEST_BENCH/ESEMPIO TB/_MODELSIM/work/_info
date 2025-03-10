@@ -1,0 +1,88 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/18.1
+Eand_gate_clocked
+Z0 w1731857450
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z3 dC:/Users/stefa/OneDrive/Desktop/ESEMPIO TB/_MODELSIM
+Z4 8C:/Users/stefa/OneDrive/Desktop/ESEMPIO TB/_MODELSIM/and_gate_clocked.vhd
+Z5 FC:/Users/stefa/OneDrive/Desktop/ESEMPIO TB/_MODELSIM/and_gate_clocked.vhd
+l0
+L5
+VZWUkT[?FBY0@Ah2?H@4UD0
+!s100 UYMEkS2X=`zmO1[olC<QE2
+Z6 OV;C;10.5b;63
+32
+Z7 !s110 1731864474
+!i10b 1
+Z8 !s108 1731864474.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/stefa/OneDrive/Desktop/ESEMPIO TB/_MODELSIM/and_gate_clocked.vhd|
+Z10 !s107 C:/Users/stefa/OneDrive/Desktop/ESEMPIO TB/_MODELSIM/and_gate_clocked.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1 CvgOpt 0
+Abehavioral
+R1
+R2
+Z13 DEx4 work 16 and_gate_clocked 0 22 ZWUkT[?FBY0@Ah2?H@4UD0
+l14
+L12
+Z14 V]Jh;1n0zagT1Ho1L01XkR1
+Z15 !s100 ;O:?hHD5?H]n^6NYo]biM0
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Etb_andgateclocked
+Z16 w1731857440
+R1
+R2
+R3
+Z17 8C:/Users/stefa/OneDrive/Desktop/ESEMPIO TB/_MODELSIM/tb_andgateClocked.vhd
+Z18 FC:/Users/stefa/OneDrive/Desktop/ESEMPIO TB/_MODELSIM/tb_andgateClocked.vhd
+l0
+L4
+VA3mQG2D5bGO8HQ0ToeJZ63
+!s100 7A`;MFnlA>:RI^P17dEQZ0
+R6
+32
+R7
+!i10b 1
+R8
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/stefa/OneDrive/Desktop/ESEMPIO TB/_MODELSIM/tb_andgateClocked.vhd|
+Z20 !s107 C:/Users/stefa/OneDrive/Desktop/ESEMPIO TB/_MODELSIM/tb_andgateClocked.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R1
+R2
+DEx4 work 17 tb_andgateclocked 0 22 A3mQG2D5bGO8HQ0ToeJZ63
+l20
+L7
+V<:Ac1h`ISF]T=MUP4<C3Y2
+!s100 `Pb^daP8SOAKC6lGHXNa60
+R6
+32
+R7
+!i10b 1
+R8
+R19
+R20
+!i113 1
+R11
+R12

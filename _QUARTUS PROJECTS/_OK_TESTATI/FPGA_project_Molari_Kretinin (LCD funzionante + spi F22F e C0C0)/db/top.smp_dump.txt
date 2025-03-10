@@ -1,0 +1,37 @@
+
+State Machine - |top|spi_fsm:spi0|state
+Name state.set_strobe state.elaboration state.waiting state.verify 
+state.verify 0 0 0 0 
+state.waiting 0 0 1 1 
+state.elaboration 0 1 0 1 
+state.set_strobe 1 0 0 1 
+
+State Machine - |top|lcd_controller:lcd_controller|state
+Name state.send state.ready state.initialize state.power_up 
+state.power_up 0 0 0 0 
+state.initialize 0 0 1 1 
+state.ready 0 1 0 1 
+state.send 1 0 0 1 
+
+State Machine - |top|fsm:main_fsm|state
+Name state.PRSD_9 state.PRSD_8 state.PRSD_7 state.PRSD_6 state.PRSD_5 state.PRSD_4 state.PRSD_3 state.PRSD_2 state.PRSD_1 state.PRSD_0 state.PRSD_L state.PRSD_R state.PRSD_DOWN state.PRESSED_UP state.SEND state.PRSD_MSG state.PRSD_CMD state.WAIT_INPUT state.DISPL_CLEAR state.START 
+state.START 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.DISPL_CLEAR 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.WAIT_INPUT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.PRSD_CMD 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.PRSD_MSG 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.SEND 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.PRESSED_UP 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.PRSD_DOWN 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.PRSD_R 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.PRSD_L 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.PRSD_0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.PRSD_1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.PRSD_2 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.PRSD_3 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.PRSD_4 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.PRSD_5 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.PRSD_6 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.PRSD_7 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.PRSD_8 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.PRSD_9 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

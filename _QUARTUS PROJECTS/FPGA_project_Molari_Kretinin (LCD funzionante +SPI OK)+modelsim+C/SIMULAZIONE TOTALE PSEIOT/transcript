@@ -1,0 +1,110 @@
+# Compile of buttons_controller.vhd was successful.
+# Compile of clock_generator.vhd was successful.
+# Compile of debounce_fsm.vhd was successful.
+# Compile of fsm.vhd was successful.
+# Compile of lcd_controller.vhd was successful.
+# Compile of spi.vhd was successful.
+# Compile of spi_fsm.vhd was successful.
+# Compile of tb_all_vecchia.vhd was successful with warnings.
+# Compile of tb_totale.vhd was successful.
+# Compile of top.vhd was successful.
+# 10 compiles, 0 failed with no errors.
+# Load canceled
+# Load canceled
+# Load canceled
+vsim -gui work.tb_all
+# vsim -gui work.tb_all 
+# Start time: 23:27:29 on Feb 09,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.tb_all(behavioral)
+# Loading work.fsm(controller)
+# Loading work.debounce_fsm(controller)
+# Loading work.lcd_controller(controller)
+# Loading work.spi_fsm(behavioral)
+# Loading work.spi(behavioral)
+# Loading work.clock_generator(rtl)
+add wave -position insertpoint sim:/tb_all/*
+add wave -position insertpoint sim:/tb_all/*
+run
+run
+run
+# Compile of buttons_controller.vhd was successful.
+# Compile of clock_generator.vhd was successful.
+# Compile of debounce_fsm.vhd was successful.
+# Compile of fsm.vhd was successful.
+# Compile of lcd_controller.vhd was successful.
+# Compile of spi.vhd was successful.
+# Compile of spi_fsm.vhd was successful.
+# Compile of tb_all_vecchia.vhd was successful with warnings.
+# Compile of tb_totale.vhd was successful.
+# Compile of top.vhd was successful.
+# 10 compiles, 0 failed with no errors.
+# Load canceled
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.tb_all(behavioral)
+# Loading work.fsm(controller)
+# Loading work.debounce_fsm(controller)
+# Loading work.lcd_controller(controller)
+# Loading work.spi_fsm(behavioral)
+# Loading work.spi(behavioral)
+# Loading work.clock_generator(rtl)
+run
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+# Compile of tb_totale.vhd was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.tb_all(behavioral)
+run
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+restart
+run
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+add wave -position insertpoint sim:/tb_all/*
+restart
+run
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+# Compile of tb_totale.vhd was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.tb_all(behavioral)
+run
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+run
+run
+# Compile of tb_totale.vhd was successful.
+vsim -gui work.tb_all
+# End time: 23:59:06 on Feb 09,2025, Elapsed time: 0:31:37
+# Errors: 0, Warnings: 2
+# vsim -gui work.tb_all 
+# Start time: 23:59:06 on Feb 09,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.tb_all(behavioral)
+# Loading work.fsm(controller)
+# Loading work.debounce_fsm(controller)
+# Loading work.lcd_controller(controller)
+# Loading work.spi_fsm(behavioral)
+# Loading work.spi(behavioral)
+# Loading work.clock_generator(rtl)
+add wave -position insertpoint sim:/tb_all/*
+run
+# End time: 00:01:15 on Feb 10,2025, Elapsed time: 0:02:09
+# Errors: 0, Warnings: 1

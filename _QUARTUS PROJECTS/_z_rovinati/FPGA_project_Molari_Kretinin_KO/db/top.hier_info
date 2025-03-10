@@ -1,0 +1,69 @@
+|top
+SW[0] => ~NO_FANOUT~
+SW[1] => ~NO_FANOUT~
+SW[2] => ~NO_FANOUT~
+SW[3] => ~NO_FANOUT~
+LED[0] << clock_generator:tim_1Hz.clock_out
+LED[1] << LED[1].DB_MAX_OUTPUT_PORT_TYPE
+LED[2] << LED[2].DB_MAX_OUTPUT_PORT_TYPE
+LED[3] << LED[3].DB_MAX_OUTPUT_PORT_TYPE
+FPGA_CLK1_50 => clock_generator:tim_1Hz.clock_in
+FPGA_CLK1_50 => clock_generator:tim_1MHz.clock_in
+PCB_RS << PCB_RS.DB_MAX_OUTPUT_PORT_TYPE
+PCB_RW << PCB_RW.DB_MAX_OUTPUT_PORT_TYPE
+PCB_E << PCB_E.DB_MAX_OUTPUT_PORT_TYPE
+PCB_DB[0] << clock_generator:tim_1Hz.clock_out
+PCB_DB[1] << PCB_DB[1].DB_MAX_OUTPUT_PORT_TYPE
+PCB_DB[2] << PCB_DB[2].DB_MAX_OUTPUT_PORT_TYPE
+PCB_DB[3] << PCB_DB[3].DB_MAX_OUTPUT_PORT_TYPE
+PCB_DB[4] << PCB_DB[4].DB_MAX_OUTPUT_PORT_TYPE
+PCB_DB[5] << PCB_DB[5].DB_MAX_OUTPUT_PORT_TYPE
+PCB_DB[6] << PCB_DB[6].DB_MAX_OUTPUT_PORT_TYPE
+PCB_DB[7] << comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|clock_generator:tim_1Hz
+clock_in => clock_signal.CLK
+clock_in => counter[0].CLK
+clock_in => counter[1].CLK
+clock_in => counter[2].CLK
+clock_in => counter[3].CLK
+clock_in => counter[4].CLK
+clock_in => counter[5].CLK
+clock_in => counter[6].CLK
+clock_in => counter[7].CLK
+clock_in => counter[8].CLK
+clock_in => counter[9].CLK
+clock_in => counter[10].CLK
+clock_in => counter[11].CLK
+clock_in => counter[12].CLK
+clock_in => counter[13].CLK
+clock_in => counter[14].CLK
+clock_in => counter[15].CLK
+clock_in => counter[16].CLK
+clock_in => counter[17].CLK
+clock_in => counter[18].CLK
+clock_in => counter[19].CLK
+clock_in => counter[20].CLK
+clock_in => counter[21].CLK
+clock_in => counter[22].CLK
+clock_in => counter[23].CLK
+clock_in => counter[24].CLK
+clock_in => counter[25].CLK
+clock_out <= clock_signal.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|clock_generator:tim_1MHz
+clock_in => clock_signal.CLK
+clock_in => counter[0].CLK
+clock_in => counter[1].CLK
+clock_in => counter[2].CLK
+clock_in => counter[3].CLK
+clock_in => counter[4].CLK
+clock_in => counter[5].CLK
+clock_in => counter[6].CLK
+clock_in => counter[7].CLK
+clock_in => counter[8].CLK
+clock_out <= clock_signal.DB_MAX_OUTPUT_PORT_TYPE
+
+

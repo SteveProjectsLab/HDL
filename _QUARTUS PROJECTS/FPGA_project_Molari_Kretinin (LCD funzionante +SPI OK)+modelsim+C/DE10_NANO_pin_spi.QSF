@@ -1,0 +1,6 @@
+#set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PCB_MISO
+#set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PCB_MOSI
+#set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PCB_SCK
+set_location_assignment PIN_AA11 -to PCB_MISO
+set_location_assignment PIN_AA26 -to PCB_MOSI
+set_location_assignment PIN_AB26 -to PCB_SCK

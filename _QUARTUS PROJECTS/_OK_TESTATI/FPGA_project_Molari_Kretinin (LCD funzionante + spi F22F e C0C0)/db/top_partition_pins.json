@@ -1,0 +1,77 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "LED[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[3]",
+					"strict" : false
+				},
+				{
+					"name" : "PCB_RS",
+					"strict" : false
+				},
+				{
+					"name" : "PCB_E",
+					"strict" : false
+				},
+				{
+					"name" : "PCB_DB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "PCB_DB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "PCB_DB[2]",
+					"strict" : false
+				},
+				{
+					"name" : "PCB_DB[3]",
+					"strict" : false
+				},
+				{
+					"name" : "PCB_DB[4]",
+					"strict" : false
+				},
+				{
+					"name" : "PCB_DB[5]",
+					"strict" : false
+				},
+				{
+					"name" : "PCB_MISO",
+					"strict" : false
+				},
+				{
+					"name" : "PCB_SCK",
+					"strict" : false
+				},
+				{
+					"name" : "FPGA_CLK1_50",
+					"strict" : false
+				},
+				{
+					"name" : "PCB_BT0",
+					"strict" : false
+				},
+				{
+					"name" : "PCB_BT1",
+					"strict" : false
+				},
+				{
+					"name" : "PCB_BT2",
+					"strict" : false
+				},
+				{
+					"name" : "PCB_BT3",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

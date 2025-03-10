@@ -1,0 +1,127 @@
+
+State Machine - |top_spiir|basic_iir:spi0|state
+Name state.set_strobe state.elaboration state.waiting state.verify 
+state.verify 0 0 0 0 
+state.waiting 0 0 1 1 
+state.elaboration 0 1 0 1 
+state.set_strobe 1 0 0 1 
+
+State Machine - |top_spiir|basic_iir:spi0|iir_init:Filtro_IIR|sos_cascaded_top:Filtro_IIR|sos_core_df1_reuse:\NoUsePipelineCore:MoreSec:CascadeSections:7:OutputSection:OutSOS|StatexSP
+Name StatexSP.SATGAINOUT StatexSP.GAINOUT_DIVFRAC StatexSP.GAINOUT StatexSP.SATOUT StatexSP.DIVFRAC StatexSP.MULACC6 StatexSP.MULACC5 StatexSP.MULACC4 StatexSP.MULACC3 StatexSP.MULACC2 StatexSP.MULACC1 StatexSP.IDLE 
+StatexSP.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 
+StatexSP.MULACC1 0 0 0 0 0 0 0 0 0 0 1 1 
+StatexSP.MULACC2 0 0 0 0 0 0 0 0 0 1 0 1 
+StatexSP.MULACC3 0 0 0 0 0 0 0 0 1 0 0 1 
+StatexSP.MULACC4 0 0 0 0 0 0 0 1 0 0 0 1 
+StatexSP.MULACC5 0 0 0 0 0 0 1 0 0 0 0 1 
+StatexSP.MULACC6 0 0 0 0 0 1 0 0 0 0 0 1 
+StatexSP.DIVFRAC 0 0 0 0 1 0 0 0 0 0 0 1 
+StatexSP.SATOUT 0 0 0 1 0 0 0 0 0 0 0 1 
+StatexSP.GAINOUT 0 0 1 0 0 0 0 0 0 0 0 1 
+StatexSP.GAINOUT_DIVFRAC 0 1 0 0 0 0 0 0 0 0 0 1 
+StatexSP.SATGAINOUT 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |top_spiir|basic_iir:spi0|iir_init:Filtro_IIR|sos_cascaded_top:Filtro_IIR|sos_core_df1_reuse:\NoUsePipelineCore:MoreSec:CascadeSections:6:MiddleSections:MidSOS|StatexSP
+Name StatexSP.SATGAINOUT StatexSP.GAINOUT_DIVFRAC StatexSP.GAINOUT StatexSP.SATOUT StatexSP.DIVFRAC StatexSP.MULACC6 StatexSP.MULACC5 StatexSP.MULACC4 StatexSP.MULACC3 StatexSP.MULACC2 StatexSP.MULACC1 StatexSP.IDLE 
+StatexSP.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 
+StatexSP.MULACC1 0 0 0 0 0 0 0 0 0 0 1 1 
+StatexSP.MULACC2 0 0 0 0 0 0 0 0 0 1 0 1 
+StatexSP.MULACC3 0 0 0 0 0 0 0 0 1 0 0 1 
+StatexSP.MULACC4 0 0 0 0 0 0 0 1 0 0 0 1 
+StatexSP.MULACC5 0 0 0 0 0 0 1 0 0 0 0 1 
+StatexSP.MULACC6 0 0 0 0 0 1 0 0 0 0 0 1 
+StatexSP.DIVFRAC 0 0 0 0 1 0 0 0 0 0 0 1 
+StatexSP.SATOUT 0 0 0 1 0 0 0 0 0 0 0 1 
+StatexSP.GAINOUT 0 0 1 0 0 0 0 0 0 0 0 1 
+StatexSP.GAINOUT_DIVFRAC 0 1 0 0 0 0 0 0 0 0 0 1 
+StatexSP.SATGAINOUT 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |top_spiir|basic_iir:spi0|iir_init:Filtro_IIR|sos_cascaded_top:Filtro_IIR|sos_core_df1_reuse:\NoUsePipelineCore:MoreSec:CascadeSections:5:MiddleSections:MidSOS|StatexSP
+Name StatexSP.SATGAINOUT StatexSP.GAINOUT_DIVFRAC StatexSP.GAINOUT StatexSP.SATOUT StatexSP.DIVFRAC StatexSP.MULACC6 StatexSP.MULACC5 StatexSP.MULACC4 StatexSP.MULACC3 StatexSP.MULACC2 StatexSP.MULACC1 StatexSP.IDLE 
+StatexSP.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 
+StatexSP.MULACC1 0 0 0 0 0 0 0 0 0 0 1 1 
+StatexSP.MULACC2 0 0 0 0 0 0 0 0 0 1 0 1 
+StatexSP.MULACC3 0 0 0 0 0 0 0 0 1 0 0 1 
+StatexSP.MULACC4 0 0 0 0 0 0 0 1 0 0 0 1 
+StatexSP.MULACC5 0 0 0 0 0 0 1 0 0 0 0 1 
+StatexSP.MULACC6 0 0 0 0 0 1 0 0 0 0 0 1 
+StatexSP.DIVFRAC 0 0 0 0 1 0 0 0 0 0 0 1 
+StatexSP.SATOUT 0 0 0 1 0 0 0 0 0 0 0 1 
+StatexSP.GAINOUT 0 0 1 0 0 0 0 0 0 0 0 1 
+StatexSP.GAINOUT_DIVFRAC 0 1 0 0 0 0 0 0 0 0 0 1 
+StatexSP.SATGAINOUT 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |top_spiir|basic_iir:spi0|iir_init:Filtro_IIR|sos_cascaded_top:Filtro_IIR|sos_core_df1_reuse:\NoUsePipelineCore:MoreSec:CascadeSections:4:MiddleSections:MidSOS|StatexSP
+Name StatexSP.SATGAINOUT StatexSP.GAINOUT_DIVFRAC StatexSP.GAINOUT StatexSP.SATOUT StatexSP.DIVFRAC StatexSP.MULACC6 StatexSP.MULACC5 StatexSP.MULACC4 StatexSP.MULACC3 StatexSP.MULACC2 StatexSP.MULACC1 StatexSP.IDLE 
+StatexSP.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 
+StatexSP.MULACC1 0 0 0 0 0 0 0 0 0 0 1 1 
+StatexSP.MULACC2 0 0 0 0 0 0 0 0 0 1 0 1 
+StatexSP.MULACC3 0 0 0 0 0 0 0 0 1 0 0 1 
+StatexSP.MULACC4 0 0 0 0 0 0 0 1 0 0 0 1 
+StatexSP.MULACC5 0 0 0 0 0 0 1 0 0 0 0 1 
+StatexSP.MULACC6 0 0 0 0 0 1 0 0 0 0 0 1 
+StatexSP.DIVFRAC 0 0 0 0 1 0 0 0 0 0 0 1 
+StatexSP.SATOUT 0 0 0 1 0 0 0 0 0 0 0 1 
+StatexSP.GAINOUT 0 0 1 0 0 0 0 0 0 0 0 1 
+StatexSP.GAINOUT_DIVFRAC 0 1 0 0 0 0 0 0 0 0 0 1 
+StatexSP.SATGAINOUT 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |top_spiir|basic_iir:spi0|iir_init:Filtro_IIR|sos_cascaded_top:Filtro_IIR|sos_core_df1_reuse:\NoUsePipelineCore:MoreSec:CascadeSections:3:MiddleSections:MidSOS|StatexSP
+Name StatexSP.SATGAINOUT StatexSP.GAINOUT_DIVFRAC StatexSP.GAINOUT StatexSP.SATOUT StatexSP.DIVFRAC StatexSP.MULACC6 StatexSP.MULACC5 StatexSP.MULACC4 StatexSP.MULACC3 StatexSP.MULACC2 StatexSP.MULACC1 StatexSP.IDLE 
+StatexSP.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 
+StatexSP.MULACC1 0 0 0 0 0 0 0 0 0 0 1 1 
+StatexSP.MULACC2 0 0 0 0 0 0 0 0 0 1 0 1 
+StatexSP.MULACC3 0 0 0 0 0 0 0 0 1 0 0 1 
+StatexSP.MULACC4 0 0 0 0 0 0 0 1 0 0 0 1 
+StatexSP.MULACC5 0 0 0 0 0 0 1 0 0 0 0 1 
+StatexSP.MULACC6 0 0 0 0 0 1 0 0 0 0 0 1 
+StatexSP.DIVFRAC 0 0 0 0 1 0 0 0 0 0 0 1 
+StatexSP.SATOUT 0 0 0 1 0 0 0 0 0 0 0 1 
+StatexSP.GAINOUT 0 0 1 0 0 0 0 0 0 0 0 1 
+StatexSP.GAINOUT_DIVFRAC 0 1 0 0 0 0 0 0 0 0 0 1 
+StatexSP.SATGAINOUT 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |top_spiir|basic_iir:spi0|iir_init:Filtro_IIR|sos_cascaded_top:Filtro_IIR|sos_core_df1_reuse:\NoUsePipelineCore:MoreSec:CascadeSections:2:MiddleSections:MidSOS|StatexSP
+Name StatexSP.SATGAINOUT StatexSP.GAINOUT_DIVFRAC StatexSP.GAINOUT StatexSP.SATOUT StatexSP.DIVFRAC StatexSP.MULACC6 StatexSP.MULACC5 StatexSP.MULACC4 StatexSP.MULACC3 StatexSP.MULACC2 StatexSP.MULACC1 StatexSP.IDLE 
+StatexSP.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 
+StatexSP.MULACC1 0 0 0 0 0 0 0 0 0 0 1 1 
+StatexSP.MULACC2 0 0 0 0 0 0 0 0 0 1 0 1 
+StatexSP.MULACC3 0 0 0 0 0 0 0 0 1 0 0 1 
+StatexSP.MULACC4 0 0 0 0 0 0 0 1 0 0 0 1 
+StatexSP.MULACC5 0 0 0 0 0 0 1 0 0 0 0 1 
+StatexSP.MULACC6 0 0 0 0 0 1 0 0 0 0 0 1 
+StatexSP.DIVFRAC 0 0 0 0 1 0 0 0 0 0 0 1 
+StatexSP.SATOUT 0 0 0 1 0 0 0 0 0 0 0 1 
+StatexSP.GAINOUT 0 0 1 0 0 0 0 0 0 0 0 1 
+StatexSP.GAINOUT_DIVFRAC 0 1 0 0 0 0 0 0 0 0 0 1 
+StatexSP.SATGAINOUT 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |top_spiir|basic_iir:spi0|iir_init:Filtro_IIR|sos_cascaded_top:Filtro_IIR|sos_core_df1_reuse:\NoUsePipelineCore:MoreSec:CascadeSections:1:MiddleSections:MidSOS|StatexSP
+Name StatexSP.SATGAINOUT StatexSP.GAINOUT_DIVFRAC StatexSP.GAINOUT StatexSP.SATOUT StatexSP.DIVFRAC StatexSP.MULACC6 StatexSP.MULACC5 StatexSP.MULACC4 StatexSP.MULACC3 StatexSP.MULACC2 StatexSP.MULACC1 StatexSP.IDLE 
+StatexSP.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 
+StatexSP.MULACC1 0 0 0 0 0 0 0 0 0 0 1 1 
+StatexSP.MULACC2 0 0 0 0 0 0 0 0 0 1 0 1 
+StatexSP.MULACC3 0 0 0 0 0 0 0 0 1 0 0 1 
+StatexSP.MULACC4 0 0 0 0 0 0 0 1 0 0 0 1 
+StatexSP.MULACC5 0 0 0 0 0 0 1 0 0 0 0 1 
+StatexSP.MULACC6 0 0 0 0 0 1 0 0 0 0 0 1 
+StatexSP.DIVFRAC 0 0 0 0 1 0 0 0 0 0 0 1 
+StatexSP.SATOUT 0 0 0 1 0 0 0 0 0 0 0 1 
+StatexSP.GAINOUT 0 0 1 0 0 0 0 0 0 0 0 1 
+StatexSP.GAINOUT_DIVFRAC 0 1 0 0 0 0 0 0 0 0 0 1 
+StatexSP.SATGAINOUT 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |top_spiir|basic_iir:spi0|iir_init:Filtro_IIR|sos_cascaded_top:Filtro_IIR|sos_core_df1_reuse:\NoUsePipelineCore:MoreSec:CascadeSections:0:InputSection:InputSOS|StatexSP
+Name StatexSP.SATGAINOUT StatexSP.GAINOUT_DIVFRAC StatexSP.GAINOUT StatexSP.SATOUT StatexSP.DIVFRAC StatexSP.MULACC6 StatexSP.MULACC5 StatexSP.MULACC4 StatexSP.MULACC3 StatexSP.MULACC2 StatexSP.MULACC1 StatexSP.IDLE 
+StatexSP.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 
+StatexSP.MULACC1 0 0 0 0 0 0 0 0 0 0 1 1 
+StatexSP.MULACC2 0 0 0 0 0 0 0 0 0 1 0 1 
+StatexSP.MULACC3 0 0 0 0 0 0 0 0 1 0 0 1 
+StatexSP.MULACC4 0 0 0 0 0 0 0 1 0 0 0 1 
+StatexSP.MULACC5 0 0 0 0 0 0 1 0 0 0 0 1 
+StatexSP.MULACC6 0 0 0 0 0 1 0 0 0 0 0 1 
+StatexSP.DIVFRAC 0 0 0 0 1 0 0 0 0 0 0 1 
+StatexSP.SATOUT 0 0 0 1 0 0 0 0 0 0 0 1 
+StatexSP.GAINOUT 0 0 1 0 0 0 0 0 0 0 0 1 
+StatexSP.GAINOUT_DIVFRAC 0 1 0 0 0 0 0 0 0 0 0 1 
+StatexSP.SATGAINOUT 1 0 0 0 0 0 0 0 0 0 0 1 
