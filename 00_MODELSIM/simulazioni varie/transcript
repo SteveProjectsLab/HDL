@@ -1,0 +1,28 @@
+# Reading pref.tcl
+# OpenFile C:/Users/stefa/Desktop/_modelsim_all/test_fpga_all.mpf
+# Loading project test_fpga_all
+# Compile of tb_ALL.vhd failed with 1 errors.
+# Compile of buttons_controller.vhd was successful.
+# Compile of debounce.vhd was successful.
+# Compile of lcd_controller.vhd was successful.
+# Compile of tb_ALL.vhd was successful with warnings.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.tb_all
+# vsim -gui work.tb_all 
+# Start time: 10:24:09 on Jan 20,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb_all(behavioral)
+# Loading work.buttons_controller(box)
+# Loading work.debounce(logic)
+# Loading work.lcd_controller(controller)
+add wave -position insertpoint sim:/tb_all/DUT2/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: stefa  Hostname: PC-STE  ProcessID: 8388
+#           Attempting to use alternate WLF file "./wlft1jzjtc".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft1jzjtc
+run
+# End time: 18:16:31 on Jan 20,2025, Elapsed time: 7:52:22
+# Errors: 0, Warnings: 5

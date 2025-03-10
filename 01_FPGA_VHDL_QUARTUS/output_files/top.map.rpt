@@ -1,0 +1,641 @@
+Analysis & Synthesis report for top
+Sat Feb 08 10:07:22 2025
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |top|lcd_controller:lcd_controller|state
+  9. State Machine - |top|fsm:main_fsm|state
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: debounce_fsm:btn_controller
+ 16. Parameter Settings for User Entity Instance: lcd_controller:lcd_controller
+ 17. Parameter Settings for User Entity Instance: spi_fsm:spi0
+ 18. Parameter Settings for User Entity Instance: spi_fsm:spi0|spi:spi
+ 19. Parameter Settings for User Entity Instance: clock_generator:tim_1Hz
+ 20. Parameter Settings for User Entity Instance: clock_generator:tim_100kHz
+ 21. Port Connectivity Checks: "clock_generator:tim_1Hz"
+ 22. Port Connectivity Checks: "spi_fsm:spi0|spi:spi"
+ 23. Port Connectivity Checks: "spi_fsm:spi0"
+ 24. Port Connectivity Checks: "lcd_controller:lcd_controller"
+ 25. Port Connectivity Checks: "debounce_fsm:btn_controller"
+ 26. Port Connectivity Checks: "fsm:main_fsm"
+ 27. Post-Synthesis Netlist Statistics for Top Partition
+ 28. Elapsed Time Per Partition
+ 29. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sat Feb 08 10:07:22 2025       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; top                                         ;
+; Top-level Entity Name           ; top                                         ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 184                                         ;
+; Total pins                      ; 23                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEBA6U23I7S      ;                    ;
+; Top-level entity name                                                           ; top                ; top                ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 32          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                               ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                        ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------+---------+
+; spi_fsm.vhd                      ; yes             ; User VHDL File  ; C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/spi_fsm.vhd         ;         ;
+; spi.vhd                          ; yes             ; User VHDL File  ; C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/spi.vhd             ;         ;
+; debounce_fsm.vhd                 ; yes             ; User VHDL File  ; C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/debounce_fsm.vhd    ;         ;
+; fsm.vhd                          ; yes             ; User VHDL File  ; C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/fsm.vhd             ;         ;
+; clock_generator.vhd              ; yes             ; User VHDL File  ; C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/clock_generator.vhd ;         ;
+; lcd_controller.vhd               ; yes             ; User VHDL File  ; C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/lcd_controller.vhd  ;         ;
+; top.vhd                          ; yes             ; User VHDL File  ; C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd             ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                      ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+; Estimate of Logic utilization (ALMs needed) ; 210                ;
+;                                             ;                    ;
+; Combinational ALUT usage for logic          ; 321                ;
+;     -- 7 input functions                    ; 1                  ;
+;     -- 6 input functions                    ; 80                 ;
+;     -- 5 input functions                    ; 34                 ;
+;     -- 4 input functions                    ; 25                 ;
+;     -- <=3 input functions                  ; 181                ;
+;                                             ;                    ;
+; Dedicated logic registers                   ; 184                ;
+;                                             ;                    ;
+; I/O pins                                    ; 23                 ;
+;                                             ;                    ;
+; Total DSP Blocks                            ; 0                  ;
+;                                             ;                    ;
+; Maximum fan-out node                        ; FPGA_CLK1_50~input ;
+; Maximum fan-out                             ; 99                 ;
+; Total fan-out                               ; 1739               ;
+; Average fan-out                             ; 3.14               ;
++---------------------------------------------+--------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                               ;
++------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                ; Entity Name     ; Library Name ;
++------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------+-----------------+--------------+
+; |top                               ; 321 (0)             ; 184 (0)                   ; 0                 ; 0          ; 23   ; 0            ; |top                               ; top             ; work         ;
+;    |clock_generator:tim_100kHz|    ; 12 (12)             ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |top|clock_generator:tim_100kHz    ; clock_generator ; work         ;
+;    |debounce_fsm:btn_controller|   ; 75 (75)             ; 37 (37)                   ; 0                 ; 0          ; 0    ; 0            ; |top|debounce_fsm:btn_controller   ; debounce_fsm    ; work         ;
+;    |fsm:main_fsm|                  ; 71 (71)             ; 48 (48)                   ; 0                 ; 0          ; 0    ; 0            ; |top|fsm:main_fsm                  ; fsm             ; work         ;
+;    |lcd_controller:lcd_controller| ; 140 (140)           ; 43 (43)                   ; 0                 ; 0          ; 0    ; 0            ; |top|lcd_controller:lcd_controller ; lcd_controller  ; work         ;
+;    |spi_fsm:spi0|                  ; 23 (7)              ; 46 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |top|spi_fsm:spi0                  ; spi_fsm         ; work         ;
+;       |spi:spi|                    ; 16 (16)             ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |top|spi_fsm:spi0|spi:spi          ; spi             ; work         ;
++------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------+
+; State Machine - |top|lcd_controller:lcd_controller|state                        ;
++------------------+------------+-------------+------------------+----------------+
+; Name             ; state.send ; state.ready ; state.initialize ; state.power_up ;
++------------------+------------+-------------+------------------+----------------+
+; state.power_up   ; 0          ; 0           ; 0                ; 0              ;
+; state.initialize ; 0          ; 0           ; 1                ; 1              ;
+; state.ready      ; 0          ; 1           ; 0                ; 1              ;
+; state.send       ; 1          ; 0           ; 0                ; 1              ;
++------------------+------------+-------------+------------------+----------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top|fsm:main_fsm|state                                                                                              ;
++-------------------+--------------+------------+----------------+----------------+------------------+-------------------+-------------+
+; Name              ; state.WAIT_2 ; state.SEND ; state.PRSD_MSG ; state.PRSD_CMD ; state.WAIT_INPUT ; state.DISPL_CLEAR ; state.START ;
++-------------------+--------------+------------+----------------+----------------+------------------+-------------------+-------------+
+; state.START       ; 0            ; 0          ; 0              ; 0              ; 0                ; 0                 ; 0           ;
+; state.DISPL_CLEAR ; 0            ; 0          ; 0              ; 0              ; 0                ; 1                 ; 1           ;
+; state.WAIT_INPUT  ; 0            ; 0          ; 0              ; 0              ; 1                ; 0                 ; 1           ;
+; state.PRSD_CMD    ; 0            ; 0          ; 0              ; 1              ; 0                ; 0                 ; 1           ;
+; state.PRSD_MSG    ; 0            ; 0          ; 1              ; 0              ; 0                ; 0                 ; 1           ;
+; state.SEND        ; 0            ; 1          ; 0              ; 0              ; 0                ; 0                 ; 1           ;
+; state.WAIT_2      ; 1            ; 0          ; 0              ; 0              ; 0                ; 0                 ; 1           ;
++-------------------+--------------+------------+----------------+----------------+------------------+-------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                       ;
++--------------------------------------------------+-------------------------------------------------------+
+; Register name                                    ; Reason for Removal                                    ;
++--------------------------------------------------+-------------------------------------------------------+
+; spi_fsm:spi0|spi:spi|wr                          ; Merged with spi_fsm:spi0|spi:spi|read_me              ;
+; lcd_controller:lcd_controller|lcd_data[5]        ; Merged with lcd_controller:lcd_controller|lcd_data[4] ;
+; lcd_controller:lcd_controller|lcd_data[7]        ; Merged with lcd_controller:lcd_controller|lcd_data[6] ;
+; fsm:main_fsm|lcd_bus[5,9]                        ; Merged with fsm:main_fsm|lcd_bus[4]                   ;
+; fsm:main_fsm|lcd_bus[7,8]                        ; Merged with fsm:main_fsm|lcd_bus[6]                   ;
+; debounce_fsm:btn_controller|btn_num[2..9,11..15] ; Merged with debounce_fsm:btn_controller|btn_num[10]   ;
+; spi_fsm:spi0|data_in[2,3,5,9,13..15]             ; Merged with spi_fsm:spi0|data_in[12]                  ;
+; spi_fsm:spi0|current_msg[2,3,5,9,13..15]         ; Merged with spi_fsm:spi0|current_msg[12]              ;
+; fsm:main_fsm|spi_msg[2..9,11..15]                ; Merged with fsm:main_fsm|spi_msg[10]                  ;
+; fsm:main_fsm|last_btn_pressed[2..9,11..15]       ; Merged with fsm:main_fsm|last_btn_pressed[10]         ;
+; spi_fsm:spi0|data_in[4,6..8,11]                  ; Merged with spi_fsm:spi0|data_in[10]                  ;
+; spi_fsm:spi0|current_msg[4,6..8,11]              ; Merged with spi_fsm:spi0|current_msg[10]              ;
+; fsm:main_fsm|lcd_bus[3]                          ; Merged with fsm:main_fsm|lcd_bus[2]                   ;
+; debounce_fsm:btn_controller|btn_num[10]          ; Stuck at GND due to stuck port data_in                ;
+; fsm:main_fsm|lcd_bus[2,6]                        ; Stuck at GND due to stuck port data_in                ;
+; lcd_controller:lcd_controller|rw                 ; Stuck at GND due to stuck port data_in                ;
+; lcd_controller:lcd_controller|lcd_data[6]        ; Stuck at GND due to stuck port data_in                ;
+; fsm:main_fsm|state.PRSD_CMD                      ; Stuck at GND due to stuck port data_in                ;
+; Total Number of Removed Registers = 77           ;                                                       ;
++--------------------------------------------------+-------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                               ;
++-----------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
+; Register name                           ; Reason for Removal        ; Registers Removed due to This Register                                              ;
++-----------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
+; debounce_fsm:btn_controller|btn_num[10] ; Stuck at GND              ; fsm:main_fsm|lcd_bus[6], fsm:main_fsm|lcd_bus[2], lcd_controller:lcd_controller|rw, ;
+;                                         ; due to stuck port data_in ; lcd_controller:lcd_controller|lcd_data[6]                                           ;
++-----------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 184   ;
+; Number of registers using Synchronous Clear  ; 61    ;
+; Number of registers using Synchronous Load   ; 16    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 93    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; debounce_fsm:btn_controller|and_buttons ; 35      ;
+; debounce_fsm:btn_controller|delay[13]   ; 2       ;
+; debounce_fsm:btn_controller|delay[0]    ; 2       ;
+; debounce_fsm:btn_controller|delay[1]    ; 2       ;
+; debounce_fsm:btn_controller|delay[2]    ; 2       ;
+; debounce_fsm:btn_controller|delay[3]    ; 2       ;
+; debounce_fsm:btn_controller|delay[8]    ; 2       ;
+; debounce_fsm:btn_controller|delay[9]    ; 2       ;
+; debounce_fsm:btn_controller|delay[10]   ; 2       ;
+; fsm:main_fsm|delay[0]                   ; 2       ;
+; fsm:main_fsm|delay[1]                   ; 2       ;
+; fsm:main_fsm|delay[2]                   ; 2       ;
+; fsm:main_fsm|delay[3]                   ; 2       ;
+; fsm:main_fsm|delay[8]                   ; 2       ;
+; fsm:main_fsm|delay[9]                   ; 2       ;
+; fsm:main_fsm|delay[10]                  ; 2       ;
+; fsm:main_fsm|delay[13]                  ; 2       ;
+; fsm:main_fsm|last_btn_pressed[10]       ; 1       ;
+; fsm:main_fsm|last_btn_pressed[1]        ; 1       ;
+; fsm:main_fsm|last_btn_pressed[0]        ; 1       ;
+; Total number of inverted registers = 20 ;         ;
++-----------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; 3:1                ; 15 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |top|spi_fsm:spi0|spi:spi|spi_value[1]          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |top|spi_fsm:spi0|spi:spi|flag2                 ;
+; 3:1                ; 23 bits   ; 46 LEs        ; 23 LEs               ; 23 LEs                 ; Yes        ; |top|debounce_fsm:btn_controller|delay[11]      ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |top|lcd_controller:lcd_controller|rs           ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |top|debounce_fsm:btn_controller|btn_num[1]     ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |top|lcd_controller:lcd_controller|clk_count[1] ;
+; 4:1                ; 19 bits   ; 38 LEs        ; 0 LEs                ; 38 LEs                 ; Yes        ; |top|fsm:main_fsm|delay[18]                     ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |top|fsm:main_fsm|delay[15]                     ;
+; 13:1               ; 4 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |top|lcd_controller:lcd_controller|lcd_data[2]  ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 14 LEs               ; 4 LEs                  ; Yes        ; |top|lcd_controller:lcd_controller|lcd_data[1]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|debounce_fsm:btn_controller|delay[13]      ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |top|fsm:main_fsm|delay[3]                      ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |top|fsm:main_fsm|delay[8]                      ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |top|fsm:main_fsm|delay[1]                      ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |top|fsm:main_fsm|Selector35                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debounce_fsm:btn_controller ;
++------------------+----------------+--------------------------------------+
+; Parameter Name   ; Value          ; Type                                 ;
++------------------+----------------+--------------------------------------+
+; fsm_clock_period ; 10000000000 fs ; Physical                             ;
++------------------+----------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lcd_controller:lcd_controller ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; clk_freq       ; 50    ; Signed Integer                                    ;
+; display_lines  ; '1'   ; Enumerated                                        ;
+; character_font ; '0'   ; Enumerated                                        ;
+; display_on_off ; '1'   ; Enumerated                                        ;
+; cursor         ; '0'   ; Enumerated                                        ;
+; blink          ; '0'   ; Enumerated                                        ;
+; inc_dec        ; '1'   ; Enumerated                                        ;
+; shift          ; '0'   ; Enumerated                                        ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: spi_fsm:spi0 ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; data_w         ; 16    ; Signed Integer                   ;
+; nbit           ; 4     ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: spi_fsm:spi0|spi:spi ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; data_w         ; 16    ; Signed Integer                           ;
+; nbit           ; 4     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_generator:tim_1Hz ;
++-----------------+----------+-----------------------------------------+
+; Parameter Name  ; Value    ; Type                                    ;
++-----------------+----------+-----------------------------------------+
+; clock_in_speed  ; 50000000 ; Signed Integer                          ;
+; clock_out_speed ; 1        ; Signed Integer                          ;
++-----------------+----------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_generator:tim_100kHz ;
++-----------------+----------+--------------------------------------------+
+; Parameter Name  ; Value    ; Type                                       ;
++-----------------+----------+--------------------------------------------+
+; clock_in_speed  ; 50000000 ; Signed Integer                             ;
+; clock_out_speed ; 100000   ; Signed Integer                             ;
++-----------------+----------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_generator:tim_1Hz"                                                                 ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; clock_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "spi_fsm:spi0|spi:spi"                                                                   ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; data_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rd       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Port Connectivity Checks: "spi_fsm:spi0" ;
++-------+-------+----------+---------------+
+; Port  ; Type  ; Severity ; Details       ;
++-------+-------+----------+---------------+
+; reset ; Input ; Info     ; Stuck at GND  ;
++-------+-------+----------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lcd_controller:lcd_controller"                                                         ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; reset_n ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; busy    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "debounce_fsm:btn_controller" ;
++----------+-------+----------+---------------------------+
+; Port     ; Type  ; Severity ; Details                   ;
++----------+-------+----------+---------------------------+
+; reset    ; Input ; Info     ; Stuck at GND              ;
+; btn_4    ; Input ; Info     ; Stuck at VCC              ;
+; btn_5    ; Input ; Info     ; Stuck at VCC              ;
+; btn_6    ; Input ; Info     ; Stuck at VCC              ;
+; btn_7    ; Input ; Info     ; Stuck at VCC              ;
+; btn_8    ; Input ; Info     ; Stuck at VCC              ;
+; btn_9    ; Input ; Info     ; Stuck at VCC              ;
+; btn_up   ; Input ; Info     ; Stuck at VCC              ;
+; btn_down ; Input ; Info     ; Stuck at VCC              ;
+; btn_r    ; Input ; Info     ; Stuck at VCC              ;
+; btn_l    ; Input ; Info     ; Stuck at VCC              ;
++----------+-------+----------+---------------------------+
+
+
++------------------------------------------+
+; Port Connectivity Checks: "fsm:main_fsm" ;
++-------+-------+----------+---------------+
+; Port  ; Type  ; Severity ; Details       ;
++-------+-------+----------+---------------+
+; reset ; Input ; Info     ; Stuck at GND  ;
++-------+-------+----------+---------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 184                         ;
+;     ENA               ; 59                          ;
+;     ENA SCLR          ; 19                          ;
+;     ENA SLD           ; 15                          ;
+;     SCLR              ; 42                          ;
+;     SLD               ; 1                           ;
+;     plain             ; 48                          ;
+; arriav_io_obuf        ; 3                           ;
+; arriav_lcell_comb     ; 322                         ;
+;     arith             ; 103                         ;
+;         1 data inputs ; 103                         ;
+;     extend            ; 1                           ;
+;         7 data inputs ; 1                           ;
+;     normal            ; 218                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 26                          ;
+;         3 data inputs ; 43                          ;
+;         4 data inputs ; 25                          ;
+;         5 data inputs ; 34                          ;
+;         6 data inputs ; 80                          ;
+; boundary_port         ; 23                          ;
+;                       ;                             ;
+; Max LUT depth         ; 7.90                        ;
+; Average LUT depth     ; 4.01                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Sat Feb 08 10:07:11 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top -c top
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 32 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file spi_fsm.vhd
+    Info (12022): Found design unit 1: spi_fsm-Behavioral File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/spi_fsm.vhd Line: 23
+    Info (12023): Found entity 1: spi_fsm File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/spi_fsm.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file spi.vhd
+    Info (12022): Found design unit 1: spi-Behavioral File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/spi.vhd Line: 23
+    Info (12023): Found entity 1: spi File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/spi.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file debounce_fsm.vhd
+    Info (12022): Found design unit 1: debounce_fsm-controller File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/debounce_fsm.vhd Line: 32
+    Info (12023): Found entity 1: debounce_fsm File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/debounce_fsm.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file fsm.vhd
+    Info (12022): Found design unit 1: fsm-controller File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/fsm.vhd Line: 20
+    Info (12023): Found entity 1: fsm File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/fsm.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file clock_generator.vhd
+    Info (12022): Found design unit 1: clock_generator-rtl File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/clock_generator.vhd Line: 16
+    Info (12023): Found entity 1: clock_generator File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/clock_generator.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file lcd_controller.vhd
+    Info (12022): Found design unit 1: lcd_controller-controller File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/lcd_controller.vhd Line: 49
+    Info (12023): Found entity 1: lcd_controller File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/lcd_controller.vhd Line: 29
+Info (12021): Found 2 design units, including 1 entities, in source file top.vhd
+    Info (12022): Found design unit 1: top-logicfunction File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 51
+    Info (12023): Found entity 1: top File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 12
+Warning (12019): Can't analyze file -- file output_files/debounce_fsm.vhd is missing
+Info (12127): Elaborating entity "top" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at top.vhd(81): object "w_lcd_busy" assigned a value but never read File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 81
+Warning (10541): VHDL Signal Declaration warning at top.vhd(89): used implicit default value for signal "w_led2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 89
+Warning (10541): VHDL Signal Declaration warning at top.vhd(90): used implicit default value for signal "w_led3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 90
+Warning (10036): Verilog HDL or VHDL warning at top.vhd(99): object "w_1Hz" assigned a value but never read File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 99
+Warning (10540): VHDL Signal Declaration warning at top.vhd(110): used explicit default value for signal "w_btn4" because signal was never assigned a value File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 110
+Warning (10540): VHDL Signal Declaration warning at top.vhd(111): used explicit default value for signal "w_btn5" because signal was never assigned a value File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 111
+Warning (10540): VHDL Signal Declaration warning at top.vhd(112): used explicit default value for signal "w_btn6" because signal was never assigned a value File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 112
+Warning (10540): VHDL Signal Declaration warning at top.vhd(113): used explicit default value for signal "w_btn7" because signal was never assigned a value File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 113
+Warning (10540): VHDL Signal Declaration warning at top.vhd(114): used explicit default value for signal "w_btn8" because signal was never assigned a value File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 114
+Warning (10540): VHDL Signal Declaration warning at top.vhd(115): used explicit default value for signal "w_btn9" because signal was never assigned a value File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 115
+Warning (10540): VHDL Signal Declaration warning at top.vhd(118): used explicit default value for signal "w_btn_up" because signal was never assigned a value File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 118
+Warning (10540): VHDL Signal Declaration warning at top.vhd(119): used explicit default value for signal "w_btn_down" because signal was never assigned a value File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 119
+Warning (10540): VHDL Signal Declaration warning at top.vhd(120): used explicit default value for signal "w_btn_r" because signal was never assigned a value File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 120
+Warning (10540): VHDL Signal Declaration warning at top.vhd(121): used explicit default value for signal "w_btn_l" because signal was never assigned a value File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 121
+Info (12128): Elaborating entity "fsm" for hierarchy "fsm:main_fsm" File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 133
+Info (12128): Elaborating entity "debounce_fsm" for hierarchy "debounce_fsm:btn_controller" File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 146
+Info (12128): Elaborating entity "lcd_controller" for hierarchy "lcd_controller:lcd_controller" File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 170
+Info (12128): Elaborating entity "spi_fsm" for hierarchy "spi_fsm:spi0" File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 183
+Warning (10036): Verilog HDL or VHDL warning at spi_fsm.vhd(26): object "data_out" assigned a value but never read File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/spi_fsm.vhd Line: 26
+Warning (10036): Verilog HDL or VHDL warning at spi_fsm.vhd(27): object "leggi" assigned a value but never read File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/spi_fsm.vhd Line: 27
+Info (12128): Elaborating entity "spi" for hierarchy "spi_fsm:spi0|spi:spi" File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/spi_fsm.vhd Line: 39
+Info (12128): Elaborating entity "clock_generator" for hierarchy "clock_generator:tim_1Hz" File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 201
+Info (12128): Elaborating entity "clock_generator" for hierarchy "clock_generator:tim_100kHz" File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 211
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "PCB_MISO" and its non-tri-state driver. File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 23
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "PCB_MOSI" has no driver File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 24
+    Warning (13040): bidirectional pin "PCB_SCK" has no driver File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 25
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "PCB_MISO~synth" File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 23
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LED[2]" is stuck at GND File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 16
+    Warning (13410): Pin "LED[3]" is stuck at GND File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 16
+    Warning (13410): Pin "PCB_RW" is stuck at GND File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 20
+    Warning (13410): Pin "PCB_DB[6]" is stuck at GND File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 27
+    Warning (13410): Pin "PCB_DB[7]" is stuck at GND File: C:/Users/stefa/Desktop/_QUARTUS PROJECTS/FPGA_project_Molari_Kretinin (LCD funzionante +SPI OK)/top.vhd Line: 27
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 406 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 15 output pins
+    Info (21060): Implemented 3 bidirectional pins
+    Info (21061): Implemented 383 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 31 warnings
+    Info: Peak virtual memory: 4924 megabytes
+    Info: Processing ended: Sat Feb 08 10:07:22 2025
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:10
+
+
