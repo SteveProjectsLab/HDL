@@ -1,7 +1,0 @@
-
-State Machine - |top_spiir|basic_iir:spi0|state
-Name state.set_strobe state.elaboration state.waiting state.verify 
-state.verify 0 0 0 0 
-state.waiting 0 0 1 1 
-state.elaboration 0 1 0 1 
-state.set_strobe 1 0 0 1 
