@@ -1,0 +1,197 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/18.1
+Ebuttons_controller
+Z0 w1733223827
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 88
+Z3 dC:/Users/stefa/Desktop/_modelsim_all
+Z4 8C:/Users/stefa/Desktop/_modelsim_all/buttons_controller.vhd
+Z5 FC:/Users/stefa/Desktop/_modelsim_all/buttons_controller.vhd
+l0
+L4 1
+VYWG5:US8UUS=S^gOin8bm3
+!s100 S_ZRPTRPJCfkCjR?4f:g?1
+Z6 OV;C;2020.1;71
+32
+Z7 !s110 1737365043
+!i10b 1
+Z8 !s108 1737365042.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/stefa/Desktop/_modelsim_all/buttons_controller.vhd|
+Z10 !s107 C:/Users/stefa/Desktop/_modelsim_all/buttons_controller.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1 CvgOpt 0
+Abox
+R1
+R2
+Z13 DEx4 work 18 buttons_controller 0 22 YWG5:US8UUS=S^gOin8bm3
+!i122 88
+l47
+L27 82
+VBPoFhmHE?J6z41g<>bH]83
+!s100 Qa]]P@:Ti:jR[n]?XA7]Z0
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Alogic
+R1
+DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R13
+l46
+L27
+V?6?m@ojb97AOZYBPZ[=A]2
+!s100 <^M`2]=QAKXA96M9B;P8z2
+OV;C;10.5b;63
+32
+!s110 1733167249
+!i10b 1
+!s108 1733167249.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/stefa/OneDrive/Desktop/_modelsim_all/buttons_controller.vhd|
+!s107 C:/Users/stefa/OneDrive/Desktop/_modelsim_all/buttons_controller.vhd|
+!i113 1
+R11
+R12
+w1733167245
+dC:/Users/stefa/OneDrive/Desktop/_modelsim_all
+FC:/Users/stefa/OneDrive/Desktop/_modelsim_all/buttons_controller.vhd
+8C:/Users/stefa/OneDrive/Desktop/_modelsim_all/buttons_controller.vhd
+Edebounce
+Z14 w1733161171
+R1
+R2
+!i122 89
+R3
+Z15 8C:/Users/stefa/Desktop/_modelsim_all/debounce.vhd
+Z16 FC:/Users/stefa/Desktop/_modelsim_all/debounce.vhd
+l0
+Z17 L29 1
+V5YPFn4T377BzASQ3zobJL2
+!s100 =Sd0WE3I`F6QZF9aMPj0e1
+R6
+32
+R7
+!i10b 1
+Z18 !s108 1737365043.000000
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/stefa/Desktop/_modelsim_all/debounce.vhd|
+Z20 !s107 C:/Users/stefa/Desktop/_modelsim_all/debounce.vhd|
+!i113 1
+R11
+R12
+Alogic
+R1
+R2
+DEx4 work 8 debounce 0 22 5YPFn4T377BzASQ3zobJL2
+!i122 89
+l43
+L40 27
+Vl4VHI9>cE=VY@Ma9>ZzP]2
+!s100 n>S:eQmWnAWEzR4keYU>d2
+R6
+32
+R7
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R11
+R12
+Elcd_controller
+Z21 w1731998695
+R1
+R2
+!i122 90
+R3
+Z22 8C:/Users/stefa/Desktop/_modelsim_all/lcd_controller.vhd
+Z23 FC:/Users/stefa/Desktop/_modelsim_all/lcd_controller.vhd
+l0
+R17
+VFIRKiXQ0`G77jnUkj>>c>3
+!s100 mUR8FN3ge9kgJ@_6BohlC0
+R6
+32
+R7
+!i10b 1
+R18
+Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/stefa/Desktop/_modelsim_all/lcd_controller.vhd|
+Z25 !s107 C:/Users/stefa/Desktop/_modelsim_all/lcd_controller.vhd|
+!i113 1
+R11
+R12
+Acontroller
+R1
+R2
+DEx4 work 14 lcd_controller 0 22 FIRKiXQ0`G77jnUkj>>c>3
+!i122 90
+l52
+L49 113
+VI=C=`Wk30iDe^bZjicc3;1
+!s100 GeV=NU^39L6iZhXbT8kBn1
+R6
+32
+R7
+!i10b 1
+R18
+R24
+R25
+!i113 1
+R11
+R12
+Etb_all
+Z26 w1737365036
+R1
+R2
+!i122 91
+R3
+Z27 8C:/Users/stefa/Desktop/_modelsim_all/tb_ALL.vhd
+Z28 FC:/Users/stefa/Desktop/_modelsim_all/tb_ALL.vhd
+l0
+L7 1
+Vjn[]go2SQXmDHkkOiP2ai2
+!s100 =zbacWU=Sb9HQ:^GGRH<A1
+R6
+32
+R7
+!i10b 1
+R18
+Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/stefa/Desktop/_modelsim_all/tb_ALL.vhd|
+Z30 !s107 C:/Users/stefa/Desktop/_modelsim_all/tb_ALL.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R1
+R2
+Z31 DEx4 work 6 tb_all 0 22 jn[]go2SQXmDHkkOiP2ai2
+!i122 91
+l97
+Z32 L10 236
+Z33 V4Ggd69^LzV_O`R5=LNfFF1
+Z34 !s100 @9]S=0o5GP6bNa0Uc3]oj2
+R6
+32
+R7
+!i10b 1
+R18
+R29
+R30
+!i113 1
+R11
+R12

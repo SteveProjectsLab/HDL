@@ -1,0 +1,228 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/stefa/Desktop/_modelsim_all/_modelsim_timer
+Ebasic_spi
+Z0 w1715863900
+Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 46
+Z4 dC:/Users/stefa/Desktop/_modelsim_all/_modelsim_l10
+Z5 8C:/Users/stefa/Desktop/_modelsim_all/_modelsim_l10/basic_spi.vhd
+Z6 FC:/Users/stefa/Desktop/_modelsim_all/_modelsim_l10/basic_spi.vhd
+l0
+Z7 L21 1
+VkT?^`B8SdnnVG>:eGMm912
+!s100 IPKjK8Ij[8;XLOfDW_znC2
+Z8 OV;C;2020.1;71
+32
+Z9 !s110 1736945945
+!i10b 1
+Z10 !s108 1736945945.000000
+Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/stefa/Desktop/_modelsim_all/_modelsim_l10/basic_spi.vhd|
+!s107 C:/Users/stefa/Desktop/_modelsim_all/_modelsim_l10/basic_spi.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Abehavioral
+Z14 DEx4 work 3 spi 0 22 TiLazWc9@H6IbC02N?ocW2
+Z15 DEx4 work 15 blink_heartbeat 0 22 VIE@f2=a=GS?R0>BVXFoz2
+R1
+R2
+R3
+DEx4 work 9 basic_spi 0 22 kT?^`B8SdnnVG>:eGMm912
+!i122 46
+l44
+L37 48
+V8`f<]9Dd2H6362g:3HC<N1
+!s100 jz>S=Uj@Qz=G@5AZFYWfU1
+R8
+32
+R9
+!i10b 1
+R10
+R11
+Z16 !s107 C:/Users/stefa/Desktop/_modelsim_all/_modelsim_l10/basic_spi.vhd|
+!i113 1
+R12
+R13
+Ebasic_spi_tb
+R0
+Z17 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z18 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+R2
+R3
+!i122 42
+R4
+Z19 8C:/Users/stefa/Desktop/_modelsim_all/_modelsim_l10/basic_spi_tb.vhd
+Z20 FC:/Users/stefa/Desktop/_modelsim_all/_modelsim_l10/basic_spi_tb.vhd
+l0
+L9 1
+ViL@_8@:QQ]FX3FnS8LS`43
+!s100 hja;@<KARPW@MC:5E=FQk1
+R8
+32
+R9
+!i10b 1
+R10
+Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/stefa/Desktop/_modelsim_all/_modelsim_l10/basic_spi_tb.vhd|
+Z22 !s107 C:/Users/stefa/Desktop/_modelsim_all/_modelsim_l10/basic_spi_tb.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R17
+R18
+R2
+R3
+DEx4 work 12 basic_spi_tb 0 22 iL@_8@:QQ]FX3FnS8LS`43
+!i122 42
+l61
+L12 97
+V?R9hz9f>j>9Co?547?]Yf3
+!s100 K3l5MaWZW1E0[_7?J<i8c3
+R8
+32
+R9
+!i10b 1
+R10
+R21
+R22
+!i113 1
+R12
+R13
+Eblink_heartbeat
+Z23 w1716462984
+R1
+R2
+R3
+!i122 45
+R4
+Z24 8C:/Users/stefa/Desktop/_modelsim_all/_modelsim_l10/blink_heartbeat.vhd
+Z25 FC:/Users/stefa/Desktop/_modelsim_all/_modelsim_l10/blink_heartbeat.vhd
+l0
+L18 1
+VVIE@f2=a=GS?R0>BVXFoz2
+!s100 k_KJ3bCz57m]cg;VzI_jD0
+R8
+32
+R9
+!i10b 1
+R10
+Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/stefa/Desktop/_modelsim_all/_modelsim_l10/blink_heartbeat.vhd|
+Z27 !s107 C:/Users/stefa/Desktop/_modelsim_all/_modelsim_l10/blink_heartbeat.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R1
+R2
+R3
+R15
+!i122 45
+l27
+L23 16
+VPeQ<AeR@THjoQSXK1<e2j1
+!s100 dBS2V1dE>]URU1DBc;7KC1
+R8
+32
+R9
+!i10b 1
+R10
+R26
+R27
+!i113 1
+R12
+R13
+Espi
+R0
+R1
+R2
+R3
+!i122 43
+R4
+Z28 8C:/Users/stefa/Desktop/_modelsim_all/_modelsim_l10/spi.vhd
+Z29 FC:/Users/stefa/Desktop/_modelsim_all/_modelsim_l10/spi.vhd
+l0
+R7
+VTiLazWc9@H6IbC02N?ocW2
+!s100 55=>5P<kebW737o<lVlU>3
+R8
+32
+R9
+!i10b 1
+R10
+Z30 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/stefa/Desktop/_modelsim_all/_modelsim_l10/spi.vhd|
+Z31 !s107 C:/Users/stefa/Desktop/_modelsim_all/_modelsim_l10/spi.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R1
+R2
+R3
+R14
+!i122 43
+l54
+L37 86
+VchVNVF;I=ga=jNFmJAz2l3
+!s100 odE]I<egWh^jb9hzl8:9Y1
+R8
+32
+R9
+!i10b 1
+R10
+R30
+R31
+!i113 1
+R12
+R13
+Espi_tb
+R0
+R2
+R3
+!i122 44
+R4
+Z32 8C:/Users/stefa/Desktop/_modelsim_all/_modelsim_l10/spi_tb.vhd
+Z33 FC:/Users/stefa/Desktop/_modelsim_all/_modelsim_l10/spi_tb.vhd
+l0
+L9 1
+VUAo2Rj:igHfMNF;@9V`]43
+!s100 ?PRJMYgd@aOmG=?RgK_:N0
+R8
+32
+R9
+!i10b 1
+R10
+Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/stefa/Desktop/_modelsim_all/_modelsim_l10/spi_tb.vhd|
+Z35 !s107 C:/Users/stefa/Desktop/_modelsim_all/_modelsim_l10/spi_tb.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R2
+R3
+DEx4 work 6 spi_tb 0 22 UAo2Rj:igHfMNF;@9V`]43
+!i122 44
+l49
+L12 88
+V<mVfh_kWiELV^R^:DX0e[3
+!s100 _bDlKLEbaaZJRbF0T@HDc2
+R8
+32
+R9
+!i10b 1
+R10
+R34
+R35
+!i113 1
+R12
+R13

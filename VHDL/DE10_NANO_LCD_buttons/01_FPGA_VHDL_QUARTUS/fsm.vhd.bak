@@ -1,0 +1,22 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY lcd_controller IS
+  GENERIC(
+    clk_freq       :  INTEGER    := 50;    --system clock frequency in MHz
+    display_lines  :  STD_LOGIC  := '1';   --number of display lines (0 = 1-line mode, 1 = 2-line mode)
+    character_font :  STD_LOGIC  := '0';   --font (0 = 5x8 dots, 1 = 5x10 dots)
+    display_on_off :  STD_LOGIC  := '1';   --display on/off (0 = off, 1 = on)
+    cursor         :  STD_LOGIC  := '0';   --cursor on/off (0 = off, 1 = on)
+    blink          :  STD_LOGIC  := '0';   --blink on/off (0 = off, 1 = on)
+    inc_dec        :  STD_LOGIC  := '1';   --increment/decrement (0 = decrement, 1 = increment)
+    shift          :  STD_LOGIC  := '0');  --shift on/off (0 = off, 1 = on)
+  PORT(
+    clk        : IN   STD_LOGIC;                     --system clock
+    reset_n    : IN   STD_LOGIC;                     --active low reinitializes lcd
+    lcd_enable : IN   STD_LOGIC;                     --latches data into lcd controller
+    lcd_bus    : IN   STD_LOGIC_VECTOR(9 DOWNTO 0);  --data and control signals
+    busy       : OUT  STD_LOGIC := '1';              --lcd controller busy/idle feedback
+    rw, rs, e  : OUT  STD_LOGIC;                     --read/write, setup/data, and enable for lcd
+    lcd_data   : OUT  STD_LOGIC_VECTOR(7 DOWNTO 0)); --data signals for lcd
+END lcd_controller;
