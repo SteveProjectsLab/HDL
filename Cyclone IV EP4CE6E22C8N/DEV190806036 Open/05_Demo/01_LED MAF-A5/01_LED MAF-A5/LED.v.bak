@@ -1,0 +1,22 @@
+module LED
+(
+	output reg LED [1:0],
+	input clk
+);
+
+reg [31:0] cnt;
+
+always@(posedge clk)
+begin
+	if(&cnt)
+		begin
+		cnt<=0;
+		LED<=2'b01;
+		end
+	else if(cnt==16'hffff)
+		LED<=~LED;
+	else
+		cnt<=cnt+1;
+end
+
+endmodule

@@ -1,0 +1,15 @@
+set_instance_assignment -name ENABLE_OPEN_DRAIN -to led[3]~output false
+set_instance_assignment -name ENABLE_OPEN_DRAIN -to led[2]~output false
+set_instance_assignment -name ENABLE_OPEN_DRAIN -to led[0]~output false
+set_instance_assignment -name ENABLE_OPEN_DRAIN -to led[1]~output false
+set_location_assignment -to clk PIN_23
+set_instance_assignment -to clk -name IO_STANDARD "2.5 V"
+set_location_assignment -to led PIN_114
+set_location_assignment -to led[0] PIN_114
+set_instance_assignment -to led[0] -name IO_STANDARD "2.5 V"
+set_location_assignment -to led[1] PIN_115
+set_instance_assignment -to led[1] -name IO_STANDARD "2.5 V"
+set_location_assignment -to led[2] PIN_113
+set_instance_assignment -to led[2] -name IO_STANDARD "2.5 V"
+set_location_assignment -to led[3] PIN_112
+set_instance_assignment -to led[3] -name IO_STANDARD "2.5 V"

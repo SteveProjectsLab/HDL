@@ -1,0 +1,27 @@
+Quartus II Archive log --	F:/PCB PRO/FPGA Core board/MCC-C/MCC-C-V1R06/MCC-C-CX-V1R06/01_LED MAF-A5/LED.qarlog
+
+Archive:	F:/PCB PRO/FPGA Core board/MCC-C/MCC-C-V1R06/MCC-C-CX-V1R06/01_LED MAF-A5/LED.qar
+Date:		Wed Mar 01 20:17:35 2023
+Quartus II 64-Bit		13.1.0 Build 162 10/23/2013 SJ Full Version
+
+	=========== Files Selected: ===========
+F:/PCB PRO/FPGA Core board/MCC-C/MCC-C-V1R06/MCC-C-CX-V1R06/01_LED MAF-A5/db/tmp_qic_export_dir/LED.cmp.atm
+F:/PCB PRO/FPGA Core board/MCC-C/MCC-C-V1R06/MCC-C-CX-V1R06/01_LED MAF-A5/db/tmp_qic_export_dir/LED.cmp.dpi
+F:/PCB PRO/FPGA Core board/MCC-C/MCC-C-V1R06/MCC-C-CX-V1R06/01_LED MAF-A5/db/tmp_qic_export_dir/LED.cmp.hdbx
+F:/PCB PRO/FPGA Core board/MCC-C/MCC-C-V1R06/MCC-C-CX-V1R06/01_LED MAF-A5/db/tmp_qic_export_dir/LED.cmp.logdb
+F:/PCB PRO/FPGA Core board/MCC-C/MCC-C-V1R06/MCC-C-CX-V1R06/01_LED MAF-A5/db/tmp_qic_export_dir/LED.cmp.map.kpt
+F:/PCB PRO/FPGA Core board/MCC-C/MCC-C-V1R06/MCC-C-CX-V1R06/01_LED MAF-A5/db/tmp_qic_export_dir/LED.cmp.qxp_info
+F:/PCB PRO/FPGA Core board/MCC-C/MCC-C-V1R06/MCC-C-CX-V1R06/01_LED MAF-A5/db/tmp_qic_export_dir/LED.cmp.rcf
+F:/PCB PRO/FPGA Core board/MCC-C/MCC-C-V1R06/MCC-C-CX-V1R06/01_LED MAF-A5/db/tmp_qic_export_dir/LED.cmp.scidsc
+F:/PCB PRO/FPGA Core board/MCC-C/MCC-C-V1R06/MCC-C-CX-V1R06/01_LED MAF-A5/db/tmp_qic_export_dir/LED.map.atm
+F:/PCB PRO/FPGA Core board/MCC-C/MCC-C-V1R06/MCC-C-CX-V1R06/01_LED MAF-A5/db/tmp_qic_export_dir/LED.map.dpi
+F:/PCB PRO/FPGA Core board/MCC-C/MCC-C-V1R06/MCC-C-CX-V1R06/01_LED MAF-A5/db/tmp_qic_export_dir/LED.map.hdbx
+F:/PCB PRO/FPGA Core board/MCC-C/MCC-C-V1R06/MCC-C-CX-V1R06/01_LED MAF-A5/db/tmp_qic_export_dir/LED.map.logdb
+F:/PCB PRO/FPGA Core board/MCC-C/MCC-C-V1R06/MCC-C-CX-V1R06/01_LED MAF-A5/db/tmp_qic_export_dir/LED.map.map.kpt
+F:/PCB PRO/FPGA Core board/MCC-C/MCC-C-V1R06/MCC-C-CX-V1R06/01_LED MAF-A5/db/tmp_qic_export_dir/LED.map.qxp_info
+F:/PCB PRO/FPGA Core board/MCC-C/MCC-C-V1R06/MCC-C-CX-V1R06/01_LED MAF-A5/db/tmp_qic_export_dir/LED.map.scidsc
+F:/PCB PRO/FPGA Core board/MCC-C/MCC-C-V1R06/MCC-C-CX-V1R06/01_LED MAF-A5/db/tmp_qic_export_dir/qic_export_file_list
+	======= Total: 16 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
