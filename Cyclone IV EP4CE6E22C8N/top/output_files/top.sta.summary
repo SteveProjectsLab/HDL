@@ -1,0 +1,41 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1000mV 85C Model Setup 'FPGA_CLK1_50'
+Slack : -3.282
+TNS   : -80.850
+
+Type  : Slow 1000mV 85C Model Hold 'FPGA_CLK1_50'
+Slack : 0.511
+TNS   : 0.000
+
+Type  : Slow 1000mV 85C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -3.000
+TNS   : -68.231
+
+Type  : Slow 1000mV 0C Model Setup 'FPGA_CLK1_50'
+Slack : -3.109
+TNS   : -76.751
+
+Type  : Slow 1000mV 0C Model Hold 'FPGA_CLK1_50'
+Slack : 0.494
+TNS   : 0.000
+
+Type  : Slow 1000mV 0C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -3.000
+TNS   : -68.231
+
+Type  : Fast 1000mV 0C Model Setup 'FPGA_CLK1_50'
+Slack : -1.426
+TNS   : -29.064
+
+Type  : Fast 1000mV 0C Model Hold 'FPGA_CLK1_50'
+Slack : 0.275
+TNS   : 0.000
+
+Type  : Fast 1000mV 0C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -3.000
+TNS   : -68.231
+
+------------------------------------------------------------
