@@ -1,6 +1,6 @@
 Fitter report for blink
-Mon Mar 03 23:02:19 2025
-Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+Sun Oct 12 11:49:19 2025
+Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
 ---------------------
@@ -21,173 +21,184 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
  13. Delay Chain Summary
  14. Control Signals
  15. Global & Other Fast Signals
- 16. Non-Global High Fan-Out Signals
- 17. Routing Usage Summary
- 18. LAB Logic Elements
- 19. LAB-wide Signals
- 20. LAB Signals Sourced
- 21. LAB Signals Sourced Out
- 22. LAB Distinct Inputs
- 23. Fitter Device Options
- 24. Fitter Messages
- 25. Fitter Suppressed Messages
+ 16. Routing Usage Summary
+ 17. LAB Logic Elements
+ 18. LAB-wide Signals
+ 19. LAB Signals Sourced
+ 20. LAB Signals Sourced Out
+ 21. LAB Distinct Inputs
+ 22. Fitter Device Options
+ 23. Fitter Messages
+ 24. Fitter Suppressed Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2013 Altera Corporation
+Copyright (C) 2025  Altera Corporation. All rights reserved.
 Your use of Altera Corporation's design tools, logic functions 
-and other software and tools, and its AMPP partner logic 
+and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
 to the terms and conditions of the Altera Program License 
-Subscription Agreement, Altera MegaCore Function License 
-Agreement, or other applicable license agreement, including, 
-without limitation, that your use is for the sole purpose of 
-programming logic devices manufactured by Altera and sold by 
-Altera or its authorized distributors.  Please refer to the 
-applicable agreement for further details.
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
 
 
 
-+------------------------------------------------------------------------+
-; Fitter Summary                                                         ;
-+---------------------------+--------------------------------------------+
-; Fitter Status             ; Successful - Mon Mar 03 23:02:19 2025      ;
-; Quartus II 64-Bit Version ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
-; Revision Name             ; blink                                      ;
-; Top-level Entity Name     ; blink                                      ;
-; Family                    ; MAX II                                     ;
-; Device                    ; EPM240T100C5                               ;
-; Timing Models             ; Final                                      ;
-; Total logic elements      ; 69 / 240 ( 29 % )                          ;
-; Total pins                ; 2 / 80 ( 3 % )                             ;
-; Total virtual pins        ; 0                                          ;
-; UFM blocks                ; 0 / 1 ( 0 % )                              ;
-+---------------------------+--------------------------------------------+
++-------------------------------------------------------------------------+
+; Fitter Summary                                                          ;
++-----------------------+-------------------------------------------------+
+; Fitter Status         ; Successful - Sun Oct 12 11:49:19 2025           ;
+; Quartus Prime Version ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
+; Revision Name         ; blink                                           ;
+; Top-level Entity Name ; blink                                           ;
+; Family                ; MAX II                                          ;
+; Device                ; EPM240T100C5                                    ;
+; Timing Models         ; Final                                           ;
+; Total logic elements  ; 69 / 240 ( 29 % )                               ;
+; Total pins            ; 2 / 80 ( 3 % )                                  ;
+; Total virtual pins    ; 0                                               ;
+; UFM blocks            ; 0 / 1 ( 0 % )                                   ;
++-----------------------+-------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Settings                                                                                                                              ;
-+----------------------------------------------------------------------------+--------------------------------+--------------------------------+
-; Option                                                                     ; Setting                        ; Default Value                  ;
-+----------------------------------------------------------------------------+--------------------------------+--------------------------------+
-; Device                                                                     ; EPM240T100C5                   ;                                ;
-; Minimum Core Junction Temperature                                          ; 0                              ;                                ;
-; Maximum Core Junction Temperature                                          ; 85                             ;                                ;
-; Fit Attempts to Skip                                                       ; 0                              ; 0.0                            ;
-; Device I/O Standard                                                        ; 3.3-V LVTTL                    ;                                ;
-; Use smart compilation                                                      ; Off                            ; Off                            ;
-; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                             ; On                             ;
-; Enable compact report table                                                ; Off                            ; Off                            ;
-; Router Timing Optimization Level                                           ; Normal                         ; Normal                         ;
-; Placement Effort Multiplier                                                ; 1.0                            ; 1.0                            ;
-; Router Effort Multiplier                                                   ; 1.0                            ; 1.0                            ;
-; Always Enable Input Buffers                                                ; Off                            ; Off                            ;
-; Optimize Hold Timing                                                       ; IO Paths and Minimum TPD Paths ; IO Paths and Minimum TPD Paths ;
-; Optimize Multi-Corner Timing                                               ; Off                            ; Off                            ;
-; Guarantee I/O Paths Have Zero Hold Time at Fast Corner                     ; On                             ; On                             ;
-; PowerPlay Power Optimization                                               ; Normal compilation             ; Normal compilation             ;
-; Optimize Timing                                                            ; Normal compilation             ; Normal compilation             ;
-; Optimize Timing for ECOs                                                   ; Off                            ; Off                            ;
-; Regenerate full fit report during ECO compiles                             ; Off                            ; Off                            ;
-; Optimize IOC Register Placement for Timing                                 ; Normal                         ; Normal                         ;
-; Limit to One Fitting Attempt                                               ; Off                            ; Off                            ;
-; Final Placement Optimizations                                              ; Automatically                  ; Automatically                  ;
-; Fitter Aggressive Routability Optimizations                                ; Automatically                  ; Automatically                  ;
-; Fitter Initial Placement Seed                                              ; 1                              ; 1                              ;
-; Slow Slew Rate                                                             ; Off                            ; Off                            ;
-; PCI I/O                                                                    ; Off                            ; Off                            ;
-; Weak Pull-Up Resistor                                                      ; Off                            ; Off                            ;
-; Enable Bus-Hold Circuitry                                                  ; Off                            ; Off                            ;
-; Auto Delay Chains                                                          ; On                             ; On                             ;
-; Auto Delay Chains for High Fanout Input Pins                               ; Off                            ; Off                            ;
-; Perform Physical Synthesis for Combinational Logic for Performance         ; Off                            ; Off                            ;
-; Perform Register Duplication for Performance                               ; Off                            ; Off                            ;
-; Perform Register Retiming for Performance                                  ; Off                            ; Off                            ;
-; Perform Asynchronous Signal Pipelining                                     ; Off                            ; Off                            ;
-; Fitter Effort                                                              ; Auto Fit                       ; Auto Fit                       ;
-; Physical Synthesis Effort Level                                            ; Normal                         ; Normal                         ;
-; Logic Cell Insertion - Logic Duplication                                   ; Auto                           ; Auto                           ;
-; Auto Register Duplication                                                  ; Auto                           ; Auto                           ;
-; Auto Global Clock                                                          ; On                             ; On                             ;
-; Auto Global Register Control Signals                                       ; On                             ; On                             ;
-; Force Fitter to Avoid Periphery Placement Warnings                         ; Off                            ; Off                            ;
-+----------------------------------------------------------------------------+--------------------------------+--------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Settings                                                                                                                      ;
++--------------------------------------------------------------------+--------------------------------+--------------------------------+
+; Option                                                             ; Setting                        ; Default Value                  ;
++--------------------------------------------------------------------+--------------------------------+--------------------------------+
+; Device                                                             ; EPM240T100C5                   ;                                ;
+; Minimum Core Junction Temperature                                  ; 0                              ;                                ;
+; Maximum Core Junction Temperature                                  ; 85                             ;                                ;
+; Fit Attempts to Skip                                               ; 0                              ; 0.0                            ;
+; Device I/O Standard                                                ; 3.3-V LVTTL                    ;                                ;
+; Use smart compilation                                              ; Off                            ; Off                            ;
+; Enable parallel Assembler and Timing Analyzer during compilation   ; On                             ; On                             ;
+; Enable compact report table                                        ; Off                            ; Off                            ;
+; Router Timing Optimization Level                                   ; Normal                         ; Normal                         ;
+; Placement Effort Multiplier                                        ; 1.0                            ; 1.0                            ;
+; Router Effort Multiplier                                           ; 1.0                            ; 1.0                            ;
+; Always Enable Input Buffers                                        ; Off                            ; Off                            ;
+; Optimize Hold Timing                                               ; IO Paths and Minimum TPD Paths ; IO Paths and Minimum TPD Paths ;
+; Optimize Multi-Corner Timing                                       ; Off                            ; Off                            ;
+; Guarantee I/O Paths Have Zero Hold Time at Fast Corner             ; On                             ; On                             ;
+; Power Optimization During Fitting                                  ; Normal compilation             ; Normal compilation             ;
+; Optimize Timing                                                    ; Normal compilation             ; Normal compilation             ;
+; Optimize Timing for ECOs                                           ; Off                            ; Off                            ;
+; Regenerate Full Fit Report During ECO Compiles                     ; Off                            ; Off                            ;
+; Optimize IOC Register Placement for Timing                         ; Normal                         ; Normal                         ;
+; Limit to One Fitting Attempt                                       ; Off                            ; Off                            ;
+; Final Placement Optimizations                                      ; Automatically                  ; Automatically                  ;
+; Fitter Aggressive Routability Optimizations                        ; Automatically                  ; Automatically                  ;
+; Fitter Initial Placement Seed                                      ; 1                              ; 1                              ;
+; Periphery to Core Placement and Routing Optimization               ; Off                            ; Off                            ;
+; Slow Slew Rate                                                     ; Off                            ; Off                            ;
+; PCI I/O                                                            ; Off                            ; Off                            ;
+; Weak Pull-Up Resistor                                              ; Off                            ; Off                            ;
+; Enable Bus-Hold Circuitry                                          ; Off                            ; Off                            ;
+; Auto Delay Chains                                                  ; On                             ; On                             ;
+; Auto Delay Chains for High Fanout Input Pins                       ; Off                            ; Off                            ;
+; Perform Physical Synthesis for Combinational Logic for Performance ; Off                            ; Off                            ;
+; Perform Register Duplication for Performance                       ; Off                            ; Off                            ;
+; Perform Register Retiming for Performance                          ; Off                            ; Off                            ;
+; Perform Asynchronous Signal Pipelining                             ; Off                            ; Off                            ;
+; Fitter Effort                                                      ; Auto Fit                       ; Auto Fit                       ;
+; Physical Synthesis Effort Level                                    ; Normal                         ; Normal                         ;
+; Logic Cell Insertion - Logic Duplication                           ; Auto                           ; Auto                           ;
+; Auto Register Duplication                                          ; Auto                           ; Auto                           ;
+; Auto Global Clock                                                  ; On                             ; On                             ;
+; Auto Global Register Control Signals                               ; On                             ; On                             ;
+; Force Fitter to Avoid Periphery Placement Warnings                 ; Off                            ; Off                            ;
++--------------------------------------------------------------------+--------------------------------+--------------------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 32     ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 32          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.04        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.3%      ;
++----------------------------+-------------+
 
 
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/stefa/Desktop/max ii/blink/output_files/blink.pin.
+The pin-out file can be found in C:/Users/stefa/Documents/GitHub/HDL/max ii/blink/output_files/blink.pin.
 
 
-+-----------------------------------------------------------------+
-; Fitter Resource Usage Summary                                   ;
-+---------------------------------------------+-------------------+
-; Resource                                    ; Usage             ;
-+---------------------------------------------+-------------------+
-; Total logic elements                        ; 69 / 240 ( 29 % ) ;
-;     -- Combinational with no register       ; 36                ;
-;     -- Register only                        ; 13                ;
-;     -- Combinational with a register        ; 20                ;
-;                                             ;                   ;
-; Logic element usage by number of LUT inputs ;                   ;
-;     -- 4 input functions                    ; 10                ;
-;     -- 3 input functions                    ; 14                ;
-;     -- 2 input functions                    ; 31                ;
-;     -- 1 input functions                    ; 1                 ;
-;     -- 0 input functions                    ; 0                 ;
-;                                             ;                   ;
-; Logic elements by mode                      ;                   ;
-;     -- normal mode                          ; 38                ;
-;     -- arithmetic mode                      ; 31                ;
-;     -- qfbk mode                            ; 6                 ;
-;     -- register cascade mode                ; 0                 ;
-;     -- synchronous clear/load mode          ; 16                ;
-;     -- asynchronous clear/load mode         ; 0                 ;
-;                                             ;                   ;
-; Total registers                             ; 33 / 240 ( 14 % ) ;
-; Total LABs                                  ; 9 / 24 ( 38 % )   ;
-; Logic elements in carry chains              ; 32                ;
-; Virtual pins                                ; 0                 ;
-; I/O pins                                    ; 2 / 80 ( 3 % )    ;
-;     -- Clock pins                           ; 1 / 4 ( 25 % )    ;
-;                                             ;                   ;
-; Global signals                              ; 1                 ;
-; UFM blocks                                  ; 0 / 1 ( 0 % )     ;
-; Global clocks                               ; 1 / 4 ( 25 % )    ;
-; JTAGs                                       ; 0 / 1 ( 0 % )     ;
-; Average interconnect usage (total/H/V)      ; 5% / 3% / 7%      ;
-; Peak interconnect usage (total/H/V)         ; 5% / 3% / 7%      ;
-; Maximum fan-out                             ; 33                ;
-; Highest non-global fan-out                  ; 14                ;
-; Total fan-out                               ; 216               ;
-; Average fan-out                             ; 3.04              ;
-+---------------------------------------------+-------------------+
++------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                    ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+; Total logic elements                        ; 69 / 240 ( 29 % )  ;
+;     -- Combinational with no register       ; 36                 ;
+;     -- Register only                        ; 13                 ;
+;     -- Combinational with a register        ; 20                 ;
+;                                             ;                    ;
+; Logic element usage by number of LUT inputs ;                    ;
+;     -- 4 input functions                    ; 10                 ;
+;     -- 3 input functions                    ; 14                 ;
+;     -- 2 input functions                    ; 31                 ;
+;     -- 1 input functions                    ; 1                  ;
+;     -- 0 input functions                    ; 0                  ;
+;                                             ;                    ;
+; Logic elements by mode                      ;                    ;
+;     -- normal mode                          ; 38                 ;
+;     -- arithmetic mode                      ; 31                 ;
+;     -- qfbk mode                            ; 6                  ;
+;     -- register cascade mode                ; 0                  ;
+;     -- synchronous clear/load mode          ; 16                 ;
+;     -- asynchronous clear/load mode         ; 0                  ;
+;                                             ;                    ;
+; Total registers                             ; 33 / 240 ( 14 % )  ;
+; Total LABs                                  ; 10 / 24 ( 42 % )   ;
+; Logic elements in carry chains              ; 32                 ;
+; Virtual pins                                ; 0                  ;
+; I/O pins                                    ; 2 / 80 ( 3 % )     ;
+;     -- Clock pins                           ; 1 / 4 ( 25 % )     ;
+;                                             ;                    ;
+; UFM blocks                                  ; 0 / 1 ( 0 % )      ;
+;                                             ;                    ;
+;     -- Total Fixed Point DSP Blocks         ; 0                  ;
+;     -- Total Floating Point DSP Blocks      ; 0                  ;
+;                                             ;                    ;
+; Global signals                              ; 1                  ;
+;     -- Global clocks                        ; 1 / 4 ( 25 % )     ;
+; JTAGs                                       ; 0 / 1 ( 0 % )      ;
+; Average interconnect usage (total/H/V)      ; 5.4% / 2.6% / 8.4% ;
+; Peak interconnect usage (total/H/V)         ; 5.4% / 2.6% / 8.4% ;
+; Maximum fan-out                             ; 33                 ;
+; Highest non-global fan-out                  ; 14                 ;
+; Total fan-out                               ; 216                ;
+; Average fan-out                             ; 3.04               ;
++---------------------------------------------+--------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Input Pins                                                                                                                                                                                                  ;
-+------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
-; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Location assigned by ;
-+------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
-; CLK  ; 12    ; 1        ; 1            ; 3            ; 3           ; 33                    ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
-+------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                                                                                                                   ;
++------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+----------------+
+; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Location assigned by ; Slow Slew Rate ;
++------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+----------------+
+; CLK  ; 12    ; 1        ; 1            ; 3            ; 3           ; 33                    ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ; no             ;
++------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+----------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -334,13 +345,13 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
-; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
-; |blink                     ; 69 (69)     ; 33           ; 0          ; 2    ; 0            ; 36 (36)      ; 13 (13)           ; 20 (20)          ; 32 (32)         ; 6 (6)      ; |blink              ; work         ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                              ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; |blink                     ; 69 (69)     ; 33           ; 0          ; 2    ; 0            ; 36 (36)      ; 13 (13)           ; 20 (20)          ; 32 (32)         ; 6 (6)      ; |blink              ; blink       ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -372,248 +383,110 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+----------+---------+----------------------+------------------+
 
 
-+---------------------------------+
-; Non-Global High Fan-Out Signals ;
-+-------------------+-------------+
-; Name              ; Fan-Out     ;
-+-------------------+-------------+
-; Equal0~9          ; 14          ;
-; Equal0~4          ; 14          ;
-; Add0~122          ; 5           ;
-; Add0~102          ; 5           ;
-; Add0~77           ; 5           ;
-; Add0~52           ; 5           ;
-; Add0~42           ; 5           ;
-; Add0~17           ; 5           ;
-; counter[31]       ; 2           ;
-; counter[30]       ; 2           ;
-; counter[29]       ; 2           ;
-; counter[27]       ; 2           ;
-; counter[26]       ; 2           ;
-; counter[25]       ; 2           ;
-; counter[23]       ; 2           ;
-; counter[22]       ; 2           ;
-; counter[21]       ; 2           ;
-; counter[20]       ; 2           ;
-; counter[18]       ; 2           ;
-; counter[19]       ; 2           ;
-; counter[17]       ; 2           ;
-; counter[15]       ; 2           ;
-; counter[14]       ; 2           ;
-; counter[13]       ; 2           ;
-; counter[12]       ; 2           ;
-; counter[11]       ; 2           ;
-; counter[10]       ; 2           ;
-; counter[0]        ; 2           ;
-; counter[1]        ; 2           ;
-; counter[2]        ; 2           ;
-; counter[3]        ; 2           ;
-; counter[5]        ; 2           ;
-; counter[6]        ; 2           ;
-; counter[7]        ; 2           ;
-; clk_div           ; 2           ;
-; Add0~155          ; 1           ;
-; Add0~152          ; 1           ;
-; Add0~150          ; 1           ;
-; Add0~147COUT1_232 ; 1           ;
-; Add0~147          ; 1           ;
-; Add0~145          ; 1           ;
-; Add0~142COUT1_230 ; 1           ;
-; Add0~142          ; 1           ;
-; Add0~140          ; 1           ;
-; Add0~137COUT1_228 ; 1           ;
-; Add0~137          ; 1           ;
-; Add0~135          ; 1           ;
-; Add0~132COUT1_226 ; 1           ;
-; Add0~132          ; 1           ;
-; Add0~130          ; 1           ;
-; Add0~127COUT1_224 ; 1           ;
-; Add0~127          ; 1           ;
-; Add0~125          ; 1           ;
-; Add0~120          ; 1           ;
-; Add0~117COUT1_222 ; 1           ;
-; Add0~117          ; 1           ;
-; Add0~115          ; 1           ;
-; Add0~112COUT1_220 ; 1           ;
-; Add0~112          ; 1           ;
-; Add0~110          ; 1           ;
-; Add0~107COUT1_218 ; 1           ;
-; Add0~107          ; 1           ;
-; Add0~105          ; 1           ;
-; Add0~100          ; 1           ;
-; Add0~97COUT1_214  ; 1           ;
-; Add0~97           ; 1           ;
-; Add0~95           ; 1           ;
-; Add0~92COUT1_210  ; 1           ;
-; Add0~92           ; 1           ;
-; Add0~90           ; 1           ;
-; Add0~87COUT1_216  ; 1           ;
-; Add0~87           ; 1           ;
-; Add0~85           ; 1           ;
-; Add0~82COUT1_212  ; 1           ;
-; Add0~82           ; 1           ;
-; Add0~80           ; 1           ;
-; Add0~75           ; 1           ;
-; Add0~72COUT1_208  ; 1           ;
-; Add0~72           ; 1           ;
-; Add0~70           ; 1           ;
-; Add0~67COUT1_206  ; 1           ;
-; Add0~67           ; 1           ;
-; Add0~65           ; 1           ;
-; Add0~62COUT1_204  ; 1           ;
-; Add0~62           ; 1           ;
-; Add0~60           ; 1           ;
-; Add0~57COUT1_202  ; 1           ;
-; Add0~57           ; 1           ;
-; Add0~55           ; 1           ;
-; Add0~50           ; 1           ;
-; Add0~47COUT1_200  ; 1           ;
-; Add0~47           ; 1           ;
-; Add0~45           ; 1           ;
-; Add0~40           ; 1           ;
-; Add0~37COUT1_186  ; 1           ;
-; Add0~37           ; 1           ;
-; Add0~35           ; 1           ;
-; Add0~32COUT1_188  ; 1           ;
-; Add0~32           ; 1           ;
-; Add0~30           ; 1           ;
-; Add0~27COUT1_190  ; 1           ;
-; Add0~27           ; 1           ;
-; Add0~25           ; 1           ;
-; Add0~22COUT1_192  ; 1           ;
-; Add0~22           ; 1           ;
-; Add0~20           ; 1           ;
-; Add0~15           ; 1           ;
-; Add0~12COUT1_194  ; 1           ;
-; Add0~12           ; 1           ;
-; Add0~10           ; 1           ;
-; Add0~7COUT1_198   ; 1           ;
-; Add0~7            ; 1           ;
-; Add0~5            ; 1           ;
-; Add0~2COUT1_196   ; 1           ;
-; Add0~2            ; 1           ;
-; Add0~0            ; 1           ;
-; counter[28]       ; 1           ;
-; Equal0~8          ; 1           ;
-; counter[24]       ; 1           ;
-; Equal0~7          ; 1           ;
-; Equal0~6          ; 1           ;
-; counter[16]       ; 1           ;
-; Equal0~5          ; 1           ;
-; Equal0~3          ; 1           ;
-; counter[9]        ; 1           ;
-; Equal0~2          ; 1           ;
-; counter[4]        ; 1           ;
-; Equal0~1          ; 1           ;
-; counter[8]        ; 1           ;
-; Equal0~0          ; 1           ;
-+-------------------+-------------+
-
-
 +------------------------------------------+
 ; Routing Usage Summary                    ;
 +-----------------------+------------------+
 ; Routing Resource Type ; Usage            ;
 +-----------------------+------------------+
-; C4s                   ; 47 / 784 ( 6 % ) ;
-; Direct links          ; 17 / 888 ( 2 % ) ;
+; C4s                   ; 55 / 784 ( 7 % ) ;
+; Direct links          ; 14 / 888 ( 2 % ) ;
 ; Global clocks         ; 1 / 4 ( 25 % )   ;
 ; LAB clocks            ; 5 / 32 ( 16 % )  ;
 ; LUT chains            ; 0 / 216 ( 0 % )  ;
-; Local interconnects   ; 73 / 888 ( 8 % ) ;
-; R4s                   ; 22 / 704 ( 3 % ) ;
+; Local interconnects   ; 78 / 888 ( 9 % ) ;
+; R4s                   ; 20 / 704 ( 3 % ) ;
 +-----------------------+------------------+
 
 
-+--------------------------------------------------------------------------+
-; LAB Logic Elements                                                       ;
-+--------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 7.67) ; Number of LABs  (Total = 9) ;
-+--------------------------------------------+-----------------------------+
-; 1                                          ; 1                           ;
-; 2                                          ; 0                           ;
-; 3                                          ; 1                           ;
-; 4                                          ; 0                           ;
-; 5                                          ; 1                           ;
-; 6                                          ; 0                           ;
-; 7                                          ; 0                           ;
-; 8                                          ; 0                           ;
-; 9                                          ; 0                           ;
-; 10                                         ; 6                           ;
-+--------------------------------------------+-----------------------------+
-
-
-+------------------------------------------------------------------+
-; LAB-wide Signals                                                 ;
-+------------------------------------+-----------------------------+
-; LAB-wide Signals  (Average = 0.78) ; Number of LABs  (Total = 9) ;
-+------------------------------------+-----------------------------+
-; 1 Clock                            ; 7                           ;
-+------------------------------------+-----------------------------+
-
-
 +---------------------------------------------------------------------------+
-; LAB Signals Sourced                                                       ;
-+---------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 8.33) ; Number of LABs  (Total = 9) ;
-+---------------------------------------------+-----------------------------+
-; 0                                           ; 0                           ;
-; 1                                           ; 1                           ;
-; 2                                           ; 0                           ;
-; 3                                           ; 0                           ;
-; 4                                           ; 1                           ;
-; 5                                           ; 0                           ;
-; 6                                           ; 1                           ;
-; 7                                           ; 0                           ;
-; 8                                           ; 0                           ;
-; 9                                           ; 0                           ;
-; 10                                          ; 3                           ;
-; 11                                          ; 2                           ;
-; 12                                          ; 1                           ;
-+---------------------------------------------+-----------------------------+
+; LAB Logic Elements                                                        ;
++--------------------------------------------+------------------------------+
+; Number of Logic Elements  (Average = 6.90) ; Number of LABs  (Total = 10) ;
++--------------------------------------------+------------------------------+
+; 1                                          ; 1                            ;
+; 2                                          ; 2                            ;
+; 3                                          ; 0                            ;
+; 4                                          ; 1                            ;
+; 5                                          ; 0                            ;
+; 6                                          ; 0                            ;
+; 7                                          ; 0                            ;
+; 8                                          ; 0                            ;
+; 9                                          ; 0                            ;
+; 10                                         ; 6                            ;
++--------------------------------------------+------------------------------+
 
 
-+-------------------------------------------------------------------------------+
-; LAB Signals Sourced Out                                                       ;
-+-------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 6.67) ; Number of LABs  (Total = 9) ;
-+-------------------------------------------------+-----------------------------+
-; 0                                               ; 0                           ;
-; 1                                               ; 1                           ;
-; 2                                               ; 0                           ;
-; 3                                               ; 0                           ;
-; 4                                               ; 1                           ;
-; 5                                               ; 1                           ;
-; 6                                               ; 2                           ;
-; 7                                               ; 0                           ;
-; 8                                               ; 0                           ;
-; 9                                               ; 2                           ;
-; 10                                              ; 2                           ;
-+-------------------------------------------------+-----------------------------+
++-------------------------------------------------------------------+
+; LAB-wide Signals                                                  ;
++------------------------------------+------------------------------+
+; LAB-wide Signals  (Average = 0.80) ; Number of LABs  (Total = 10) ;
++------------------------------------+------------------------------+
+; 1 Clock                            ; 8                            ;
++------------------------------------+------------------------------+
 
 
-+---------------------------------------------------------------------------+
-; LAB Distinct Inputs                                                       ;
-+---------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 8.67) ; Number of LABs  (Total = 9) ;
-+---------------------------------------------+-----------------------------+
-; 0                                           ; 0                           ;
-; 1                                           ; 0                           ;
-; 2                                           ; 1                           ;
-; 3                                           ; 0                           ;
-; 4                                           ; 1                           ;
-; 5                                           ; 1                           ;
-; 6                                           ; 0                           ;
-; 7                                           ; 1                           ;
-; 8                                           ; 0                           ;
-; 9                                           ; 1                           ;
-; 10                                          ; 0                           ;
-; 11                                          ; 2                           ;
-; 12                                          ; 0                           ;
-; 13                                          ; 0                           ;
-; 14                                          ; 1                           ;
-; 15                                          ; 1                           ;
-+---------------------------------------------+-----------------------------+
++----------------------------------------------------------------------------+
+; LAB Signals Sourced                                                        ;
++---------------------------------------------+------------------------------+
+; Number of Signals Sourced  (Average = 7.50) ; Number of LABs  (Total = 10) ;
++---------------------------------------------+------------------------------+
+; 0                                           ; 0                            ;
+; 1                                           ; 1                            ;
+; 2                                           ; 1                            ;
+; 3                                           ; 1                            ;
+; 4                                           ; 0                            ;
+; 5                                           ; 1                            ;
+; 6                                           ; 0                            ;
+; 7                                           ; 0                            ;
+; 8                                           ; 0                            ;
+; 9                                           ; 0                            ;
+; 10                                          ; 3                            ;
+; 11                                          ; 2                            ;
+; 12                                          ; 1                            ;
++---------------------------------------------+------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; LAB Signals Sourced Out                                                        ;
++-------------------------------------------------+------------------------------+
+; Number of Signals Sourced Out  (Average = 6.00) ; Number of LABs  (Total = 10) ;
++-------------------------------------------------+------------------------------+
+; 0                                               ; 0                            ;
+; 1                                               ; 1                            ;
+; 2                                               ; 1                            ;
+; 3                                               ; 1                            ;
+; 4                                               ; 0                            ;
+; 5                                               ; 2                            ;
+; 6                                               ; 1                            ;
+; 7                                               ; 0                            ;
+; 8                                               ; 0                            ;
+; 9                                               ; 2                            ;
+; 10                                              ; 2                            ;
++-------------------------------------------------+------------------------------+
+
+
++----------------------------------------------------------------------------+
+; LAB Distinct Inputs                                                        ;
++---------------------------------------------+------------------------------+
+; Number of Distinct Inputs  (Average = 7.60) ; Number of LABs  (Total = 10) ;
++---------------------------------------------+------------------------------+
+; 0                                           ; 0                            ;
+; 1                                           ; 0                            ;
+; 2                                           ; 1                            ;
+; 3                                           ; 1                            ;
+; 4                                           ; 1                            ;
+; 5                                           ; 1                            ;
+; 6                                           ; 2                            ;
+; 7                                           ; 0                            ;
+; 8                                           ; 0                            ;
+; 9                                           ; 0                            ;
+; 10                                          ; 0                            ;
+; 11                                          ; 2                            ;
+; 12                                          ; 0                            ;
+; 13                                          ; 1                            ;
+; 14                                          ; 0                            ;
+; 15                                          ; 1                            ;
++---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------------+
@@ -627,14 +500,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Enable INIT_DONE output                      ; Off                      ;
 ; Configuration scheme                         ; Passive Serial           ;
 ; Reserve all unused pins                      ; As output driving ground ;
-; Base pin-out file on sameframe device        ; Off                      ;
 +----------------------------------------------+--------------------------+
 
 
 +-----------------+
 ; Fitter Messages ;
 +-----------------+
-Warning (20028): Parallel compilation is not licensed and has been disabled
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 32 processors detected
 Info (119006): Selected device EPM240T100C5 for design "blink"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
@@ -646,7 +519,7 @@ Info (176444): Device migration not selected. If you intend to use device migrat
     Info (176445): Device EPM570T100C5 is compatible
     Info (176445): Device EPM570T100I5 is compatible
     Info (176445): Device EPM570T100A5 is compatible
-Critical Warning (332012): Synopsys Design Constraints File file not found: 'blink.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'blink.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332144): No user constrained base clocks found in the design
 Info (332128): Timing requirements not specified -- optimizing circuit to achieve the following default global requirements
     Info (332127): Assuming a default timing requirement
@@ -655,13 +528,14 @@ Info (332111): Found 1 clocks
     Info (332111): ======== ============
     Info (332111):    1.000          CLK
 Info (186079): Completed User Assigned Global Signals Promotion Operation
-Info (186215): Automatically promoted signal "CLK" to use Global clock in PIN 12
+Info (186215): Automatically promoted signal "CLK" to use Global clock in PIN 12 File: C:/Users/stefa/Documents/GitHub/HDL/max ii/blink/blink.vhd Line: 8
 Info (186079): Completed Auto Global Promotion Operation
 Info (176234): Starting register packing
 Info (186468): Started processing fast register assignments
 Info (186469): Finished processing fast register assignments
 Info (176235): Finished register packing
 Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
@@ -670,23 +544,23 @@ Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 4% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 4% of the available device resources in the region that extends from location X0_Y0 to location X8_Y5
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.08 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
+Info (11888): Total time spent on timing analysis during the Fitter is 0.12 seconds.
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
-Info (144001): Generated suppressed messages file C:/Users/stefa/Desktop/max ii/blink/output_files/blink.fit.smsg
-Info: Quartus II 64-Bit Fitter was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4828 megabytes
-    Info: Processing ended: Mon Mar 03 23:02:19 2025
-    Info: Elapsed time: 00:00:01
+Info (144001): Generated suppressed messages file C:/Users/stefa/Documents/GitHub/HDL/max ii/blink/output_files/blink.fit.smsg
+Info: Quartus Prime Fitter was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 6163 megabytes
+    Info: Processing ended: Sun Oct 12 11:49:19 2025
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/stefa/Desktop/max ii/blink/output_files/blink.fit.smsg.
+The suppressed messages can be found in C:/Users/stefa/Documents/GitHub/HDL/max ii/blink/output_files/blink.fit.smsg.
 
 

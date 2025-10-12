@@ -13,7 +13,7 @@ use IEEE.math_real.all;
 entity top is
 	port(
 		LED: out std_logic_vector(4 downto 0); -- DE10 leds
-		FPGA_CLK1_50: in std_logic	-- DE10 internal 50 MHz clock
+		FPGA_CLK1_50: in std_logic;	-- DE10 internal 50 MHz clock
 --		
 --		PCB_RS: out std_logic; --RS of LCD
 --		PCB_RW: out std_logic; --Rw of LCD
@@ -25,11 +25,11 @@ entity top is
 --		
 --		PCB_DB: out std_logic_vector(7 downto 0);--DATA BITS of LCD
 --		
---		PCB_BT0: in std_logic;--BUTTON (0 when pressed)
---		PCB_BT1: in std_logic;--BUTTON (0 when pressed)
---		PCB_BT2: in std_logic;--BUTTON (0 when pressed)
---		PCB_BT3: in std_logic --BUTTON (0 when pressed)
---		PCB_BT4: in std_logic;--BUTTON (0 when pressed)
+		PCB_BT0: in std_logic;--BUTTON (0 when pressed)
+		PCB_BT1: in std_logic;--BUTTON (0 when pressed)
+		PCB_BT2: in std_logic;--BUTTON (0 when pressed)
+		PCB_BT3: in std_logic; --BUTTON (0 when pressed)
+		PCB_BT4: in std_logic--BUTTON (0 when pressed)
 --		PCB_BT5: in std_logic;--BUTTON (0 when pressed)
 --		PCB_BT6: in std_logic;--BUTTON (0 when pressed)
 --		PCB_BT7: in std_logic --BUTTON (0 when pressed)
@@ -188,11 +188,7 @@ begin
 		w_50MHz <= FPGA_CLK1_50;
 
 
-		LED(0)<=w_1Hz;
-		LED(1)<= not w_1Hz;
-		LED(2)<=w_1Hz;
-		LED(3)<= not w_1Hz;
-		LED(4)<=w_1Hz;
+
 
 --		PCB_RS <= w_lcd_rs;
 --		PCB_RW <= w_lcd_rw;
@@ -207,10 +203,11 @@ begin
 --		PCB_DB(6) <= w_lcd_data(6); 
 --		PCB_DB(7) <= w_lcd_data(7);
 --
---		w_btn0<=PCB_BT0;
---		w_btn1<=PCB_BT1;
---		w_btn2<=PCB_BT2;
---		w_btn3<=PCB_BT3;
+		w_btn0<=PCB_BT0;
+		w_btn1<=PCB_BT1;
+		w_btn2<=PCB_BT2;
+		w_btn3<=PCB_BT3;
+		w_btn4<=PCB_BT4;
 --		PCB_BT4 <= w_btn4;
 --		PCB_BT5 <= w_btn5;
 --		PCB_BT6 <= w_btn6;
@@ -223,6 +220,11 @@ begin
 --		PCB_BT_RIGHT <= w_btn_r;
 --		PCB_BT_LEFT <= w_btn_l;
 
+		LED(0)<=w_1Hz;
+		LED(1)<= not w_1Hz;
+		LED(2)<=w_1Hz;
+		LED(3)<= not w_1Hz;
+		LED(4)<=not(not(w_btn0) or(not(w_btn1)) or(not(w_btn2)) or(not(w_btn3)) or(not(w_btn4)));-- or w_btn1 or w_btn2 or w_btn3 or w_btn4
 
 		
 end logicfunction;

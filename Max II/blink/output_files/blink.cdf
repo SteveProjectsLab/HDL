@@ -1,10 +1,10 @@
-/* Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition */
+/* Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition */
 JedecChain;
 	FileRevision(JESD32A);
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE6E22) Path("C:/Users/stefa/OneDrive/Desktop/Nuova cartella (2)/output_files/") File("blink.sof") MfrSpec(OpMask(1));
+		Device PartName(EPM240T100) Path("C:/Users/stefa/Documents/GitHub/HDL/max ii/blink/output_files/") File("blink.pof") MfrSpec(OpMask(1) SEC_Device(EPM240T100) Child_OpMask(2 1 1));
 
 ChainEnd;
 

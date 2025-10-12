@@ -24,6 +24,26 @@
 					"strict" : false
 				},
 				{
+					"name" : "PCB_BT0",
+					"strict" : false
+				},
+				{
+					"name" : "PCB_BT1",
+					"strict" : false
+				},
+				{
+					"name" : "PCB_BT2",
+					"strict" : false
+				},
+				{
+					"name" : "PCB_BT3",
+					"strict" : false
+				},
+				{
+					"name" : "PCB_BT4",
+					"strict" : false
+				},
+				{
 					"name" : "FPGA_CLK1_50",
 					"strict" : false
 				}
