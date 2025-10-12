@@ -1,9 +1,9 @@
 |top
-LED[0] <= clock_generator:tim_1Hz.clock_out
-LED[1] <= clock_generator:tim_1Hz.clock_out
-LED[2] <= clock_generator:tim_1Hz.clock_out
-LED[3] <= clock_generator:tim_1Hz.clock_out
-LED[4] <= LED.DB_MAX_OUTPUT_PORT_TYPE
+LED[0] << clock_generator:tim_1Hz.clock_out
+LED[1] << clock_generator:tim_1Hz.clock_out
+LED[2] << clock_generator:tim_1Hz.clock_out
+LED[3] << clock_generator:tim_1Hz.clock_out
+LED[4] << LED.DB_MAX_OUTPUT_PORT_TYPE
 FPGA_CLK1_50 => clock_generator:tim_1Hz.clock_in
 FPGA_CLK1_50 => clock_generator:tim_100kHz.clock_in
 PCB_BT0 => LED.IN0

@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition"
 
--- DATE "10/12/2025 16:45:06"
+-- DATE "10/12/2025 20:30:47"
 
 -- 
 -- Device: Altera EP4CE6E22C8L Package TQFP144
@@ -79,7 +79,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY 	top IS
     PORT (
-	LED : OUT std_logic_vector(4 DOWNTO 0);
+	LED : BUFFER std_logic_vector(4 DOWNTO 0);
 	FPGA_CLK1_50 : IN std_logic;
 	PCB_BT0 : IN std_logic;
 	PCB_BT1 : IN std_logic;
@@ -211,8 +211,8 @@ SIGNAL \PCB_BT2~input_o\ : std_logic;
 SIGNAL \LED~0_combout\ : std_logic;
 SIGNAL \LED~1_combout\ : std_logic;
 SIGNAL \tim_1Hz|counter\ : std_logic_vector(25 DOWNTO 0);
-SIGNAL \ALT_INV_LED~1_combout\ : std_logic;
 SIGNAL \tim_1Hz|ALT_INV_clock_signal~q\ : std_logic;
+SIGNAL \ALT_INV_LED~1_combout\ : std_logic;
 
 COMPONENT hard_block
     PORT (
@@ -235,8 +235,8 @@ ww_devclrn <= devclrn;
 ww_devpor <= devpor;
 
 \FPGA_CLK1_50~inputclkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \FPGA_CLK1_50~input_o\);
-\ALT_INV_LED~1_combout\ <= NOT \LED~1_combout\;
 \tim_1Hz|ALT_INV_clock_signal~q\ <= NOT \tim_1Hz|clock_signal~q\;
+\ALT_INV_LED~1_combout\ <= NOT \LED~1_combout\;
 auto_generated_inst : hard_block
 PORT MAP (
 	devoe => ww_devoe,
