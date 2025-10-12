@@ -12,7 +12,7 @@ use IEEE.math_real.all;
 --declaration of top entity
 entity top is
 	port(
-		LED: out std_logic_vector(3 downto 0); -- DE10 leds
+		LED: out std_logic_vector(4 downto 0); -- DE10 leds
 		FPGA_CLK1_50: in std_logic	-- DE10 internal 50 MHz clock
 --		
 --		PCB_RS: out std_logic; --RS of LCD
@@ -188,11 +188,12 @@ begin
 		w_50MHz <= FPGA_CLK1_50;
 
 
-		LED(0)<= FPGA_CLK1_50;
-		LED(1)<=w_100kHz;
+		LED(0)<=w_1Hz;
+		LED(1)<= not w_1Hz;
 		LED(2)<=w_1Hz;
-		LED(3)<=w_1Hz;
-	
+		LED(3)<= not w_1Hz;
+		LED(4)<=w_1Hz;
+
 --		PCB_RS <= w_lcd_rs;
 --		PCB_RW <= w_lcd_rw;
 --		PCB_E  <= w_lcd_e;

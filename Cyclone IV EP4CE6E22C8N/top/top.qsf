@@ -41,7 +41,7 @@ set_global_assignment -name DEVICE EP4CE6E22C8L
 set_global_assignment -name TOP_LEVEL_ENTITY top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:45:32  OCTOBER 08, 2025"
-set_global_assignment -name LAST_QUARTUS_VERSION 13.1
+set_global_assignment -name LAST_QUARTUS_VERSION "24.1std.0 Lite Edition"
 set_global_assignment -name VHDL_FILE top.vhd
 set_global_assignment -name VHDL_FILE clock_generator.vhd
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
@@ -49,14 +49,8 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.0V
-set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
+set_global_assignment -name EDA_SIMULATION_TOOL "Questa Intel FPGA (VHDL)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
-set_location_assignment PIN_1 -to IO_1
-set_location_assignment PIN_2 -to IO_2
-set_location_assignment PIN_3 -to IO_3
-set_location_assignment PIN_7 -to IO_7
-set_location_assignment PIN_23 -to I_23
-set_location_assignment PIN_24 -to I_24
 set_location_assignment PIN_25 -to I_25
 set_location_assignment PIN_28 -to IO_28
 set_location_assignment PIN_30 -to IO_30
@@ -128,9 +122,10 @@ set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_location_assignment PIN_110 -to LED[0]
-set_location_assignment PIN_111 -to LED[1]
-set_location_assignment PIN_112 -to LED[2]
-set_location_assignment PIN_113 -to LED[3]
-set_location_assignment PIN_91 -to FPGA_CLK1_50
+set_location_assignment PIN_1 -to LED[0]
+set_location_assignment PIN_2 -to LED[1]
+set_location_assignment PIN_3 -to LED[2]
+set_location_assignment PIN_7 -to LED[3]
+set_location_assignment PIN_24 -to FPGA_CLK1_50
+set_location_assignment PIN_11 -to LED[4]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
