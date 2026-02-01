@@ -10,4 +10,4 @@ This document contains official repositories, documentation, and external resour
 
 ## 🛠️ Development Tools
 * **[Vivado Design Suite](https://www.xilinx.com/products/design-tools/vivado.html)** – Essential for FPGA development on the Wukong board.
-
+* **[Raspberry pico-xvc](https://github.com/kholia/xvc-pico)** – To program the board using a pi pico
