@@ -14,3 +14,4 @@ This document contains official repositories, documentation, and external resour
 
 ## Youtube Videos
 * **[Xilinx ISE 14 7 Tutorial 01 VHDL One Pulse Key for QMTECH Wukong board](https://www.youtube.com/watch?v=ioQVxqQMIvI)**
+* **[STL 3D COVER]([https://github.com/kholia/xvc-pico](https://www.thingiverse.com/thing:7004303))** – to 3d print a cover
