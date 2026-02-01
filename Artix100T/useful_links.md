@@ -6,7 +6,7 @@ This document contains official repositories, documentation, and external resour
 
 ## 🏗️ Hardware & Official Repositories
 * **[Official QMTECH Repo QMTECH_XC7A100T_Wukong_Board](https://github.com/ChinaQMTECH/QM_XC7A100T_WUKONG_BOARD)** – Official documentation, schematics, and board support files for the Wukong XC7A100T.
-* **[DavidJRichards' Repo QMTECH_XC7A100T_Wukong_Board]([https://github.com/DavidJRichards](https://github.com/DavidJRichards/QMTECH_XC7A100T_Wukong_Board))** – Community contributions and additional resources provided by David J. Richards.
+* **[DavidJRichards' Repo QMTECH_XC7A100T_Wukong_Board](https://github.com/DavidJRichards/QMTECH_XC7A100T_Wukong_Board)** – Community contributions and additional resources provided by David J. Richards.
 
 ## 🛠️ Development Tools
 * **[Arduino IDE](https://www.arduino.cc/en/software)** – Recommended environment for microcontroller programming.
