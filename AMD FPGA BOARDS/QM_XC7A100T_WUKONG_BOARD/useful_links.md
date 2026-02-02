@@ -7,7 +7,7 @@ This document contains official repositories, documentation, and external resour
 ## 🏗️ Hardware & Official Repositories
 * **[Official QMTECH Repo QMTECH_XC7A100T_Wukong_Board](https://github.com/ChinaQMTECH/QM_XC7A100T_WUKONG_BOARD)** – Official documentation, schematics, and board support files for the Wukong XC7A100T.
 * **[DavidJRichards' Repo QMTECH_XC7A100T_Wukong_Board](https://github.com/DavidJRichards/QMTECH_XC7A100T_Wukong_Board)** – Community contributions and additional resources provided by David J. Richards.
-* **[tangerineA7_100](https://github.com/ChinaQMTECH/QM_XC7A100T_WUKONG_BOARD](https://github.com/qubeck78/tangerineA7_100)** – by qubeck78
+* **[tangerineA7_100](https://github.com/qubeck78/tangerineA7_100)** – by qubeck78
 * **[luffca news](https://www.luffca.com/2021/08/linux-litex-vexriscv-wukong)** – interesting achievements
 ## 🛠️ Development Tools
 * **[Vivado Design Suite](https://www.xilinx.com/products/design-tools/vivado.html)** – Essential for FPGA development on the Wukong board.
