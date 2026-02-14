@@ -1,0 +1,30 @@
+
+State Machine - |top|debounce:Debounce_btn4|s_state
+Name s_state.LOCKOUT s_state.DEBOUNCING s_state.IDLE 
+s_state.IDLE 0 0 0 
+s_state.DEBOUNCING 0 1 1 
+s_state.LOCKOUT 1 0 1 
+
+State Machine - |top|debounce:Debounce_btn3|s_state
+Name s_state.LOCKOUT s_state.DEBOUNCING s_state.IDLE 
+s_state.IDLE 0 0 0 
+s_state.DEBOUNCING 0 1 1 
+s_state.LOCKOUT 1 0 1 
+
+State Machine - |top|debounce:Debounce_btn2|s_state
+Name s_state.LOCKOUT s_state.DEBOUNCING s_state.IDLE 
+s_state.IDLE 0 0 0 
+s_state.DEBOUNCING 0 1 1 
+s_state.LOCKOUT 1 0 1 
+
+State Machine - |top|debounce:Debounce_btn1|s_state
+Name s_state.LOCKOUT s_state.DEBOUNCING s_state.IDLE 
+s_state.IDLE 0 0 0 
+s_state.DEBOUNCING 0 1 1 
+s_state.LOCKOUT 1 0 1 
+
+State Machine - |top|debounce:Debounce_btn0|s_state
+Name s_state.LOCKOUT s_state.DEBOUNCING s_state.IDLE 
+s_state.IDLE 0 0 0 
+s_state.DEBOUNCING 0 1 1 
+s_state.LOCKOUT 1 0 1 

@@ -1,0 +1,1181 @@
+Timing Analyzer report for top
+Sat Feb 14 11:31:18 2026
+Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1000mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1000mV 85C Model Setup Summary
+  8. Slow 1000mV 85C Model Hold Summary
+  9. Slow 1000mV 85C Model Recovery Summary
+ 10. Slow 1000mV 85C Model Removal Summary
+ 11. Slow 1000mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1000mV 85C Model Setup: 'FPGA_CLK1_50'
+ 13. Slow 1000mV 85C Model Hold: 'FPGA_CLK1_50'
+ 14. Slow 1000mV 85C Model Metastability Summary
+ 15. Slow 1000mV 0C Model Fmax Summary
+ 16. Slow 1000mV 0C Model Setup Summary
+ 17. Slow 1000mV 0C Model Hold Summary
+ 18. Slow 1000mV 0C Model Recovery Summary
+ 19. Slow 1000mV 0C Model Removal Summary
+ 20. Slow 1000mV 0C Model Minimum Pulse Width Summary
+ 21. Slow 1000mV 0C Model Setup: 'FPGA_CLK1_50'
+ 22. Slow 1000mV 0C Model Hold: 'FPGA_CLK1_50'
+ 23. Slow 1000mV 0C Model Metastability Summary
+ 24. Fast 1000mV 0C Model Setup Summary
+ 25. Fast 1000mV 0C Model Hold Summary
+ 26. Fast 1000mV 0C Model Recovery Summary
+ 27. Fast 1000mV 0C Model Removal Summary
+ 28. Fast 1000mV 0C Model Minimum Pulse Width Summary
+ 29. Fast 1000mV 0C Model Setup: 'FPGA_CLK1_50'
+ 30. Fast 1000mV 0C Model Hold: 'FPGA_CLK1_50'
+ 31. Fast 1000mV 0C Model Metastability Summary
+ 32. Multicorner Timing Analysis Summary
+ 33. Board Trace Model Assignments
+ 34. Input Transition Times
+ 35. Signal Integrity Metrics (Slow 1000mv 0c Model)
+ 36. Signal Integrity Metrics (Slow 1000mv 85c Model)
+ 37. Signal Integrity Metrics (Fast 1000mv 0c Model)
+ 38. Setup Transfers
+ 39. Hold Transfers
+ 40. Report TCCS
+ 41. Report RSKM
+ 42. Unconstrained Paths Summary
+ 43. Clock Status Summary
+ 44. Unconstrained Output Ports
+ 45. Unconstrained Output Ports
+ 46. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++---------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                         ;
++-----------------------+---------------------------------------------------------+
+; Quartus Prime Version ; Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                                  ;
+; Revision Name         ; top                                                     ;
+; Device Family         ; Cyclone IV E                                            ;
+; Device Name           ; EP4CE6E22C8L                                            ;
+; Timing Models         ; Final                                                   ;
+; Delay Model           ; Combined                                                ;
+; Rise/Fall Delays      ; Enabled                                                 ;
++-----------------------+---------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 32          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.07        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.4%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                     ;
++--------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------+
+; Clock Name   ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets          ;
++--------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------+
+; FPGA_CLK1_50 ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { FPGA_CLK1_50 } ;
++--------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------+
+
+
++----------------------------------------------------+
+; Slow 1000mV 85C Model Fmax Summary                 ;
++------------+-----------------+--------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name   ; Note ;
++------------+-----------------+--------------+------+
+; 239.52 MHz ; 239.52 MHz      ; FPGA_CLK1_50 ;      ;
++------------+-----------------+--------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++---------------------------------------+
+; Slow 1000mV 85C Model Setup Summary   ;
++--------------+--------+---------------+
+; Clock        ; Slack  ; End Point TNS ;
++--------------+--------+---------------+
+; FPGA_CLK1_50 ; -3.175 ; -62.270       ;
++--------------+--------+---------------+
+
+
++--------------------------------------+
+; Slow 1000mV 85C Model Hold Summary   ;
++--------------+-------+---------------+
+; Clock        ; Slack ; End Point TNS ;
++--------------+-------+---------------+
+; FPGA_CLK1_50 ; 0.512 ; 0.000         ;
++--------------+-------+---------------+
+
+
+------------------------------------------
+; Slow 1000mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1000mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1000mV 85C Model Minimum Pulse Width Summary ;
++--------------+--------+---------------------------+
+; Clock        ; Slack  ; End Point TNS             ;
++--------------+--------+---------------------------+
+; FPGA_CLK1_50 ; -3.000 ; -50.601                   ;
++--------------+--------+---------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1000mV 85C Model Setup: 'FPGA_CLK1_50'                                                                                                               ;
++--------+-------------------------------------+-------------------------------------+--------------+--------------+--------------+------------+------------+
+; Slack  ; From Node                           ; To Node                             ; Launch Clock ; Latch Clock  ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------+-------------------------------------+--------------+--------------+--------------+------------+------------+
+; -3.175 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 4.093      ;
+; -3.175 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 4.093      ;
+; -3.174 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 4.092      ;
+; -3.131 ; clock_generator:gen_1Hz|counter[4]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 4.049      ;
+; -3.131 ; clock_generator:gen_1Hz|counter[4]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 4.049      ;
+; -3.131 ; clock_generator:gen_1Hz|counter[4]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 4.049      ;
+; -3.120 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[24] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.383      ; 4.508      ;
+; -3.115 ; clock_generator:gen_1Hz|counter[14] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.577     ; 3.543      ;
+; -3.115 ; clock_generator:gen_1Hz|counter[14] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.577     ; 3.543      ;
+; -3.115 ; clock_generator:gen_1Hz|counter[7]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 4.033      ;
+; -3.115 ; clock_generator:gen_1Hz|counter[7]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 4.033      ;
+; -3.115 ; clock_generator:gen_1Hz|counter[7]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 4.033      ;
+; -3.114 ; clock_generator:gen_1Hz|counter[14] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.577     ; 3.542      ;
+; -3.047 ; clock_generator:gen_1Hz|counter[10] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.965      ;
+; -3.047 ; clock_generator:gen_1Hz|counter[10] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.965      ;
+; -3.047 ; clock_generator:gen_1Hz|counter[10] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.965      ;
+; -3.041 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[24] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.107     ; 3.939      ;
+; -3.030 ; clock_generator:gen_1Hz|counter[11] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.948      ;
+; -3.030 ; clock_generator:gen_1Hz|counter[11] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.948      ;
+; -3.029 ; clock_generator:gen_1Hz|counter[11] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.947      ;
+; -3.022 ; clock_generator:gen_1Hz|counter[0]  ; clock_generator:gen_1Hz|counter[24] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.383      ; 4.410      ;
+; -3.015 ; clock_generator:gen_1Hz|counter[6]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.933      ;
+; -3.015 ; clock_generator:gen_1Hz|counter[6]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.933      ;
+; -3.014 ; clock_generator:gen_1Hz|counter[6]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.932      ;
+; -3.011 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[20] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.383      ; 4.399      ;
+; -2.988 ; clock_generator:gen_1Hz|counter[9]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.906      ;
+; -2.988 ; clock_generator:gen_1Hz|counter[9]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.906      ;
+; -2.988 ; clock_generator:gen_1Hz|counter[9]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.906      ;
+; -2.955 ; clock_generator:gen_1Hz|counter[3]  ; clock_generator:gen_1Hz|counter[24] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.383      ; 4.343      ;
+; -2.935 ; clock_generator:gen_1Hz|counter[2]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.853      ;
+; -2.935 ; clock_generator:gen_1Hz|counter[2]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.853      ;
+; -2.934 ; clock_generator:gen_1Hz|counter[2]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.852      ;
+; -2.932 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[20] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.107     ; 3.830      ;
+; -2.915 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.577     ; 3.343      ;
+; -2.915 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.577     ; 3.343      ;
+; -2.914 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.577     ; 3.342      ;
+; -2.913 ; clock_generator:gen_1Hz|counter[0]  ; clock_generator:gen_1Hz|counter[20] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.383      ; 4.301      ;
+; -2.877 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[13] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.577     ; 3.305      ;
+; -2.869 ; clock_generator:gen_1Hz|counter[2]  ; clock_generator:gen_1Hz|counter[24] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.383      ; 4.257      ;
+; -2.862 ; clock_generator:gen_1Hz|counter[18] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.577     ; 3.290      ;
+; -2.862 ; clock_generator:gen_1Hz|counter[18] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.577     ; 3.290      ;
+; -2.861 ; clock_generator:gen_1Hz|counter[18] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.577     ; 3.289      ;
+; -2.846 ; clock_generator:gen_1Hz|counter[3]  ; clock_generator:gen_1Hz|counter[20] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.383      ; 4.234      ;
+; -2.838 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[13] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.756      ;
+; -2.833 ; clock_generator:gen_1Hz|counter[0]  ; clock_generator:gen_1Hz|counter[13] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.751      ;
+; -2.826 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[18] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.383      ; 4.214      ;
+; -2.800 ; clock_generator:gen_1Hz|counter[5]  ; clock_generator:gen_1Hz|counter[24] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.383      ; 4.188      ;
+; -2.789 ; clock_generator:gen_1Hz|counter[24] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.577     ; 3.217      ;
+; -2.789 ; clock_generator:gen_1Hz|counter[24] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.577     ; 3.217      ;
+; -2.788 ; clock_generator:gen_1Hz|counter[24] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.577     ; 3.216      ;
+; -2.787 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[22] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.382      ; 4.174      ;
+; -2.772 ; clock_generator:gen_1Hz|counter[5]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.690      ;
+; -2.772 ; clock_generator:gen_1Hz|counter[5]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.690      ;
+; -2.772 ; clock_generator:gen_1Hz|counter[5]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.690      ;
+; -2.767 ; clock_generator:gen_1Hz|counter[22] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.576     ; 3.196      ;
+; -2.767 ; clock_generator:gen_1Hz|counter[22] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.576     ; 3.196      ;
+; -2.766 ; clock_generator:gen_1Hz|counter[22] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.576     ; 3.195      ;
+; -2.760 ; clock_generator:gen_1Hz|counter[2]  ; clock_generator:gen_1Hz|counter[20] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.383      ; 4.148      ;
+; -2.755 ; clock_generator:gen_1Hz|counter[19] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.576     ; 3.184      ;
+; -2.755 ; clock_generator:gen_1Hz|counter[19] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.576     ; 3.184      ;
+; -2.754 ; clock_generator:gen_1Hz|counter[19] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.576     ; 3.183      ;
+; -2.747 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[18] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.107     ; 3.645      ;
+; -2.739 ; clock_generator:gen_1Hz|counter[15] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.657      ;
+; -2.739 ; clock_generator:gen_1Hz|counter[15] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.657      ;
+; -2.738 ; clock_generator:gen_1Hz|counter[15] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.656      ;
+; -2.728 ; clock_generator:gen_1Hz|counter[0]  ; clock_generator:gen_1Hz|counter[18] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.383      ; 4.116      ;
+; -2.724 ; clock_generator:gen_1Hz|counter[3]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.642      ;
+; -2.724 ; clock_generator:gen_1Hz|counter[3]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.642      ;
+; -2.723 ; clock_generator:gen_1Hz|counter[3]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.641      ;
+; -2.711 ; clock_generator:gen_1Hz|counter[0]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.629      ;
+; -2.709 ; clock_generator:gen_1Hz|counter[16] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.577     ; 3.137      ;
+; -2.709 ; clock_generator:gen_1Hz|counter[16] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.577     ; 3.137      ;
+; -2.708 ; clock_generator:gen_1Hz|counter[16] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.577     ; 3.136      ;
+; -2.708 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[22] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.108     ; 3.605      ;
+; -2.704 ; clock_generator:gen_1Hz|counter[20] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.577     ; 3.132      ;
+; -2.704 ; clock_generator:gen_1Hz|counter[20] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.577     ; 3.132      ;
+; -2.703 ; clock_generator:gen_1Hz|counter[20] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.577     ; 3.131      ;
+; -2.702 ; clock_generator:gen_1Hz|counter[4]  ; clock_generator:gen_1Hz|counter[24] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.383      ; 4.090      ;
+; -2.691 ; clock_generator:gen_1Hz|counter[5]  ; clock_generator:gen_1Hz|counter[20] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.383      ; 4.079      ;
+; -2.689 ; clock_generator:gen_1Hz|counter[0]  ; clock_generator:gen_1Hz|counter[22] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.382      ; 4.076      ;
+; -2.677 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[19] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.382      ; 4.064      ;
+; -2.677 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[21] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.382      ; 4.064      ;
+; -2.673 ; clock_generator:gen_1Hz|counter[3]  ; clock_generator:gen_1Hz|counter[13] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.591      ;
+; -2.667 ; clock_generator:gen_1Hz|counter[2]  ; clock_generator:gen_1Hz|counter[13] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.585      ;
+; -2.661 ; clock_generator:gen_1Hz|counter[3]  ; clock_generator:gen_1Hz|counter[18] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.383      ; 4.049      ;
+; -2.657 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[21] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.108     ; 3.554      ;
+; -2.650 ; clock_generator:gen_1Hz|counter[8]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.568      ;
+; -2.650 ; clock_generator:gen_1Hz|counter[8]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.568      ;
+; -2.650 ; clock_generator:gen_1Hz|counter[8]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.568      ;
+; -2.647 ; clock_generator:gen_1Hz|counter[14] ; clock_generator:gen_1Hz|counter[13] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.577     ; 3.075      ;
+; -2.640 ; clock_generator:gen_1Hz|counter[7]  ; clock_generator:gen_1Hz|counter[24] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.383      ; 4.028      ;
+; -2.631 ; clock_generator:gen_1Hz|counter[4]  ; clock_generator:gen_1Hz|counter[13] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.087     ; 3.549      ;
+; -2.628 ; clock_generator:gen_1Hz|counter[21] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.576     ; 3.057      ;
+; -2.628 ; clock_generator:gen_1Hz|counter[21] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.576     ; 3.057      ;
+; -2.627 ; clock_generator:gen_1Hz|counter[21] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.576     ; 3.056      ;
+; -2.623 ; clock_generator:gen_1Hz|counter[4]  ; clock_generator:gen_1Hz|counter[22] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.382      ; 4.010      ;
+; -2.623 ; clock_generator:gen_1Hz|counter[4]  ; clock_generator:gen_1Hz|counter[21] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.382      ; 4.010      ;
+; -2.622 ; clock_generator:gen_1Hz|counter[4]  ; clock_generator:gen_1Hz|counter[19] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.382      ; 4.009      ;
+; -2.622 ; clock_generator:gen_1Hz|counter[3]  ; clock_generator:gen_1Hz|counter[22] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.382      ; 4.009      ;
+; -2.618 ; clock_generator:gen_1Hz|counter[13] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.088     ; 3.535      ;
++--------+-------------------------------------+-------------------------------------+--------------+--------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1000mV 85C Model Hold: 'FPGA_CLK1_50'                                                                                                                 ;
++-------+--------------------------------------+--------------------------------------+--------------+--------------+--------------+------------+------------+
+; Slack ; From Node                            ; To Node                              ; Launch Clock ; Latch Clock  ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------+--------------------------------------+--------------+--------------+--------------+------------+------------+
+; 0.512 ; clock_generator:gen_1Hz|clock_signal ; clock_generator:gen_1Hz|clock_signal ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.107      ; 0.863      ;
+; 0.525 ; clock_generator:gen_1Hz|counter[25]  ; clock_generator:gen_1Hz|counter[25]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.107      ; 0.876      ;
+; 0.768 ; clock_generator:gen_1Hz|counter[23]  ; clock_generator:gen_1Hz|counter[23]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.107      ; 1.119      ;
+; 0.784 ; clock_generator:gen_1Hz|counter[3]   ; clock_generator:gen_1Hz|counter[3]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.115      ;
+; 0.786 ; clock_generator:gen_1Hz|counter[8]   ; clock_generator:gen_1Hz|counter[8]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.117      ;
+; 0.786 ; clock_generator:gen_1Hz|counter[10]  ; clock_generator:gen_1Hz|counter[10]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.117      ;
+; 0.786 ; clock_generator:gen_1Hz|counter[2]   ; clock_generator:gen_1Hz|counter[2]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.117      ;
+; 0.787 ; clock_generator:gen_1Hz|counter[9]   ; clock_generator:gen_1Hz|counter[9]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.118      ;
+; 0.787 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[15]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.118      ;
+; 0.787 ; clock_generator:gen_1Hz|counter[7]   ; clock_generator:gen_1Hz|counter[7]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.118      ;
+; 0.787 ; clock_generator:gen_1Hz|counter[5]   ; clock_generator:gen_1Hz|counter[5]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.118      ;
+; 0.787 ; clock_generator:gen_1Hz|counter[1]   ; clock_generator:gen_1Hz|counter[1]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.118      ;
+; 0.788 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|counter[17]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.119      ;
+; 0.790 ; clock_generator:gen_1Hz|counter[4]   ; clock_generator:gen_1Hz|counter[4]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.121      ;
+; 1.163 ; clock_generator:gen_1Hz|counter[19]  ; clock_generator:gen_1Hz|counter[19]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.107      ; 1.514      ;
+; 1.164 ; clock_generator:gen_1Hz|counter[22]  ; clock_generator:gen_1Hz|counter[22]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.107      ; 1.515      ;
+; 1.164 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|counter[23]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.576      ; 1.984      ;
+; 1.166 ; clock_generator:gen_1Hz|counter[21]  ; clock_generator:gen_1Hz|counter[21]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.107      ; 1.517      ;
+; 1.179 ; clock_generator:gen_1Hz|counter[22]  ; clock_generator:gen_1Hz|counter[23]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.107      ; 1.530      ;
+; 1.196 ; clock_generator:gen_1Hz|counter[2]   ; clock_generator:gen_1Hz|counter[3]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.527      ;
+; 1.196 ; clock_generator:gen_1Hz|counter[8]   ; clock_generator:gen_1Hz|counter[9]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.527      ;
+; 1.200 ; clock_generator:gen_1Hz|counter[4]   ; clock_generator:gen_1Hz|counter[5]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.531      ;
+; 1.200 ; clock_generator:gen_1Hz|counter[0]   ; clock_generator:gen_1Hz|counter[1]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.531      ;
+; 1.201 ; clock_generator:gen_1Hz|counter[3]   ; clock_generator:gen_1Hz|counter[4]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.532      ;
+; 1.202 ; clock_generator:gen_1Hz|counter[7]   ; clock_generator:gen_1Hz|counter[8]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.533      ;
+; 1.202 ; clock_generator:gen_1Hz|counter[9]   ; clock_generator:gen_1Hz|counter[10]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.533      ;
+; 1.202 ; clock_generator:gen_1Hz|counter[1]   ; clock_generator:gen_1Hz|counter[2]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.533      ;
+; 1.203 ; clock_generator:gen_1Hz|counter[6]   ; clock_generator:gen_1Hz|counter[7]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.534      ;
+; 1.208 ; clock_generator:gen_1Hz|counter[2]   ; clock_generator:gen_1Hz|counter[4]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.539      ;
+; 1.208 ; clock_generator:gen_1Hz|counter[8]   ; clock_generator:gen_1Hz|counter[10]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.539      ;
+; 1.212 ; clock_generator:gen_1Hz|counter[0]   ; clock_generator:gen_1Hz|counter[2]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.543      ;
+; 1.215 ; clock_generator:gen_1Hz|counter[6]   ; clock_generator:gen_1Hz|counter[8]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.546      ;
+; 1.253 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|counter[19]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.576      ; 2.073      ;
+; 1.262 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[16]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.577      ; 2.083      ;
+; 1.317 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[23]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.576      ; 2.137      ;
+; 1.318 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|counter[25]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.576      ; 2.138      ;
+; 1.325 ; clock_generator:gen_1Hz|counter[23]  ; clock_generator:gen_1Hz|counter[25]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.107      ; 1.676      ;
+; 1.327 ; clock_generator:gen_1Hz|counter[21]  ; clock_generator:gen_1Hz|counter[23]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.107      ; 1.678      ;
+; 1.333 ; clock_generator:gen_1Hz|counter[22]  ; clock_generator:gen_1Hz|counter[25]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.107      ; 1.684      ;
+; 1.341 ; clock_generator:gen_1Hz|counter[24]  ; clock_generator:gen_1Hz|counter[25]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.106      ; 1.691      ;
+; 1.343 ; clock_generator:gen_1Hz|counter[3]   ; clock_generator:gen_1Hz|counter[5]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.674      ;
+; 1.344 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[17]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.675      ;
+; 1.344 ; clock_generator:gen_1Hz|counter[1]   ; clock_generator:gen_1Hz|counter[3]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.675      ;
+; 1.344 ; clock_generator:gen_1Hz|counter[7]   ; clock_generator:gen_1Hz|counter[9]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.675      ;
+; 1.344 ; clock_generator:gen_1Hz|counter[5]   ; clock_generator:gen_1Hz|counter[7]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.675      ;
+; 1.350 ; clock_generator:gen_1Hz|counter[2]   ; clock_generator:gen_1Hz|counter[5]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.681      ;
+; 1.354 ; clock_generator:gen_1Hz|counter[0]   ; clock_generator:gen_1Hz|counter[3]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.685      ;
+; 1.354 ; clock_generator:gen_1Hz|counter[4]   ; clock_generator:gen_1Hz|counter[7]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.685      ;
+; 1.356 ; clock_generator:gen_1Hz|counter[1]   ; clock_generator:gen_1Hz|counter[4]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.687      ;
+; 1.356 ; clock_generator:gen_1Hz|counter[7]   ; clock_generator:gen_1Hz|counter[10]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.687      ;
+; 1.356 ; clock_generator:gen_1Hz|counter[5]   ; clock_generator:gen_1Hz|counter[8]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.687      ;
+; 1.357 ; clock_generator:gen_1Hz|counter[6]   ; clock_generator:gen_1Hz|counter[9]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.688      ;
+; 1.366 ; clock_generator:gen_1Hz|counter[0]   ; clock_generator:gen_1Hz|counter[4]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.697      ;
+; 1.366 ; clock_generator:gen_1Hz|counter[4]   ; clock_generator:gen_1Hz|counter[8]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.697      ;
+; 1.369 ; clock_generator:gen_1Hz|counter[6]   ; clock_generator:gen_1Hz|counter[10]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.700      ;
+; 1.406 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|counter[21]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.576      ; 2.226      ;
+; 1.406 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[19]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.576      ; 2.226      ;
+; 1.413 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|counter[18]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.577      ; 2.234      ;
+; 1.417 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|counter[22]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.576      ; 2.237      ;
+; 1.424 ; clock_generator:gen_1Hz|counter[11]  ; clock_generator:gen_1Hz|counter[14]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.577      ; 2.245      ;
+; 1.426 ; clock_generator:gen_1Hz|counter[10]  ; clock_generator:gen_1Hz|counter[14]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.577      ; 2.247      ;
+; 1.445 ; clock_generator:gen_1Hz|counter[13]  ; clock_generator:gen_1Hz|counter[14]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.577      ; 2.266      ;
+; 1.471 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[25]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.576      ; 2.291      ;
+; 1.474 ; clock_generator:gen_1Hz|counter[11]  ; clock_generator:gen_1Hz|counter[11]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.805      ;
+; 1.475 ; clock_generator:gen_1Hz|counter[6]   ; clock_generator:gen_1Hz|counter[6]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.806      ;
+; 1.478 ; clock_generator:gen_1Hz|counter[16]  ; clock_generator:gen_1Hz|counter[16]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.107      ; 1.829      ;
+; 1.478 ; clock_generator:gen_1Hz|counter[14]  ; clock_generator:gen_1Hz|counter[14]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.107      ; 1.829      ;
+; 1.480 ; clock_generator:gen_1Hz|counter[19]  ; clock_generator:gen_1Hz|counter[23]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.107      ; 1.831      ;
+; 1.481 ; clock_generator:gen_1Hz|counter[21]  ; clock_generator:gen_1Hz|counter[25]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.107      ; 1.832      ;
+; 1.489 ; clock_generator:gen_1Hz|counter[20]  ; clock_generator:gen_1Hz|counter[23]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.106      ; 1.839      ;
+; 1.493 ; clock_generator:gen_1Hz|counter[24]  ; clock_generator:gen_1Hz|counter[24]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.107      ; 1.844      ;
+; 1.497 ; clock_generator:gen_1Hz|counter[3]   ; clock_generator:gen_1Hz|counter[7]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.828      ;
+; 1.498 ; clock_generator:gen_1Hz|counter[1]   ; clock_generator:gen_1Hz|counter[5]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.829      ;
+; 1.498 ; clock_generator:gen_1Hz|counter[5]   ; clock_generator:gen_1Hz|counter[9]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.829      ;
+; 1.502 ; clock_generator:gen_1Hz|counter[11]  ; clock_generator:gen_1Hz|counter[15]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.833      ;
+; 1.504 ; clock_generator:gen_1Hz|counter[2]   ; clock_generator:gen_1Hz|counter[7]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.835      ;
+; 1.504 ; clock_generator:gen_1Hz|counter[10]  ; clock_generator:gen_1Hz|counter[15]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.835      ;
+; 1.508 ; clock_generator:gen_1Hz|counter[0]   ; clock_generator:gen_1Hz|counter[5]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.839      ;
+; 1.508 ; clock_generator:gen_1Hz|counter[4]   ; clock_generator:gen_1Hz|counter[9]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.839      ;
+; 1.509 ; clock_generator:gen_1Hz|counter[3]   ; clock_generator:gen_1Hz|counter[8]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.840      ;
+; 1.510 ; clock_generator:gen_1Hz|counter[5]   ; clock_generator:gen_1Hz|counter[10]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.841      ;
+; 1.514 ; clock_generator:gen_1Hz|counter[0]   ; clock_generator:gen_1Hz|counter[0]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.845      ;
+; 1.516 ; clock_generator:gen_1Hz|counter[2]   ; clock_generator:gen_1Hz|counter[8]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.847      ;
+; 1.520 ; clock_generator:gen_1Hz|counter[4]   ; clock_generator:gen_1Hz|counter[10]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.851      ;
+; 1.523 ; clock_generator:gen_1Hz|counter[13]  ; clock_generator:gen_1Hz|counter[15]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.087      ; 1.854      ;
+; 1.559 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[21]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.576      ; 2.379      ;
+; 1.566 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[18]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.577      ; 2.387      ;
+; 1.570 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[22]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.576      ; 2.390      ;
+; 1.574 ; clock_generator:gen_1Hz|counter[11]  ; clock_generator:gen_1Hz|counter[16]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.577      ; 2.395      ;
+; 1.574 ; clock_generator:gen_1Hz|counter[9]   ; clock_generator:gen_1Hz|counter[14]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.577      ; 2.395      ;
+; 1.576 ; clock_generator:gen_1Hz|counter[10]  ; clock_generator:gen_1Hz|counter[16]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.577      ; 2.397      ;
+; 1.580 ; clock_generator:gen_1Hz|counter[21]  ; clock_generator:gen_1Hz|counter[22]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.107      ; 1.931      ;
+; 1.580 ; clock_generator:gen_1Hz|counter[8]   ; clock_generator:gen_1Hz|counter[14]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.577      ; 2.401      ;
+; 1.585 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|counter[20]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.577      ; 2.406      ;
+; 1.595 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|clock_signal ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.577      ; 2.416      ;
+; 1.595 ; clock_generator:gen_1Hz|counter[13]  ; clock_generator:gen_1Hz|counter[16]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.577      ; 2.416      ;
+; 1.606 ; clock_generator:gen_1Hz|counter[11]  ; clock_generator:gen_1Hz|counter[12]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.577      ; 2.427      ;
+; 1.608 ; clock_generator:gen_1Hz|counter[10]  ; clock_generator:gen_1Hz|counter[12]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.577      ; 2.429      ;
+; 1.623 ; clock_generator:gen_1Hz|counter[18]  ; clock_generator:gen_1Hz|counter[18]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.107      ; 1.974      ;
+; 1.629 ; clock_generator:gen_1Hz|counter[11]  ; clock_generator:gen_1Hz|counter[23]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.576      ; 2.449      ;
++-------+--------------------------------------+--------------------------------------+--------------+--------------+--------------+------------+------------+
+
+
+-----------------------------------------------
+; Slow 1000mV 85C Model Metastability Summary ;
+-----------------------------------------------
+No synchronizer chains to report.
+
+
++----------------------------------------------------+
+; Slow 1000mV 0C Model Fmax Summary                  ;
++------------+-----------------+--------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name   ; Note ;
++------------+-----------------+--------------+------+
+; 249.75 MHz ; 249.75 MHz      ; FPGA_CLK1_50 ;      ;
++------------+-----------------+--------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------------+
+; Slow 1000mV 0C Model Setup Summary    ;
++--------------+--------+---------------+
+; Clock        ; Slack  ; End Point TNS ;
++--------------+--------+---------------+
+; FPGA_CLK1_50 ; -3.004 ; -59.014       ;
++--------------+--------+---------------+
+
+
++--------------------------------------+
+; Slow 1000mV 0C Model Hold Summary    ;
++--------------+-------+---------------+
+; Clock        ; Slack ; End Point TNS ;
++--------------+-------+---------------+
+; FPGA_CLK1_50 ; 0.496 ; 0.000         ;
++--------------+-------+---------------+
+
+
+-----------------------------------------
+; Slow 1000mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1000mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1000mV 0C Model Minimum Pulse Width Summary ;
++--------------+--------+--------------------------+
+; Clock        ; Slack  ; End Point TNS            ;
++--------------+--------+--------------------------+
+; FPGA_CLK1_50 ; -3.000 ; -50.601                  ;
++--------------+--------+--------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1000mV 0C Model Setup: 'FPGA_CLK1_50'                                                                                                                ;
++--------+-------------------------------------+-------------------------------------+--------------+--------------+--------------+------------+------------+
+; Slack  ; From Node                           ; To Node                             ; Launch Clock ; Latch Clock  ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------+-------------------------------------+--------------+--------------+--------------+------------+------------+
+; -3.004 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.933      ;
+; -3.004 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.933      ;
+; -3.004 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.933      ;
+; -2.973 ; clock_generator:gen_1Hz|counter[4]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.902      ;
+; -2.973 ; clock_generator:gen_1Hz|counter[4]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.902      ;
+; -2.973 ; clock_generator:gen_1Hz|counter[4]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.902      ;
+; -2.962 ; clock_generator:gen_1Hz|counter[7]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.891      ;
+; -2.962 ; clock_generator:gen_1Hz|counter[7]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.891      ;
+; -2.962 ; clock_generator:gen_1Hz|counter[7]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.891      ;
+; -2.959 ; clock_generator:gen_1Hz|counter[14] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.547     ; 3.424      ;
+; -2.959 ; clock_generator:gen_1Hz|counter[14] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.547     ; 3.424      ;
+; -2.959 ; clock_generator:gen_1Hz|counter[14] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.547     ; 3.424      ;
+; -2.957 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[24] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.363      ; 4.332      ;
+; -2.890 ; clock_generator:gen_1Hz|counter[10] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.819      ;
+; -2.890 ; clock_generator:gen_1Hz|counter[10] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.819      ;
+; -2.890 ; clock_generator:gen_1Hz|counter[10] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.819      ;
+; -2.882 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[24] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.101     ; 3.793      ;
+; -2.862 ; clock_generator:gen_1Hz|counter[6]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.791      ;
+; -2.862 ; clock_generator:gen_1Hz|counter[6]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.791      ;
+; -2.862 ; clock_generator:gen_1Hz|counter[6]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.791      ;
+; -2.861 ; clock_generator:gen_1Hz|counter[0]  ; clock_generator:gen_1Hz|counter[24] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.363      ; 4.236      ;
+; -2.856 ; clock_generator:gen_1Hz|counter[11] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.785      ;
+; -2.856 ; clock_generator:gen_1Hz|counter[11] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.785      ;
+; -2.856 ; clock_generator:gen_1Hz|counter[11] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.785      ;
+; -2.850 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[20] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.363      ; 4.225      ;
+; -2.847 ; clock_generator:gen_1Hz|counter[9]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.776      ;
+; -2.847 ; clock_generator:gen_1Hz|counter[9]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.776      ;
+; -2.847 ; clock_generator:gen_1Hz|counter[9]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.776      ;
+; -2.804 ; clock_generator:gen_1Hz|counter[3]  ; clock_generator:gen_1Hz|counter[24] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.363      ; 4.179      ;
+; -2.777 ; clock_generator:gen_1Hz|counter[2]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.706      ;
+; -2.777 ; clock_generator:gen_1Hz|counter[2]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.706      ;
+; -2.777 ; clock_generator:gen_1Hz|counter[2]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.706      ;
+; -2.775 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[20] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.101     ; 3.686      ;
+; -2.760 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.547     ; 3.225      ;
+; -2.760 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.547     ; 3.225      ;
+; -2.760 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.547     ; 3.225      ;
+; -2.754 ; clock_generator:gen_1Hz|counter[0]  ; clock_generator:gen_1Hz|counter[20] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.363      ; 4.129      ;
+; -2.723 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[13] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.546     ; 3.189      ;
+; -2.722 ; clock_generator:gen_1Hz|counter[2]  ; clock_generator:gen_1Hz|counter[24] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.363      ; 4.097      ;
+; -2.715 ; clock_generator:gen_1Hz|counter[18] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.547     ; 3.180      ;
+; -2.715 ; clock_generator:gen_1Hz|counter[18] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.547     ; 3.180      ;
+; -2.715 ; clock_generator:gen_1Hz|counter[18] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.547     ; 3.180      ;
+; -2.697 ; clock_generator:gen_1Hz|counter[3]  ; clock_generator:gen_1Hz|counter[20] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.363      ; 4.072      ;
+; -2.692 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[13] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.082     ; 3.622      ;
+; -2.679 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[18] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.363      ; 4.054      ;
+; -2.674 ; clock_generator:gen_1Hz|counter[0]  ; clock_generator:gen_1Hz|counter[13] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.082     ; 3.604      ;
+; -2.657 ; clock_generator:gen_1Hz|counter[5]  ; clock_generator:gen_1Hz|counter[24] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.363      ; 4.032      ;
+; -2.654 ; clock_generator:gen_1Hz|counter[24] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.547     ; 3.119      ;
+; -2.654 ; clock_generator:gen_1Hz|counter[24] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.547     ; 3.119      ;
+; -2.654 ; clock_generator:gen_1Hz|counter[24] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.547     ; 3.119      ;
+; -2.640 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[22] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.363      ; 4.015      ;
+; -2.636 ; clock_generator:gen_1Hz|counter[5]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.565      ;
+; -2.636 ; clock_generator:gen_1Hz|counter[5]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.565      ;
+; -2.636 ; clock_generator:gen_1Hz|counter[5]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.565      ;
+; -2.628 ; clock_generator:gen_1Hz|counter[22] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.547     ; 3.093      ;
+; -2.628 ; clock_generator:gen_1Hz|counter[22] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.547     ; 3.093      ;
+; -2.628 ; clock_generator:gen_1Hz|counter[22] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.547     ; 3.093      ;
+; -2.615 ; clock_generator:gen_1Hz|counter[2]  ; clock_generator:gen_1Hz|counter[20] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.363      ; 3.990      ;
+; -2.604 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[18] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.101     ; 3.515      ;
+; -2.595 ; clock_generator:gen_1Hz|counter[19] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.547     ; 3.060      ;
+; -2.595 ; clock_generator:gen_1Hz|counter[19] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.547     ; 3.060      ;
+; -2.595 ; clock_generator:gen_1Hz|counter[19] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.547     ; 3.060      ;
+; -2.594 ; clock_generator:gen_1Hz|counter[3]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.523      ;
+; -2.594 ; clock_generator:gen_1Hz|counter[3]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.523      ;
+; -2.594 ; clock_generator:gen_1Hz|counter[3]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.523      ;
+; -2.591 ; clock_generator:gen_1Hz|counter[15] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.520      ;
+; -2.591 ; clock_generator:gen_1Hz|counter[15] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.520      ;
+; -2.591 ; clock_generator:gen_1Hz|counter[15] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.520      ;
+; -2.583 ; clock_generator:gen_1Hz|counter[0]  ; clock_generator:gen_1Hz|counter[18] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.363      ; 3.958      ;
+; -2.572 ; clock_generator:gen_1Hz|counter[20] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.547     ; 3.037      ;
+; -2.572 ; clock_generator:gen_1Hz|counter[20] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.547     ; 3.037      ;
+; -2.572 ; clock_generator:gen_1Hz|counter[20] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.547     ; 3.037      ;
+; -2.570 ; clock_generator:gen_1Hz|counter[16] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.547     ; 3.035      ;
+; -2.570 ; clock_generator:gen_1Hz|counter[16] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.547     ; 3.035      ;
+; -2.570 ; clock_generator:gen_1Hz|counter[16] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.547     ; 3.035      ;
+; -2.565 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[22] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.101     ; 3.476      ;
+; -2.561 ; clock_generator:gen_1Hz|counter[4]  ; clock_generator:gen_1Hz|counter[24] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.363      ; 3.936      ;
+; -2.560 ; clock_generator:gen_1Hz|counter[0]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.489      ;
+; -2.550 ; clock_generator:gen_1Hz|counter[5]  ; clock_generator:gen_1Hz|counter[20] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.363      ; 3.925      ;
+; -2.544 ; clock_generator:gen_1Hz|counter[0]  ; clock_generator:gen_1Hz|counter[22] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.363      ; 3.919      ;
+; -2.541 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[21] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.363      ; 3.916      ;
+; -2.540 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[19] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.363      ; 3.915      ;
+; -2.539 ; clock_generator:gen_1Hz|counter[3]  ; clock_generator:gen_1Hz|counter[13] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.082     ; 3.469      ;
+; -2.535 ; clock_generator:gen_1Hz|counter[14] ; clock_generator:gen_1Hz|counter[13] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.546     ; 3.001      ;
+; -2.526 ; clock_generator:gen_1Hz|counter[3]  ; clock_generator:gen_1Hz|counter[18] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.363      ; 3.901      ;
+; -2.517 ; clock_generator:gen_1Hz|counter[2]  ; clock_generator:gen_1Hz|counter[13] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.082     ; 3.447      ;
+; -2.516 ; clock_generator:gen_1Hz|counter[8]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.445      ;
+; -2.516 ; clock_generator:gen_1Hz|counter[8]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.445      ;
+; -2.516 ; clock_generator:gen_1Hz|counter[8]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.083     ; 3.445      ;
+; -2.512 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[21] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.101     ; 3.423      ;
+; -2.507 ; clock_generator:gen_1Hz|counter[7]  ; clock_generator:gen_1Hz|counter[24] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.363      ; 3.882      ;
+; -2.502 ; clock_generator:gen_1Hz|counter[4]  ; clock_generator:gen_1Hz|counter[21] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.363      ; 3.877      ;
+; -2.502 ; clock_generator:gen_1Hz|counter[4]  ; clock_generator:gen_1Hz|counter[22] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.363      ; 3.877      ;
+; -2.501 ; clock_generator:gen_1Hz|counter[4]  ; clock_generator:gen_1Hz|counter[19] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.363      ; 3.876      ;
+; -2.500 ; clock_generator:gen_1Hz|counter[4]  ; clock_generator:gen_1Hz|counter[13] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.082     ; 3.430      ;
+; -2.496 ; clock_generator:gen_1Hz|counter[14] ; clock_generator:gen_1Hz|counter[21] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.101     ; 3.407      ;
+; -2.496 ; clock_generator:gen_1Hz|counter[14] ; clock_generator:gen_1Hz|counter[22] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.101     ; 3.407      ;
+; -2.495 ; clock_generator:gen_1Hz|counter[14] ; clock_generator:gen_1Hz|counter[19] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.101     ; 3.406      ;
+; -2.491 ; clock_generator:gen_1Hz|counter[7]  ; clock_generator:gen_1Hz|counter[21] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.363      ; 3.866      ;
+; -2.491 ; clock_generator:gen_1Hz|counter[7]  ; clock_generator:gen_1Hz|counter[22] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.363      ; 3.866      ;
++--------+-------------------------------------+-------------------------------------+--------------+--------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1000mV 0C Model Hold: 'FPGA_CLK1_50'                                                                                                                  ;
++-------+--------------------------------------+--------------------------------------+--------------+--------------+--------------+------------+------------+
+; Slack ; From Node                            ; To Node                              ; Launch Clock ; Latch Clock  ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------+--------------------------------------+--------------+--------------+--------------+------------+------------+
+; 0.496 ; clock_generator:gen_1Hz|clock_signal ; clock_generator:gen_1Hz|clock_signal ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.101      ; 0.852      ;
+; 0.505 ; clock_generator:gen_1Hz|counter[25]  ; clock_generator:gen_1Hz|counter[25]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.101      ; 0.861      ;
+; 0.746 ; clock_generator:gen_1Hz|counter[23]  ; clock_generator:gen_1Hz|counter[23]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.101      ; 1.102      ;
+; 0.760 ; clock_generator:gen_1Hz|counter[3]   ; clock_generator:gen_1Hz|counter[3]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.098      ;
+; 0.761 ; clock_generator:gen_1Hz|counter[8]   ; clock_generator:gen_1Hz|counter[8]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.099      ;
+; 0.761 ; clock_generator:gen_1Hz|counter[10]  ; clock_generator:gen_1Hz|counter[10]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.099      ;
+; 0.761 ; clock_generator:gen_1Hz|counter[2]   ; clock_generator:gen_1Hz|counter[2]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.099      ;
+; 0.763 ; clock_generator:gen_1Hz|counter[9]   ; clock_generator:gen_1Hz|counter[9]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.101      ;
+; 0.763 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[15]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.101      ;
+; 0.763 ; clock_generator:gen_1Hz|counter[7]   ; clock_generator:gen_1Hz|counter[7]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.101      ;
+; 0.763 ; clock_generator:gen_1Hz|counter[5]   ; clock_generator:gen_1Hz|counter[5]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.101      ;
+; 0.763 ; clock_generator:gen_1Hz|counter[1]   ; clock_generator:gen_1Hz|counter[1]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.101      ;
+; 0.764 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|counter[17]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.102      ;
+; 0.767 ; clock_generator:gen_1Hz|counter[4]   ; clock_generator:gen_1Hz|counter[4]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.105      ;
+; 1.123 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|counter[23]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.547      ; 1.925      ;
+; 1.128 ; clock_generator:gen_1Hz|counter[19]  ; clock_generator:gen_1Hz|counter[19]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.101      ; 1.484      ;
+; 1.128 ; clock_generator:gen_1Hz|counter[22]  ; clock_generator:gen_1Hz|counter[22]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.101      ; 1.484      ;
+; 1.129 ; clock_generator:gen_1Hz|counter[21]  ; clock_generator:gen_1Hz|counter[21]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.101      ; 1.485      ;
+; 1.137 ; clock_generator:gen_1Hz|counter[22]  ; clock_generator:gen_1Hz|counter[23]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.101      ; 1.493      ;
+; 1.151 ; clock_generator:gen_1Hz|counter[2]   ; clock_generator:gen_1Hz|counter[3]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.489      ;
+; 1.151 ; clock_generator:gen_1Hz|counter[8]   ; clock_generator:gen_1Hz|counter[9]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.489      ;
+; 1.157 ; clock_generator:gen_1Hz|counter[4]   ; clock_generator:gen_1Hz|counter[5]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.495      ;
+; 1.158 ; clock_generator:gen_1Hz|counter[0]   ; clock_generator:gen_1Hz|counter[1]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.496      ;
+; 1.161 ; clock_generator:gen_1Hz|counter[6]   ; clock_generator:gen_1Hz|counter[7]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.499      ;
+; 1.175 ; clock_generator:gen_1Hz|counter[3]   ; clock_generator:gen_1Hz|counter[4]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.513      ;
+; 1.178 ; clock_generator:gen_1Hz|counter[8]   ; clock_generator:gen_1Hz|counter[10]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.516      ;
+; 1.178 ; clock_generator:gen_1Hz|counter[2]   ; clock_generator:gen_1Hz|counter[4]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.516      ;
+; 1.181 ; clock_generator:gen_1Hz|counter[7]   ; clock_generator:gen_1Hz|counter[8]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.519      ;
+; 1.181 ; clock_generator:gen_1Hz|counter[1]   ; clock_generator:gen_1Hz|counter[2]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.519      ;
+; 1.181 ; clock_generator:gen_1Hz|counter[9]   ; clock_generator:gen_1Hz|counter[10]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.519      ;
+; 1.185 ; clock_generator:gen_1Hz|counter[0]   ; clock_generator:gen_1Hz|counter[2]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.523      ;
+; 1.188 ; clock_generator:gen_1Hz|counter[6]   ; clock_generator:gen_1Hz|counter[8]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.526      ;
+; 1.217 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|counter[19]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.547      ; 2.019      ;
+; 1.245 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[16]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.547      ; 2.047      ;
+; 1.266 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[23]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.547      ; 2.068      ;
+; 1.267 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|counter[25]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.547      ; 2.069      ;
+; 1.281 ; clock_generator:gen_1Hz|counter[23]  ; clock_generator:gen_1Hz|counter[25]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.101      ; 1.637      ;
+; 1.281 ; clock_generator:gen_1Hz|counter[22]  ; clock_generator:gen_1Hz|counter[25]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.101      ; 1.637      ;
+; 1.283 ; clock_generator:gen_1Hz|counter[21]  ; clock_generator:gen_1Hz|counter[23]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.101      ; 1.639      ;
+; 1.289 ; clock_generator:gen_1Hz|counter[24]  ; clock_generator:gen_1Hz|counter[25]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.101      ; 1.645      ;
+; 1.292 ; clock_generator:gen_1Hz|counter[3]   ; clock_generator:gen_1Hz|counter[5]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.630      ;
+; 1.295 ; clock_generator:gen_1Hz|counter[2]   ; clock_generator:gen_1Hz|counter[5]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.633      ;
+; 1.298 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[17]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.636      ;
+; 1.298 ; clock_generator:gen_1Hz|counter[1]   ; clock_generator:gen_1Hz|counter[3]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.636      ;
+; 1.298 ; clock_generator:gen_1Hz|counter[7]   ; clock_generator:gen_1Hz|counter[9]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.636      ;
+; 1.298 ; clock_generator:gen_1Hz|counter[5]   ; clock_generator:gen_1Hz|counter[7]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.636      ;
+; 1.301 ; clock_generator:gen_1Hz|counter[4]   ; clock_generator:gen_1Hz|counter[7]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.639      ;
+; 1.302 ; clock_generator:gen_1Hz|counter[0]   ; clock_generator:gen_1Hz|counter[3]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.640      ;
+; 1.305 ; clock_generator:gen_1Hz|counter[6]   ; clock_generator:gen_1Hz|counter[9]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.643      ;
+; 1.325 ; clock_generator:gen_1Hz|counter[7]   ; clock_generator:gen_1Hz|counter[10]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.663      ;
+; 1.325 ; clock_generator:gen_1Hz|counter[1]   ; clock_generator:gen_1Hz|counter[4]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.663      ;
+; 1.325 ; clock_generator:gen_1Hz|counter[5]   ; clock_generator:gen_1Hz|counter[8]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.663      ;
+; 1.328 ; clock_generator:gen_1Hz|counter[4]   ; clock_generator:gen_1Hz|counter[8]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.666      ;
+; 1.329 ; clock_generator:gen_1Hz|counter[0]   ; clock_generator:gen_1Hz|counter[4]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.667      ;
+; 1.332 ; clock_generator:gen_1Hz|counter[6]   ; clock_generator:gen_1Hz|counter[10]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.670      ;
+; 1.360 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|counter[21]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.547      ; 2.162      ;
+; 1.360 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[19]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.547      ; 2.162      ;
+; 1.387 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|counter[22]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.547      ; 2.189      ;
+; 1.390 ; clock_generator:gen_1Hz|counter[10]  ; clock_generator:gen_1Hz|counter[14]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.547      ; 2.192      ;
+; 1.395 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|counter[18]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.547      ; 2.197      ;
+; 1.397 ; clock_generator:gen_1Hz|counter[11]  ; clock_generator:gen_1Hz|counter[14]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.547      ; 2.199      ;
+; 1.410 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[25]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.547      ; 2.212      ;
+; 1.419 ; clock_generator:gen_1Hz|counter[13]  ; clock_generator:gen_1Hz|counter[14]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.546      ; 2.220      ;
+; 1.421 ; clock_generator:gen_1Hz|counter[16]  ; clock_generator:gen_1Hz|counter[16]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.101      ; 1.777      ;
+; 1.422 ; clock_generator:gen_1Hz|counter[11]  ; clock_generator:gen_1Hz|counter[11]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.760      ;
+; 1.422 ; clock_generator:gen_1Hz|counter[19]  ; clock_generator:gen_1Hz|counter[23]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.101      ; 1.778      ;
+; 1.425 ; clock_generator:gen_1Hz|counter[20]  ; clock_generator:gen_1Hz|counter[23]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.101      ; 1.781      ;
+; 1.426 ; clock_generator:gen_1Hz|counter[6]   ; clock_generator:gen_1Hz|counter[6]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.764      ;
+; 1.426 ; clock_generator:gen_1Hz|counter[14]  ; clock_generator:gen_1Hz|counter[14]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.101      ; 1.782      ;
+; 1.427 ; clock_generator:gen_1Hz|counter[21]  ; clock_generator:gen_1Hz|counter[25]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.101      ; 1.783      ;
+; 1.436 ; clock_generator:gen_1Hz|counter[3]   ; clock_generator:gen_1Hz|counter[7]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.774      ;
+; 1.439 ; clock_generator:gen_1Hz|counter[10]  ; clock_generator:gen_1Hz|counter[15]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.777      ;
+; 1.439 ; clock_generator:gen_1Hz|counter[2]   ; clock_generator:gen_1Hz|counter[7]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.777      ;
+; 1.440 ; clock_generator:gen_1Hz|counter[24]  ; clock_generator:gen_1Hz|counter[24]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.101      ; 1.796      ;
+; 1.442 ; clock_generator:gen_1Hz|counter[1]   ; clock_generator:gen_1Hz|counter[5]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.780      ;
+; 1.442 ; clock_generator:gen_1Hz|counter[5]   ; clock_generator:gen_1Hz|counter[9]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.780      ;
+; 1.445 ; clock_generator:gen_1Hz|counter[4]   ; clock_generator:gen_1Hz|counter[9]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.783      ;
+; 1.446 ; clock_generator:gen_1Hz|counter[11]  ; clock_generator:gen_1Hz|counter[15]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.784      ;
+; 1.446 ; clock_generator:gen_1Hz|counter[0]   ; clock_generator:gen_1Hz|counter[5]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.784      ;
+; 1.460 ; clock_generator:gen_1Hz|counter[0]   ; clock_generator:gen_1Hz|counter[0]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.798      ;
+; 1.463 ; clock_generator:gen_1Hz|counter[3]   ; clock_generator:gen_1Hz|counter[8]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.801      ;
+; 1.466 ; clock_generator:gen_1Hz|counter[2]   ; clock_generator:gen_1Hz|counter[8]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.804      ;
+; 1.468 ; clock_generator:gen_1Hz|counter[13]  ; clock_generator:gen_1Hz|counter[15]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.082      ; 1.805      ;
+; 1.469 ; clock_generator:gen_1Hz|counter[5]   ; clock_generator:gen_1Hz|counter[10]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.807      ;
+; 1.472 ; clock_generator:gen_1Hz|counter[4]   ; clock_generator:gen_1Hz|counter[10]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.083      ; 1.810      ;
+; 1.503 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[21]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.547      ; 2.305      ;
+; 1.530 ; clock_generator:gen_1Hz|counter[10]  ; clock_generator:gen_1Hz|counter[16]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.547      ; 2.332      ;
+; 1.530 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[22]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.547      ; 2.332      ;
+; 1.534 ; clock_generator:gen_1Hz|counter[8]   ; clock_generator:gen_1Hz|counter[14]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.547      ; 2.336      ;
+; 1.537 ; clock_generator:gen_1Hz|counter[11]  ; clock_generator:gen_1Hz|counter[16]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.547      ; 2.339      ;
+; 1.537 ; clock_generator:gen_1Hz|counter[9]   ; clock_generator:gen_1Hz|counter[14]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.547      ; 2.339      ;
+; 1.538 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[18]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.547      ; 2.340      ;
+; 1.547 ; clock_generator:gen_1Hz|counter[21]  ; clock_generator:gen_1Hz|counter[22]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.101      ; 1.903      ;
+; 1.551 ; clock_generator:gen_1Hz|counter[10]  ; clock_generator:gen_1Hz|counter[23]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.547      ; 2.353      ;
+; 1.553 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|counter[20]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.547      ; 2.355      ;
+; 1.555 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|clock_signal ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.547      ; 2.357      ;
+; 1.558 ; clock_generator:gen_1Hz|counter[11]  ; clock_generator:gen_1Hz|counter[23]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.547      ; 2.360      ;
+; 1.559 ; clock_generator:gen_1Hz|counter[13]  ; clock_generator:gen_1Hz|counter[16]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.546      ; 2.360      ;
+; 1.562 ; clock_generator:gen_1Hz|counter[10]  ; clock_generator:gen_1Hz|counter[12]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.547      ; 2.364      ;
+; 1.566 ; clock_generator:gen_1Hz|counter[19]  ; clock_generator:gen_1Hz|counter[25]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.101      ; 1.922      ;
++-------+--------------------------------------+--------------------------------------+--------------+--------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Slow 1000mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++---------------------------------------+
+; Fast 1000mV 0C Model Setup Summary    ;
++--------------+--------+---------------+
+; Clock        ; Slack  ; End Point TNS ;
++--------------+--------+---------------+
+; FPGA_CLK1_50 ; -1.342 ; -22.764       ;
++--------------+--------+---------------+
+
+
++--------------------------------------+
+; Fast 1000mV 0C Model Hold Summary    ;
++--------------+-------+---------------+
+; Clock        ; Slack ; End Point TNS ;
++--------------+-------+---------------+
+; FPGA_CLK1_50 ; 0.275 ; 0.000         ;
++--------------+-------+---------------+
+
+
+-----------------------------------------
+; Fast 1000mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1000mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1000mV 0C Model Minimum Pulse Width Summary ;
++--------------+--------+--------------------------+
+; Clock        ; Slack  ; End Point TNS            ;
++--------------+--------+--------------------------+
+; FPGA_CLK1_50 ; -3.000 ; -50.601                  ;
++--------------+--------+--------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1000mV 0C Model Setup: 'FPGA_CLK1_50'                                                                                                                ;
++--------+-------------------------------------+-------------------------------------+--------------+--------------+--------------+------------+------------+
+; Slack  ; From Node                           ; To Node                             ; Launch Clock ; Latch Clock  ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------+-------------------------------------+--------------+--------------+--------------+------------+------------+
+; -1.342 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.285      ;
+; -1.342 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.285      ;
+; -1.341 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.284      ;
+; -1.326 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[24] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.208      ; 2.527      ;
+; -1.320 ; clock_generator:gen_1Hz|counter[14] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.994      ;
+; -1.320 ; clock_generator:gen_1Hz|counter[14] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.994      ;
+; -1.319 ; clock_generator:gen_1Hz|counter[14] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.993      ;
+; -1.315 ; clock_generator:gen_1Hz|counter[4]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.258      ;
+; -1.315 ; clock_generator:gen_1Hz|counter[4]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.258      ;
+; -1.314 ; clock_generator:gen_1Hz|counter[4]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.257      ;
+; -1.311 ; clock_generator:gen_1Hz|counter[11] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.254      ;
+; -1.311 ; clock_generator:gen_1Hz|counter[11] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.254      ;
+; -1.310 ; clock_generator:gen_1Hz|counter[11] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.253      ;
+; -1.301 ; clock_generator:gen_1Hz|counter[7]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.244      ;
+; -1.301 ; clock_generator:gen_1Hz|counter[7]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.244      ;
+; -1.300 ; clock_generator:gen_1Hz|counter[7]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.243      ;
+; -1.296 ; clock_generator:gen_1Hz|counter[6]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.239      ;
+; -1.296 ; clock_generator:gen_1Hz|counter[6]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.239      ;
+; -1.295 ; clock_generator:gen_1Hz|counter[6]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.238      ;
+; -1.289 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[24] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.061     ; 2.221      ;
+; -1.272 ; clock_generator:gen_1Hz|counter[0]  ; clock_generator:gen_1Hz|counter[24] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.208      ; 2.473      ;
+; -1.254 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[20] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.208      ; 2.455      ;
+; -1.239 ; clock_generator:gen_1Hz|counter[10] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.182      ;
+; -1.239 ; clock_generator:gen_1Hz|counter[10] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.182      ;
+; -1.238 ; clock_generator:gen_1Hz|counter[10] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.181      ;
+; -1.230 ; clock_generator:gen_1Hz|counter[3]  ; clock_generator:gen_1Hz|counter[24] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.208      ; 2.431      ;
+; -1.218 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.892      ;
+; -1.218 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.892      ;
+; -1.217 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.891      ;
+; -1.217 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[20] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.061     ; 2.149      ;
+; -1.216 ; clock_generator:gen_1Hz|counter[9]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.159      ;
+; -1.216 ; clock_generator:gen_1Hz|counter[9]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.159      ;
+; -1.215 ; clock_generator:gen_1Hz|counter[9]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.158      ;
+; -1.211 ; clock_generator:gen_1Hz|counter[2]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.154      ;
+; -1.211 ; clock_generator:gen_1Hz|counter[2]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.154      ;
+; -1.210 ; clock_generator:gen_1Hz|counter[2]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.153      ;
+; -1.200 ; clock_generator:gen_1Hz|counter[0]  ; clock_generator:gen_1Hz|counter[20] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.208      ; 2.401      ;
+; -1.181 ; clock_generator:gen_1Hz|counter[2]  ; clock_generator:gen_1Hz|counter[24] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.208      ; 2.382      ;
+; -1.179 ; clock_generator:gen_1Hz|counter[18] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.853      ;
+; -1.179 ; clock_generator:gen_1Hz|counter[18] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.853      ;
+; -1.178 ; clock_generator:gen_1Hz|counter[18] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.852      ;
+; -1.158 ; clock_generator:gen_1Hz|counter[3]  ; clock_generator:gen_1Hz|counter[20] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.208      ; 2.359      ;
+; -1.157 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[13] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.100      ;
+; -1.149 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[18] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.208      ; 2.350      ;
+; -1.142 ; clock_generator:gen_1Hz|counter[5]  ; clock_generator:gen_1Hz|counter[24] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.208      ; 2.343      ;
+; -1.136 ; clock_generator:gen_1Hz|counter[24] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.810      ;
+; -1.136 ; clock_generator:gen_1Hz|counter[24] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.810      ;
+; -1.135 ; clock_generator:gen_1Hz|counter[24] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.809      ;
+; -1.133 ; clock_generator:gen_1Hz|counter[19] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.807      ;
+; -1.133 ; clock_generator:gen_1Hz|counter[19] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.807      ;
+; -1.133 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[13] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.807      ;
+; -1.132 ; clock_generator:gen_1Hz|counter[19] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.806      ;
+; -1.132 ; clock_generator:gen_1Hz|counter[0]  ; clock_generator:gen_1Hz|counter[13] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.075      ;
+; -1.128 ; clock_generator:gen_1Hz|counter[22] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.802      ;
+; -1.128 ; clock_generator:gen_1Hz|counter[22] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.802      ;
+; -1.127 ; clock_generator:gen_1Hz|counter[22] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.801      ;
+; -1.124 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[22] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.208      ; 2.325      ;
+; -1.114 ; clock_generator:gen_1Hz|counter[5]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.057      ;
+; -1.114 ; clock_generator:gen_1Hz|counter[5]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.057      ;
+; -1.113 ; clock_generator:gen_1Hz|counter[5]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.056      ;
+; -1.112 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[18] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.061     ; 2.044      ;
+; -1.109 ; clock_generator:gen_1Hz|counter[2]  ; clock_generator:gen_1Hz|counter[20] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.208      ; 2.310      ;
+; -1.107 ; clock_generator:gen_1Hz|counter[15] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.050      ;
+; -1.107 ; clock_generator:gen_1Hz|counter[15] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.050      ;
+; -1.106 ; clock_generator:gen_1Hz|counter[15] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.049      ;
+; -1.098 ; clock_generator:gen_1Hz|counter[3]  ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.041      ;
+; -1.098 ; clock_generator:gen_1Hz|counter[3]  ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.041      ;
+; -1.097 ; clock_generator:gen_1Hz|counter[3]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.040      ;
+; -1.095 ; clock_generator:gen_1Hz|counter[0]  ; clock_generator:gen_1Hz|counter[18] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.208      ; 2.296      ;
+; -1.093 ; clock_generator:gen_1Hz|counter[20] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.767      ;
+; -1.093 ; clock_generator:gen_1Hz|counter[20] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.767      ;
+; -1.092 ; clock_generator:gen_1Hz|counter[20] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.766      ;
+; -1.089 ; clock_generator:gen_1Hz|counter[16] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.763      ;
+; -1.089 ; clock_generator:gen_1Hz|counter[16] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.763      ;
+; -1.088 ; clock_generator:gen_1Hz|counter[4]  ; clock_generator:gen_1Hz|counter[24] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.208      ; 2.289      ;
+; -1.088 ; clock_generator:gen_1Hz|counter[16] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.762      ;
+; -1.087 ; clock_generator:gen_1Hz|counter[12] ; clock_generator:gen_1Hz|counter[22] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.061     ; 2.019      ;
+; -1.070 ; clock_generator:gen_1Hz|counter[5]  ; clock_generator:gen_1Hz|counter[20] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.208      ; 2.271      ;
+; -1.070 ; clock_generator:gen_1Hz|counter[0]  ; clock_generator:gen_1Hz|counter[22] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.208      ; 2.271      ;
+; -1.062 ; clock_generator:gen_1Hz|counter[21] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.736      ;
+; -1.062 ; clock_generator:gen_1Hz|counter[21] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.736      ;
+; -1.061 ; clock_generator:gen_1Hz|counter[3]  ; clock_generator:gen_1Hz|counter[13] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 2.004      ;
+; -1.061 ; clock_generator:gen_1Hz|counter[21] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.735      ;
+; -1.053 ; clock_generator:gen_1Hz|counter[3]  ; clock_generator:gen_1Hz|counter[18] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.208      ; 2.254      ;
+; -1.053 ; clock_generator:gen_1Hz|counter[0]  ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 1.996      ;
+; -1.050 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[19] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.208      ; 2.251      ;
+; -1.050 ; clock_generator:gen_1Hz|counter[1]  ; clock_generator:gen_1Hz|counter[21] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.208      ; 2.251      ;
+; -1.050 ; clock_generator:gen_1Hz|counter[7]  ; clock_generator:gen_1Hz|counter[24] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.208      ; 2.251      ;
+; -1.050 ; clock_generator:gen_1Hz|counter[13] ; clock_generator:gen_1Hz|counter[0]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.051     ; 1.992      ;
+; -1.050 ; clock_generator:gen_1Hz|counter[13] ; clock_generator:gen_1Hz|counter[6]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.051     ; 1.992      ;
+; -1.049 ; clock_generator:gen_1Hz|counter[13] ; clock_generator:gen_1Hz|counter[11] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.051     ; 1.991      ;
+; -1.038 ; clock_generator:gen_1Hz|counter[2]  ; clock_generator:gen_1Hz|counter[13] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 1.981      ;
+; -1.033 ; clock_generator:gen_1Hz|counter[14] ; clock_generator:gen_1Hz|counter[13] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.319     ; 1.707      ;
+; -1.029 ; clock_generator:gen_1Hz|counter[14] ; clock_generator:gen_1Hz|counter[22] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.061     ; 1.961      ;
+; -1.028 ; clock_generator:gen_1Hz|counter[3]  ; clock_generator:gen_1Hz|counter[22] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.208      ; 2.229      ;
+; -1.028 ; clock_generator:gen_1Hz|counter[4]  ; clock_generator:gen_1Hz|counter[13] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 1.971      ;
+; -1.028 ; clock_generator:gen_1Hz|counter[14] ; clock_generator:gen_1Hz|counter[19] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.061     ; 1.960      ;
+; -1.028 ; clock_generator:gen_1Hz|counter[14] ; clock_generator:gen_1Hz|counter[21] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.061     ; 1.960      ;
+; -1.024 ; clock_generator:gen_1Hz|counter[11] ; clock_generator:gen_1Hz|counter[13] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; -0.050     ; 1.967      ;
+; -1.024 ; clock_generator:gen_1Hz|counter[4]  ; clock_generator:gen_1Hz|counter[22] ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 1.000        ; 0.208      ; 2.225      ;
++--------+-------------------------------------+-------------------------------------+--------------+--------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1000mV 0C Model Hold: 'FPGA_CLK1_50'                                                                                                                  ;
++-------+--------------------------------------+--------------------------------------+--------------+--------------+--------------+------------+------------+
+; Slack ; From Node                            ; To Node                              ; Launch Clock ; Latch Clock  ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------+--------------------------------------+--------------+--------------+--------------+------------+------------+
+; 0.275 ; clock_generator:gen_1Hz|clock_signal ; clock_generator:gen_1Hz|clock_signal ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.061      ; 0.463      ;
+; 0.286 ; clock_generator:gen_1Hz|counter[25]  ; clock_generator:gen_1Hz|counter[25]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.061      ; 0.474      ;
+; 0.419 ; clock_generator:gen_1Hz|counter[23]  ; clock_generator:gen_1Hz|counter[23]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.061      ; 0.607      ;
+; 0.427 ; clock_generator:gen_1Hz|counter[3]   ; clock_generator:gen_1Hz|counter[3]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.604      ;
+; 0.428 ; clock_generator:gen_1Hz|counter[8]   ; clock_generator:gen_1Hz|counter[8]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.605      ;
+; 0.428 ; clock_generator:gen_1Hz|counter[10]  ; clock_generator:gen_1Hz|counter[10]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.605      ;
+; 0.428 ; clock_generator:gen_1Hz|counter[2]   ; clock_generator:gen_1Hz|counter[2]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.605      ;
+; 0.429 ; clock_generator:gen_1Hz|counter[9]   ; clock_generator:gen_1Hz|counter[9]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.606      ;
+; 0.429 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[15]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.606      ;
+; 0.429 ; clock_generator:gen_1Hz|counter[7]   ; clock_generator:gen_1Hz|counter[7]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.606      ;
+; 0.429 ; clock_generator:gen_1Hz|counter[5]   ; clock_generator:gen_1Hz|counter[5]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.606      ;
+; 0.429 ; clock_generator:gen_1Hz|counter[1]   ; clock_generator:gen_1Hz|counter[1]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.606      ;
+; 0.430 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|counter[17]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.607      ;
+; 0.430 ; clock_generator:gen_1Hz|counter[4]   ; clock_generator:gen_1Hz|counter[4]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.607      ;
+; 0.633 ; clock_generator:gen_1Hz|counter[22]  ; clock_generator:gen_1Hz|counter[22]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.061      ; 0.821      ;
+; 0.634 ; clock_generator:gen_1Hz|counter[19]  ; clock_generator:gen_1Hz|counter[19]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.061      ; 0.822      ;
+; 0.634 ; clock_generator:gen_1Hz|counter[21]  ; clock_generator:gen_1Hz|counter[21]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.061      ; 0.822      ;
+; 0.644 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|counter[23]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.319      ; 1.090      ;
+; 0.647 ; clock_generator:gen_1Hz|counter[22]  ; clock_generator:gen_1Hz|counter[23]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.061      ; 0.835      ;
+; 0.654 ; clock_generator:gen_1Hz|counter[3]   ; clock_generator:gen_1Hz|counter[4]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.831      ;
+; 0.655 ; clock_generator:gen_1Hz|counter[2]   ; clock_generator:gen_1Hz|counter[3]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.832      ;
+; 0.655 ; clock_generator:gen_1Hz|counter[7]   ; clock_generator:gen_1Hz|counter[8]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.832      ;
+; 0.655 ; clock_generator:gen_1Hz|counter[9]   ; clock_generator:gen_1Hz|counter[10]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.832      ;
+; 0.655 ; clock_generator:gen_1Hz|counter[1]   ; clock_generator:gen_1Hz|counter[2]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.832      ;
+; 0.655 ; clock_generator:gen_1Hz|counter[8]   ; clock_generator:gen_1Hz|counter[9]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.832      ;
+; 0.658 ; clock_generator:gen_1Hz|counter[4]   ; clock_generator:gen_1Hz|counter[5]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.835      ;
+; 0.658 ; clock_generator:gen_1Hz|counter[0]   ; clock_generator:gen_1Hz|counter[1]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.835      ;
+; 0.662 ; clock_generator:gen_1Hz|counter[6]   ; clock_generator:gen_1Hz|counter[7]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.839      ;
+; 0.662 ; clock_generator:gen_1Hz|counter[2]   ; clock_generator:gen_1Hz|counter[4]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.839      ;
+; 0.662 ; clock_generator:gen_1Hz|counter[8]   ; clock_generator:gen_1Hz|counter[10]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.839      ;
+; 0.665 ; clock_generator:gen_1Hz|counter[0]   ; clock_generator:gen_1Hz|counter[2]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.842      ;
+; 0.669 ; clock_generator:gen_1Hz|counter[6]   ; clock_generator:gen_1Hz|counter[8]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.846      ;
+; 0.682 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|counter[19]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.319      ; 1.128      ;
+; 0.683 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[16]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.319      ; 1.129      ;
+; 0.726 ; clock_generator:gen_1Hz|counter[23]  ; clock_generator:gen_1Hz|counter[25]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.061      ; 0.914      ;
+; 0.728 ; clock_generator:gen_1Hz|counter[21]  ; clock_generator:gen_1Hz|counter[23]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.061      ; 0.916      ;
+; 0.731 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[23]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.319      ; 1.177      ;
+; 0.732 ; clock_generator:gen_1Hz|counter[24]  ; clock_generator:gen_1Hz|counter[25]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.061      ; 0.920      ;
+; 0.732 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|counter[25]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.319      ; 1.178      ;
+; 0.735 ; clock_generator:gen_1Hz|counter[3]   ; clock_generator:gen_1Hz|counter[5]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.912      ;
+; 0.735 ; clock_generator:gen_1Hz|counter[22]  ; clock_generator:gen_1Hz|counter[25]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.061      ; 0.923      ;
+; 0.736 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[17]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.913      ;
+; 0.736 ; clock_generator:gen_1Hz|counter[1]   ; clock_generator:gen_1Hz|counter[3]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.913      ;
+; 0.736 ; clock_generator:gen_1Hz|counter[7]   ; clock_generator:gen_1Hz|counter[9]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.913      ;
+; 0.736 ; clock_generator:gen_1Hz|counter[5]   ; clock_generator:gen_1Hz|counter[7]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.913      ;
+; 0.743 ; clock_generator:gen_1Hz|counter[1]   ; clock_generator:gen_1Hz|counter[4]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.920      ;
+; 0.743 ; clock_generator:gen_1Hz|counter[7]   ; clock_generator:gen_1Hz|counter[10]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.920      ;
+; 0.743 ; clock_generator:gen_1Hz|counter[5]   ; clock_generator:gen_1Hz|counter[8]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.920      ;
+; 0.743 ; clock_generator:gen_1Hz|counter[2]   ; clock_generator:gen_1Hz|counter[5]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.920      ;
+; 0.746 ; clock_generator:gen_1Hz|counter[0]   ; clock_generator:gen_1Hz|counter[3]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.923      ;
+; 0.746 ; clock_generator:gen_1Hz|counter[4]   ; clock_generator:gen_1Hz|counter[7]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.923      ;
+; 0.750 ; clock_generator:gen_1Hz|counter[6]   ; clock_generator:gen_1Hz|counter[9]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.927      ;
+; 0.753 ; clock_generator:gen_1Hz|counter[0]   ; clock_generator:gen_1Hz|counter[4]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.930      ;
+; 0.753 ; clock_generator:gen_1Hz|counter[4]   ; clock_generator:gen_1Hz|counter[8]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.930      ;
+; 0.757 ; clock_generator:gen_1Hz|counter[6]   ; clock_generator:gen_1Hz|counter[10]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.934      ;
+; 0.767 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|counter[18]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.319      ; 1.213      ;
+; 0.769 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|counter[21]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.319      ; 1.215      ;
+; 0.769 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[19]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.319      ; 1.215      ;
+; 0.776 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|counter[22]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.319      ; 1.222      ;
+; 0.777 ; clock_generator:gen_1Hz|counter[13]  ; clock_generator:gen_1Hz|counter[14]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.319      ; 1.223      ;
+; 0.778 ; clock_generator:gen_1Hz|counter[11]  ; clock_generator:gen_1Hz|counter[14]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.319      ; 1.224      ;
+; 0.781 ; clock_generator:gen_1Hz|counter[10]  ; clock_generator:gen_1Hz|counter[14]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.319      ; 1.227      ;
+; 0.799 ; clock_generator:gen_1Hz|counter[16]  ; clock_generator:gen_1Hz|counter[16]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.061      ; 0.987      ;
+; 0.800 ; clock_generator:gen_1Hz|counter[14]  ; clock_generator:gen_1Hz|counter[14]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.061      ; 0.988      ;
+; 0.807 ; clock_generator:gen_1Hz|counter[24]  ; clock_generator:gen_1Hz|counter[24]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.061      ; 0.995      ;
+; 0.810 ; clock_generator:gen_1Hz|counter[20]  ; clock_generator:gen_1Hz|counter[23]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.061      ; 0.998      ;
+; 0.811 ; clock_generator:gen_1Hz|counter[6]   ; clock_generator:gen_1Hz|counter[6]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.988      ;
+; 0.811 ; clock_generator:gen_1Hz|counter[11]  ; clock_generator:gen_1Hz|counter[11]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 0.988      ;
+; 0.816 ; clock_generator:gen_1Hz|counter[19]  ; clock_generator:gen_1Hz|counter[23]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.061      ; 1.004      ;
+; 0.816 ; clock_generator:gen_1Hz|counter[21]  ; clock_generator:gen_1Hz|counter[25]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.061      ; 1.004      ;
+; 0.819 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[25]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.319      ; 1.265      ;
+; 0.823 ; clock_generator:gen_1Hz|counter[3]   ; clock_generator:gen_1Hz|counter[7]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 1.000      ;
+; 0.824 ; clock_generator:gen_1Hz|counter[1]   ; clock_generator:gen_1Hz|counter[5]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 1.001      ;
+; 0.824 ; clock_generator:gen_1Hz|counter[5]   ; clock_generator:gen_1Hz|counter[9]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 1.001      ;
+; 0.827 ; clock_generator:gen_1Hz|counter[13]  ; clock_generator:gen_1Hz|counter[15]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 1.004      ;
+; 0.828 ; clock_generator:gen_1Hz|counter[11]  ; clock_generator:gen_1Hz|counter[15]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 1.005      ;
+; 0.830 ; clock_generator:gen_1Hz|counter[3]   ; clock_generator:gen_1Hz|counter[8]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 1.007      ;
+; 0.831 ; clock_generator:gen_1Hz|counter[0]   ; clock_generator:gen_1Hz|counter[0]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 1.008      ;
+; 0.831 ; clock_generator:gen_1Hz|counter[5]   ; clock_generator:gen_1Hz|counter[10]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 1.008      ;
+; 0.831 ; clock_generator:gen_1Hz|counter[2]   ; clock_generator:gen_1Hz|counter[7]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 1.008      ;
+; 0.831 ; clock_generator:gen_1Hz|counter[10]  ; clock_generator:gen_1Hz|counter[15]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 1.008      ;
+; 0.834 ; clock_generator:gen_1Hz|counter[0]   ; clock_generator:gen_1Hz|counter[5]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 1.011      ;
+; 0.834 ; clock_generator:gen_1Hz|counter[4]   ; clock_generator:gen_1Hz|counter[9]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 1.011      ;
+; 0.838 ; clock_generator:gen_1Hz|counter[2]   ; clock_generator:gen_1Hz|counter[8]   ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 1.015      ;
+; 0.841 ; clock_generator:gen_1Hz|counter[4]   ; clock_generator:gen_1Hz|counter[10]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.050      ; 1.018      ;
+; 0.854 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[18]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.319      ; 1.300      ;
+; 0.856 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[21]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.319      ; 1.302      ;
+; 0.860 ; clock_generator:gen_1Hz|counter[21]  ; clock_generator:gen_1Hz|counter[22]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.061      ; 1.048      ;
+; 0.861 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|counter[20]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.319      ; 1.307      ;
+; 0.862 ; clock_generator:gen_1Hz|counter[13]  ; clock_generator:gen_1Hz|counter[16]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.319      ; 1.308      ;
+; 0.862 ; clock_generator:gen_1Hz|counter[9]   ; clock_generator:gen_1Hz|counter[14]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.319      ; 1.308      ;
+; 0.863 ; clock_generator:gen_1Hz|counter[15]  ; clock_generator:gen_1Hz|counter[22]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.319      ; 1.309      ;
+; 0.863 ; clock_generator:gen_1Hz|counter[11]  ; clock_generator:gen_1Hz|counter[16]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.319      ; 1.309      ;
+; 0.866 ; clock_generator:gen_1Hz|counter[10]  ; clock_generator:gen_1Hz|counter[16]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.319      ; 1.312      ;
+; 0.869 ; clock_generator:gen_1Hz|counter[8]   ; clock_generator:gen_1Hz|counter[14]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.319      ; 1.315      ;
+; 0.878 ; clock_generator:gen_1Hz|counter[11]  ; clock_generator:gen_1Hz|counter[12]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.319      ; 1.324      ;
+; 0.879 ; clock_generator:gen_1Hz|counter[18]  ; clock_generator:gen_1Hz|counter[18]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.061      ; 1.067      ;
+; 0.881 ; clock_generator:gen_1Hz|counter[20]  ; clock_generator:gen_1Hz|counter[20]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.061      ; 1.069      ;
+; 0.881 ; clock_generator:gen_1Hz|counter[10]  ; clock_generator:gen_1Hz|counter[12]  ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.319      ; 1.327      ;
+; 0.887 ; clock_generator:gen_1Hz|counter[17]  ; clock_generator:gen_1Hz|clock_signal ; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 0.000        ; 0.319      ; 1.333      ;
++-------+--------------------------------------+--------------------------------------+--------------+--------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Fast 1000mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -3.175  ; 0.275 ; N/A      ; N/A     ; -3.000              ;
+;  FPGA_CLK1_50    ; -3.175  ; 0.275 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -62.27  ; 0.0   ; 0.0      ; 0.0     ; -50.601             ;
+;  FPGA_CLK1_50    ; -62.270 ; 0.000 ; N/A      ; N/A     ; -50.601             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; LED[0]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LED[1]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LED[2]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LED[3]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LED[4]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; FPGA_CLK2_27            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; PCB_BT4                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; PCB_BT3                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; PCB_BT2                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; PCB_BT1                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; PCB_BT0                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; FPGA_CLK1_50            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1000mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; LED[0]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.4e-09 V                    ; 2.39 V              ; -0.016 V            ; 0.2 V                                ; 0.034 V                              ; 2.94e-10 s                  ; 3.43e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.4e-09 V                   ; 2.39 V             ; -0.016 V           ; 0.2 V                               ; 0.034 V                             ; 2.94e-10 s                 ; 3.43e-10 s                 ; Yes                       ; Yes                       ;
+; LED[1]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.4e-09 V                    ; 2.39 V              ; -0.016 V            ; 0.2 V                                ; 0.034 V                              ; 2.94e-10 s                  ; 3.43e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.4e-09 V                   ; 2.39 V             ; -0.016 V           ; 0.2 V                               ; 0.034 V                             ; 2.94e-10 s                 ; 3.43e-10 s                 ; Yes                       ; Yes                       ;
+; LED[2]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.4e-09 V                    ; 2.39 V              ; -0.016 V            ; 0.2 V                                ; 0.034 V                              ; 2.94e-10 s                  ; 3.43e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.4e-09 V                   ; 2.39 V             ; -0.016 V           ; 0.2 V                               ; 0.034 V                             ; 2.94e-10 s                 ; 3.43e-10 s                 ; Yes                       ; Yes                       ;
+; LED[3]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.4e-09 V                    ; 2.33 V              ; -0.00629 V          ; 0.186 V                              ; 0.099 V                              ; 2.82e-09 s                  ; 2.55e-09 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.4e-09 V                   ; 2.33 V             ; -0.00629 V         ; 0.186 V                             ; 0.099 V                             ; 2.82e-09 s                 ; 2.55e-09 s                 ; No                        ; Yes                       ;
+; LED[4]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.4e-09 V                    ; 2.38 V              ; -0.0186 V           ; 0.169 V                              ; 0.039 V                              ; 4.83e-10 s                  ; 4.69e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.4e-09 V                   ; 2.38 V             ; -0.0186 V          ; 0.169 V                             ; 0.039 V                             ; 4.83e-10 s                 ; 4.69e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.66e-09 V                   ; 2.38 V              ; -0.041 V            ; 0.148 V                              ; 0.093 V                              ; 2.82e-10 s                  ; 2.61e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.66e-09 V                  ; 2.38 V             ; -0.041 V           ; 0.148 V                             ; 0.093 V                             ; 2.82e-10 s                 ; 2.61e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.58e-09 V                   ; 2.38 V              ; -0.0197 V           ; 0.141 V                              ; 0.044 V                              ; 4.69e-10 s                  ; 6.07e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 5.58e-09 V                  ; 2.38 V             ; -0.0197 V          ; 0.141 V                             ; 0.044 V                             ; 4.69e-10 s                 ; 6.07e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1000mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; LED[0]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.16e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.097 V                              ; 0.037 V                              ; 4.41e-10 s                  ; 4.16e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.16e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.097 V                             ; 0.037 V                             ; 4.41e-10 s                 ; 4.16e-10 s                 ; Yes                       ; Yes                       ;
+; LED[1]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.16e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.097 V                              ; 0.037 V                              ; 4.41e-10 s                  ; 4.16e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.16e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.097 V                             ; 0.037 V                             ; 4.41e-10 s                 ; 4.16e-10 s                 ; Yes                       ; Yes                       ;
+; LED[2]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.16e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.097 V                              ; 0.037 V                              ; 4.41e-10 s                  ; 4.16e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.16e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.097 V                             ; 0.037 V                             ; 4.41e-10 s                 ; 4.16e-10 s                 ; Yes                       ; Yes                       ;
+; LED[3]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.16e-07 V                   ; 2.33 V              ; -0.0038 V           ; 0.163 V                              ; 0.075 V                              ; 3.33e-09 s                  ; 3.15e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.16e-07 V                  ; 2.33 V             ; -0.0038 V          ; 0.163 V                             ; 0.075 V                             ; 3.33e-09 s                 ; 3.15e-09 s                 ; Yes                       ; Yes                       ;
+; LED[4]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.16e-07 V                   ; 2.35 V              ; -0.0197 V           ; 0.101 V                              ; 0.101 V                              ; 6.39e-10 s                  ; 6.08e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.16e-07 V                  ; 2.35 V             ; -0.0197 V          ; 0.101 V                             ; 0.101 V                             ; 6.39e-10 s                 ; 6.08e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.74e-07 V                   ; 2.36 V              ; -0.0252 V           ; 0.074 V                              ; 0.045 V                              ; 4e-10 s                     ; 3.57e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 5.74e-07 V                  ; 2.36 V             ; -0.0252 V          ; 0.074 V                             ; 0.045 V                             ; 4e-10 s                    ; 3.57e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 9.45e-07 V                   ; 2.35 V              ; -0.0165 V           ; 0.2 V                                ; 0.105 V                              ; 5.32e-10 s                  ; 7.76e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 9.45e-07 V                  ; 2.35 V             ; -0.0165 V          ; 0.2 V                               ; 0.105 V                             ; 5.32e-10 s                 ; 7.76e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1000mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; LED[0]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.72e-08 V                   ; 2.72 V              ; -0.0376 V           ; 0.161 V                              ; 0.048 V                              ; 2.72e-10 s                  ; 2.61e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.72e-08 V                  ; 2.72 V             ; -0.0376 V          ; 0.161 V                             ; 0.048 V                             ; 2.72e-10 s                 ; 2.61e-10 s                 ; Yes                       ; Yes                       ;
+; LED[1]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.72e-08 V                   ; 2.72 V              ; -0.0376 V           ; 0.161 V                              ; 0.048 V                              ; 2.72e-10 s                  ; 2.61e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.72e-08 V                  ; 2.72 V             ; -0.0376 V          ; 0.161 V                             ; 0.048 V                             ; 2.72e-10 s                 ; 2.61e-10 s                 ; Yes                       ; Yes                       ;
+; LED[2]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.72e-08 V                   ; 2.72 V              ; -0.0376 V           ; 0.161 V                              ; 0.048 V                              ; 2.72e-10 s                  ; 2.61e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.72e-08 V                  ; 2.72 V             ; -0.0376 V          ; 0.161 V                             ; 0.048 V                             ; 2.72e-10 s                 ; 2.61e-10 s                 ; Yes                       ; Yes                       ;
+; LED[3]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.72e-08 V                   ; 2.64 V              ; -0.0115 V           ; 0.202 V                              ; 0.118 V                              ; 2.37e-09 s                  ; 2.22e-09 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.72e-08 V                  ; 2.64 V             ; -0.0115 V          ; 0.202 V                             ; 0.118 V                             ; 2.37e-09 s                 ; 2.22e-09 s                 ; No                        ; Yes                       ;
+; LED[4]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.72e-08 V                   ; 2.71 V              ; -0.0204 V           ; 0.145 V                              ; 0.065 V                              ; 4.51e-10 s                  ; 4.12e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.72e-08 V                  ; 2.71 V             ; -0.0204 V          ; 0.145 V                             ; 0.065 V                             ; 4.51e-10 s                 ; 4.12e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.21e-08 V                   ; 2.74 V              ; -0.0824 V           ; 0.159 V                              ; 0.115 V                              ; 2.7e-10 s                   ; 2.18e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.21e-08 V                  ; 2.74 V             ; -0.0824 V          ; 0.159 V                             ; 0.115 V                             ; 2.7e-10 s                  ; 2.18e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.55e-08 V                   ; 2.7 V               ; -0.0204 V           ; 0.273 V                              ; 0.058 V                              ; 3.2e-10 s                   ; 5.11e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.55e-08 V                  ; 2.7 V              ; -0.0204 V          ; 0.273 V                             ; 0.058 V                             ; 3.2e-10 s                  ; 5.11e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Transfers                                                         ;
++--------------+--------------+----------+----------+----------+----------+
+; From Clock   ; To Clock     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++--------------+--------------+----------+----------+----------+----------+
+; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 716      ; 0        ; 0        ; 0        ;
++--------------+--------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------+
+; Hold Transfers                                                          ;
++--------------+--------------+----------+----------+----------+----------+
+; From Clock   ; To Clock     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++--------------+--------------+----------+----------+----------+----------+
+; FPGA_CLK1_50 ; FPGA_CLK1_50 ; 716      ; 0        ; 0        ; 0        ;
++--------------+--------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 0     ; 0    ;
+; Unconstrained Input Port Paths  ; 0     ; 0    ;
+; Unconstrained Output Ports      ; 5     ; 5    ;
+; Unconstrained Output Port Paths ; 5     ; 5    ;
++---------------------------------+-------+------+
+
+
++--------------------------------------------------+
+; Clock Status Summary                             ;
++--------------+--------------+------+-------------+
+; Target       ; Clock        ; Type ; Status      ;
++--------------+--------------+------+-------------+
+; FPGA_CLK1_50 ; FPGA_CLK1_50 ; Base ; Constrained ;
++--------------+--------------+------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; LED[0]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[1]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[2]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[3]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[4]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; LED[0]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[1]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[2]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[3]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[4]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+    Info: Processing started: Sat Feb 14 11:31:17 2026
+Info: Command: quartus_sta top -c top
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 32 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'top.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name FPGA_CLK1_50 FPGA_CLK1_50
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1000mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -3.175
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.175             -62.270 FPGA_CLK1_50 
+Info (332146): Worst-case hold slack is 0.512
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.512               0.000 FPGA_CLK1_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -50.601 FPGA_CLK1_50 
+Info: Analyzing Slow 1000mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -3.004
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.004             -59.014 FPGA_CLK1_50 
+Info (332146): Worst-case hold slack is 0.496
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.496               0.000 FPGA_CLK1_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -50.601 FPGA_CLK1_50 
+Info: Analyzing Fast 1000mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -1.342
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.342             -22.764 FPGA_CLK1_50 
+Info (332146): Worst-case hold slack is 0.275
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.275               0.000 FPGA_CLK1_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -50.601 FPGA_CLK1_50 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4900 megabytes
+    Info: Processing ended: Sat Feb 14 11:31:18 2026
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
